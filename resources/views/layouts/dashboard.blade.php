@@ -12,7 +12,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url ('') }}">SB Admin v2.0 | Laravel 5</a>
+                {{--<a class="navbar-brand" href="{{ url ('') }}">SB Admin v2.0 | Laravel 5</a>--}}
+                <a class="navbar-brand" href="{{ url ('igif') }}">IGIF - Golf Improvement App</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -273,6 +274,9 @@
                             <a href="{{ url ('igif/') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
+<!-- /ADMIN Navigation -->
+                        {{--{{ $userData->id }}--}}
+                    @if($userData->role_id == 1)
 
                         <li >
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Admin<span class="fa arrow"></span></a>
@@ -288,6 +292,8 @@
                             <!-- /.nav-second-level -->
                         </li>
 
+                    @endif
+<!-- /END ADMIN Navigation -->
 
 
                         {{--<li {{ (Request::is('*charts') ? 'class="active"' : '') }}>--}}

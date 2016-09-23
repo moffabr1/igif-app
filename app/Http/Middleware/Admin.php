@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class Igif
+class Admin
 {
     /**
      * Handle an incoming request.
@@ -20,7 +20,7 @@ class Igif
 
         if(Auth::check()){
 
-            if(Auth::user()->isActive()){
+            if(Auth::user()->isAdmin()){
 
                 return $next($request);
 
@@ -29,6 +29,5 @@ class Igif
         }
 
         return redirect('/');
-
     }
 }

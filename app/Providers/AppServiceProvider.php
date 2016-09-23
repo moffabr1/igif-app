@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +16,15 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+
+        view()->composer('layouts.dashboard', function($view){
+
+           //$view->with('userData', User::all());
+            $view->with('userData', Auth::User());
+
+        });
+
+
     }
 
     /**
