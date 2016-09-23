@@ -272,6 +272,24 @@
                         <li {{ (Request::is('/') ? 'class="active"' : '') }}>
                             <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
+
+
+                        <li >
+                            <a href="#"><i class="fa fa-wrench fa-fw"></i> Admin<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/users') }}">Manage Users</a>
+                                </li>
+                                <!-- /.nav-third-level -->
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('admin/users/create' ) }}">Create Users</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+
+
+
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->
