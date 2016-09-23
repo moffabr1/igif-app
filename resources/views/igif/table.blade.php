@@ -9,7 +9,7 @@
 		@section ('table_panel_body')
 		@include('widgets.table', array('class'=>''))
 		@endsection
-		@include('widgets.panel', array('header'=>true, 'as'=>'table'))
+		@include('widgets.panel', array('header'=>true, 'as'=>'igif.table'))
 	</div>
 	<div class="col-sm-6">
 		@section ('btable_panel_title','Bordered Table')

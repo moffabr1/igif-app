@@ -269,8 +269,8 @@
                             </div>
                             <!-- /input-group -->
                         </li>
-                        <li {{ (Request::is('/') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        <li {{ (Request::is('*igif') ? 'class="active"' : '') }}>
+                            <a href="{{ url ('igif/') }}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 
 
@@ -278,11 +278,11 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Admin<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin/users') }}">Manage Users</a>
+                                    <a href="{{ url ('igif/admin/users') }}">Manage Users</a>
                                 </li>
                                 <!-- /.nav-third-level -->
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('admin/users/create' ) }}">Create Users</a>
+                                    <a href="{{ url ('igif/admin/users/create' ) }}">Create Users</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -290,12 +290,16 @@
 
 
 
+                        {{--<li {{ (Request::is('*charts') ? 'class="active"' : '') }}>--}}
+                            {{--<a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
+                            <a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
+                            <a href="{{ url ('igif/tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
                         </li>
                         <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
                             <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>

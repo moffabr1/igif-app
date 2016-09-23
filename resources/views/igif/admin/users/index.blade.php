@@ -30,7 +30,7 @@
                 <tr>
                     <td>{{$user->id}}</td>
                     <td><img height="50" src="{{$user->photo ? $user->photo->file : 'http://placehold.it/50x50'}}" alt=""></td>
-                    <td><a href="{{route('admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
+                    <td><a href="{{route('igif.admin.users.edit', $user->id)}}">{{$user->name}}</a></td>
                     <td>{{$user->email}}</td>
                     <td>{{$user->role->name}}</td>
                     <td>{{$user->role_id}}</td>

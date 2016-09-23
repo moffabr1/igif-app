@@ -24,14 +24,15 @@
 
 Route::get('/', function()
 {
-    return View::make('home');
+    //return View::make('home');
+    return View::make('welcome');
 });
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/igif', 'HomeController@index');
 
-Route::resource('admin/users', 'AdminUsersController');
+Route::resource('igif/admin/users', 'AdminUsersController');
 
 //Route::resource('admin/users', 'AdminUsersController');
 
@@ -43,55 +44,55 @@ Route::resource('admin/users', 'AdminUsersController');
 //    return View::make('home');
 //});
 
-Route::get('/charts', function()
+Route::get('/igif/charts', function()
 {
-    return View::make('mcharts');
+    return View::make('igif.mcharts');
 });
 
-Route::get('/tables', function()
+Route::get('/igif/tables', function()
 {
-    return View::make('table');
+    return View::make('igif.table');
 });
 
-Route::get('/forms', function()
+Route::get('/igif/forms', function()
 {
-    return View::make('form');
+    return View::make('igif.form');
 });
 
-Route::get('/grid', function()
+Route::get('/igif/grid', function()
 {
-    return View::make('grid');
+    return View::make('igif.grid');
 });
 
-Route::get('/buttons', function()
+Route::get('/igif/buttons', function()
 {
-    return View::make('buttons');
+    return View::make('igif.buttons');
 });
 
 
-Route::get('/icons', function()
+Route::get('/igif/icons', function()
 {
-    return View::make('icons');
+    return View::make('igif.icons');
 });
 
-Route::get('/panels', function()
+Route::get('/igif/panels', function()
 {
-    return View::make('panel');
+    return View::make('igif.panel');
 });
 
-Route::get('/typography', function()
+Route::get('/igif/typography', function()
 {
-    return View::make('typography');
+    return View::make('igif.typography');
 });
 
-Route::get('/notifications', function()
+Route::get('/igif/notifications', function()
 {
-    return View::make('notifications');
+    return View::make('igif.notifications');
 });
 
-Route::get('/blank', function()
+Route::get('/igif/blank', function()
 {
-    return View::make('blank');
+    return View::make('igif.blank');
 });
 
 //Route::get('/login', function()
@@ -99,7 +100,7 @@ Route::get('/blank', function()
 //    return View::make('login');
 //});
 
-Route::get('/documentation', function()
+Route::get('/igif/documentation', function()
 {
-    return View::make('documentation');
+    return View::make('igif.documentation');
 });

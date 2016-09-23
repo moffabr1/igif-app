@@ -24,7 +24,7 @@ class AdminUsersController extends Controller
 
         $users = User::all();
 
-        return view('admin.users.index', compact('users'));
+        return view('igif.admin.users.index', compact('users'));
 
     }
     /**
@@ -38,7 +38,7 @@ class AdminUsersController extends Controller
 
         $roles = Role::lists('name','id')->all();
 
-        return view('admin.users.create', compact('roles'));
+        return view('igif.admin.users.create', compact('roles'));
 
     }
 
@@ -91,7 +91,7 @@ class AdminUsersController extends Controller
         Session::flash('message', 'The User has been Created');
 
 
-        return redirect('/admin/users');
+        return redirect('/igif/admin/users');
 
 
         //return $request->all();
@@ -122,7 +122,7 @@ class AdminUsersController extends Controller
 
         $roles = Role::lists('name', 'id')->all();
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('igif.admin.users.edit', compact('user', 'roles'));
 
     }
 
@@ -165,7 +165,7 @@ class AdminUsersController extends Controller
 
         $user->update($input);
 
-        return redirect('/admin/users');
+        return redirect('/igif/admin/users');
 
     }
     /**
@@ -186,7 +186,7 @@ class AdminUsersController extends Controller
 
         Session::flash('deleted_user','The user has been deleted');
 
-        return redirect('/admin/users');
+        return redirect('/igif/admin/users');
 
 
 
