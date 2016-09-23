@@ -89,6 +89,7 @@ class AdminUsersController extends Controller
 
 
         Session::flash('message', 'The User has been Created');
+        Session::flash('message_style', 'bg-success');
 
 
         return redirect('/igif/admin/users');
@@ -185,6 +186,7 @@ class AdminUsersController extends Controller
         $user->delete();
 
         Session::flash('deleted_user','The user has been deleted');
+        Session::flash('message_style', 'bg-danger');
 
         return redirect('/igif/admin/users');
 

@@ -4,7 +4,7 @@
 
     @if(Session::has('message'))
 
-        <p class="bg-danger">{{session('message')}}</p>
+        <p class="{{session('message_style')}}">{{session('message')}}</p>
 
     @endif
 
