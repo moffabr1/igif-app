@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clubs extends Model
+class Club extends Model
 {
     //
 
     protected $fillable =
 
     [
-        'club_id',
+        'course_id',
         'club_name'.
         'number_of_holes'.
         'address'.
@@ -24,6 +24,20 @@ class Clubs extends Model
         'longitude'.
         'latitude'
     ];
+
+    public $incrementing = false;
+
+    public function course() {
+
+        return $this->hasMany('App\Course');
+
+    }
+
+//    public function scorecards() {
+//
+//        return $this->hasMany('App\Scorecards');
+//
+//    }
 
 
 }
