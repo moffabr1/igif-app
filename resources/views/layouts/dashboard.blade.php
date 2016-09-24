@@ -275,31 +275,117 @@
                         </li>
 
 <!-- /ADMIN Navigation -->
-                        {{--{{ $userData->id }}--}}
-                    @if($userData->role_id == 1)
+                    {{--@if($userData->role_id == 1)--}}
 
-                        <li >
+                        {{--<li >--}}
+                            {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> Admin<span class="fa arrow"></span></a>--}}
+                            {{--<ul class="nav nav-second-level">--}}
+                                {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/admin/users') }}">Manage Users</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/admin/users/create' ) }}">Create Users</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
+
+                    {{--@endif--}}
+<!-- /END ADMIN Navigation -->
+<!-- /ADMIN:COURSES Navigation -->
+
+                        {{--<li >--}}
+                            {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> Golf Courses<span class="fa arrow"></span></a>--}}
+                            {{--<ul class="nav nav-second-level">--}}
+                                {{--<li {{ (Request::is('*panels') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('panels') }}">Panels and Collapsibles</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('buttons' ) }}">Buttons</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url('notifications') }}">Alerts</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*typography') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('typography') }}">Typography</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*icons') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('icons') }}"> Icons</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*grid') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('grid') }}">Grid</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
+
+<!-- /END ADMIN:COURSES Navigation -->
+
+<!-- /ADMIN Navigation -->
+                    @if($userData->role_id == 1)
+                        <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> Admin<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/admin/users') }}">Manage Users</a>
+                            <!-- /ADMIN:USERS Navigation -->
+                                <li>
+                                    <a href="#">Users <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/users') }}">Manage Users</a>
+                                        </li>
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/users/create' ) }}">Create Users</a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <!-- /.nav-third-level -->
-                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/admin/users/create' ) }}">Create Users</a>
+                            <!-- /END ADMIN:USERS Navigation -->
+                            <!-- /ADMIN:CLUBS Navigation -->
+                            <li>
+                                <a href="#">Clubs <span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                    <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                        <a href="{{ url ('igif/admin/clubs') }}">Manage Clubs</a>
+                                    </li>
+                                    <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                        <a href="{{ url ('igif/admin/clubs/create' ) }}">Create Club</a>
+                                    </li>
+                                    {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                        {{--<a href="{{ url ('igif/admin/courses') }}">Manage Courses</a>--}}
+                                    {{--</li>--}}
+                                </ul>
+                            </li>
+                            <!-- /END ADMIN:CLUBS Navigation -->
+                            <!-- /ADMIN:COURSES Navigation -->
+                                <li>
+                                    <a href="#">Courses <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                            {{--<a href="{{ url ('igif/admin/clubs') }}">Manage Clubs</a>--}}
+                                        {{--</li>--}}
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/courses') }}">Manage Courses</a>
+                                        </li>
+                                    </ul>
                                 </li>
+                            <!-- /END ADMIN:COURSES Navigation -->
+                            <!-- /ADMIN:SCORECARDS Navigation -->
+                                <li>
+                                    <a href="#">Scorecards <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/scorecards') }}">Manage Scorecards</a>
+                                        </li>
+                                        {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                            {{--<a href="{{ url ('igif/admin/clubs/create' ) }}">Create Club</a>--}}
+                                        {{--</li>--}}
+                                    </ul>
+                                </li>
+                            <!-- /END ADMIN:SCORECARDS Navigation -->
                             </ul>
-                            <!-- /.nav-second-level -->
                         </li>
-
                     @endif
 <!-- /END ADMIN Navigation -->
 
-
-                        {{--<li {{ (Request::is('*charts') ? 'class="active"' : '') }}>--}}
-                            {{--<a href="{{ url ('charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>--}}
-                            {{--<!-- /.nav-second-level -->--}}
-                        {{--</li>--}}
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->
@@ -314,52 +400,22 @@
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('panels') }}">Panels and Collapsibles</a>
+                                    <a href="{{ url ('igif/panels') }}">Panels and Collapsibles</a>
                                 </li>
                                 <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('buttons' ) }}">Buttons</a>
+                                    <a href="{{ url ('igif/buttons' ) }}">Buttons</a>
                                 </li>
                                 <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
-                                    <a href="{{ url('notifications') }}">Alerts</a>
+                                    <a href="{{ url('igif/notifications') }}">Alerts</a>
                                 </li>
                                 <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('typography') }}">Typography</a>
+                                    <a href="{{ url ('igif/typography') }}">Typography</a>
                                 </li>
                                 <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('icons') }}"> Icons</a>
+                                    <a href="{{ url ('igif/icons') }}"> Icons</a>
                                 </li>
                                 <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('grid') }}">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Second Level Item</a>
-                                </li>
-                                <li>
-                                    <a href="#">Third Level <span class="fa arrow"></span></a>
-                                    <ul class="nav nav-third-level">
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Third Level Item</a>
-                                        </li>
-                                    </ul>
-                                    <!-- /.nav-third-level -->
+                                    <a href="{{ url ('igif/grid') }}">Grid</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
@@ -368,7 +424,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('blank') }}">Blank Page</a>
+                                    <a href="{{ url ('igif/blank') }}">Blank Page</a>
                                 </li>
                                 <li>
                                     <a href="{{ url ('login') }}">Login Page</a>
@@ -377,7 +433,7 @@
                             <!-- /.nav-second-level -->
                         </li>
                         <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
+                            <a href="{{ url ('igif/documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
                         </li>
                     </ul>
                 </div>

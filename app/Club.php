@@ -11,17 +11,17 @@ class Club extends Model
     protected $fillable =
 
     [
-        'course_id',
-        'club_name'.
-        'number_of_holes'.
-        'address'.
-        'city_name'.
-        'state_province_name'.
-        'country_name'.
-        'postal_code'.
-        'phone_number'.
-        'website'.
-        'longitude'.
+        'id',
+        'club_name',
+        'number_of_holes',
+        'address',
+        'city_name',
+        'state_province_name',
+        'country_name',
+        'postal_code',
+        'phone_number',
+        'website',
+        'longitude',
         'latitude'
     ];
 
@@ -33,11 +33,11 @@ class Club extends Model
 
     }
 
-//    public function scorecards() {
-//
-//        return $this->hasMany('App\Scorecards');
-//
-//    }
+    public function scorecards() {
+
+        return $this->hasMany('App\Scorecards');
+
+    }
 
 
 }

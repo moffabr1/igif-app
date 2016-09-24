@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Club;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 
 class AdminClubsController extends Controller
 {
@@ -16,6 +18,12 @@ class AdminClubsController extends Controller
     public function index()
     {
         //
+
+        $clubs = Club::all();
+
+        return view('igif.admin.clubs.index', compact('clubs'));
+
+
     }
 
     /**
@@ -26,6 +34,10 @@ class AdminClubsController extends Controller
     public function create()
     {
         //
+//        $roles = Role::lists('name','id')->all();
+//        return view('igif.admin.users.create', compact('roles'));
+
+        return view('igif.admin.clubs.create');
     }
 
     /**
@@ -37,6 +49,17 @@ class AdminClubsController extends Controller
     public function store(Request $request)
     {
         //
+
+        $input = $request->all();
+
+        Club::create($input);
+
+        Session::flash('message', 'The Golf Club has been Created');
+        Session::flash('message_style', 'bg-success');
+
+        //return $input;
+        return redirect('/igif/admin/courses');
+
     }
 
     /**
@@ -59,6 +82,11 @@ class AdminClubsController extends Controller
     public function edit($id)
     {
         //
+        $club = Club::findOrFail($id);
+
+        //$roles = Role::lists('name', 'id')->all();
+
+        return view('igif.admin.clubs.edit', compact('club'));
     }
 
     /**
@@ -71,6 +99,16 @@ class AdminClubsController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $input = $request->all();
+
+        $club = Club::findOrFail($id);
+
+        $club->update($input);
+
+        return redirect('/igif/admin/clubs');
+
+
     }
 
     /**

@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
 use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AdminCoursesController extends Controller
+class AdminScorecardsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,12 +17,9 @@ class AdminCoursesController extends Controller
     public function index()
     {
         //
+        $cards = Scorecard::all();
 
-        $courses = Course::all();
-        $scorecards = Scorecard::all();
-
-        return view('igif.admin.courses.index', compact('courses', 'scorecards'));
-
+        return view('igif.admin.scorecards.index', compact('cards'));
     }
 
     /**

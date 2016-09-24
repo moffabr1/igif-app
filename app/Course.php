@@ -11,6 +11,7 @@ class Course extends Model
     protected $fillable =
 
         [
+//            'course_id',
             'club_id'.
             'course_name'.
             'holes'.
@@ -21,8 +22,13 @@ class Course extends Model
 
     public function club(){
 
-//        return $this->belongsTo('App\Club', 'club_id');
         return $this->belongsTo('App\Club');
+
+    }
+
+    public function scorecard(){
+
+        return $this->hasMany('App\Scorecard');
 
     }
 
