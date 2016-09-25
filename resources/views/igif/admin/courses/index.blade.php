@@ -32,9 +32,13 @@
 
                     <tbody>
 
-        @if($courses)
+        {{--@if($courses)--}}
 
-            @foreach($courses as $key=>$course)
+            {{--@foreach($courses as $key=>$course)--}}
+
+                @if($clubs)
+
+                    @foreach($clubs as $key=>$club)
 
                         <tr data-toggle="collapse" data-target="#demo{{++$key}}" class="accordion-toggle">
                             <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-eye-open"></span></button></td>

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Club;
+use App\Course;
+use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -20,8 +22,10 @@ class AdminClubsController extends Controller
         //
 
         $clubs = Club::all();
+        $courses = Course::all();
+        $scorecards = Scorecard::all();
 
-        return view('igif.admin.clubs.index', compact('clubs'));
+        return view('igif.admin.clubs.index', compact('clubs', 'courses', 'scorecards'));
 
 
     }
