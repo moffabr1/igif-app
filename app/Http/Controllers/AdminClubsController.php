@@ -62,7 +62,7 @@ class AdminClubsController extends Controller
         Session::flash('message_style', 'bg-success');
 
         //return $input;
-        return redirect('/igif/admin/courses');
+        return redirect('/igif/admin/clubs');
 
     }
 
@@ -109,6 +109,11 @@ class AdminClubsController extends Controller
         $club = Club::findOrFail($id);
 
         $club->update($input);
+
+
+        Session::flash('message', 'The Club has been Updated');
+        Session::flash('message_style', 'bg-success');
+
 
         return redirect('/igif/admin/clubs');
 

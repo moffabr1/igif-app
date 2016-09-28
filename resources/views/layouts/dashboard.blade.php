@@ -365,6 +365,9 @@
                                         <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                             <a href="{{ url ('igif/admin/courses') }}">Manage Courses</a>
                                         </li>
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/courses/create') }}">Create Courses</a>
+                                        </li>
                                     </ul>
                                 </li>
                             <!-- /END ADMIN:COURSES Navigation -->
@@ -374,6 +377,9 @@
                                     <ul class="nav nav-third-level">
                                         <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                             <a href="{{ url ('igif/admin/scorecards') }}">Manage Scorecards</a>
+                                        </li>
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/scorecards/create' ) }}">Create Scorecard</a>
                                         </li>
                                         {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
                                             {{--<a href="{{ url ('igif/admin/clubs/create' ) }}">Create Club</a>--}}

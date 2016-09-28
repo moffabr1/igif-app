@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Course;
 use App\Scorecard;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,10 @@ class AdminScorecardsController extends Controller
     public function index()
     {
         //
+
         $cards = Scorecard::all();
+
+        //return $cards;
 
         return view('igif.admin.scorecards.index', compact('cards'));
     }
@@ -30,6 +34,13 @@ class AdminScorecardsController extends Controller
     public function create()
     {
         //
+//        $roles = Role::lists('name','id')->all();
+//        return view('admin.users.create', compact('roles'));
+
+//        return view('igif.admin.scorecards.create');
+
+        $courses = Course::lists('course_name','club_id', 'id')->all();
+        return view('igif.admin.scorecards.create', compact('courses'));
     }
 
     /**
@@ -41,6 +52,13 @@ class AdminScorecardsController extends Controller
     public function store(Request $request)
     {
         //
+
+//        return $request->all();
+
+        $input = $request->all();
+        Scorecard::create($input);
+
+        return redirect('/igif/admin/scorecards/');
     }
 
     /**

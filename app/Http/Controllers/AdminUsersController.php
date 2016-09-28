@@ -95,7 +95,7 @@ class AdminUsersController extends Controller
         return redirect('/igif/admin/users');
 
 
-        //return $request->all();
+//        return $request->all();
     }
 
     /**

@@ -1,0 +1,65 @@
+[15:49:52] Using gulpfile /Applications/XAMPP/xamppfiles/htdocs/igif-app/gulpfile.js
+[15:49:52] Starting 'default'...
+[15:49:52] Starting 'less'...
+
+Fetching Less Source Files...
+   - resources/assets/less/app.less
+
+
+Saving To...
+   - public/css/app.css
+
+[15:49:53] Finished 'default' after 901 ms
+[15:49:55] gulp-notify: [Laravel Elixir] Less Compiled!
+[15:49:55] Finished 'less' after 3.1 s
+[15:49:55] Starting 'copy'...
+
+Fetching Copy Source Files...
+   - bower_components/bootstrap/dist/fonts/**/*
+
+
+Saving To...
+   - public/assets/fonts
+
+[15:49:55] Finished 'copy' after 16 ms
+[15:49:55] Starting 'copy'...
+
+Fetching Copy Source Files...
+   - bower_components/font-awesome/fonts/**/*
+
+
+Saving To...
+   - public/assets/fonts
+
+[15:49:55] Finished 'copy' after 3.43 ms
+[15:49:55] Starting 'styles'...
+
+Fetching Styles Source Files...
+   - bower_components/bootstrap/dist/css/bootstrap.css
+   - bower_components/fontawesome/css/font-awesome.css
+   - resources/css/sb-admin-2.css
+   - resources/css/timeline.css
+   - resources/assets/sass/app.scss
+
+
+Saving To...
+   - public/assets/stylesheets/styles.css
+
+[15:49:55] gulp-notify: [Laravel Elixir] Stylesheets Merged!
+[15:49:55] Finished 'styles' after 65 ms
+[15:49:55] Starting 'scripts'...
+
+Fetching Scripts Source Files...
+   - bower_components/jquery/dist/jquery.js
+   - bower_components/bootstrap/dist/js/bootstrap.js
+   - bower_components/Chart.js/Chart.js
+   - bower_components/metisMenu/dist/metisMenu.js
+   - resources/js/sb-admin-2.js
+   - resources/js/frontend.js
+
+
+Saving To...
+   - public/assets/scripts/frontend.js
+
+[15:49:56] gulp-notify: [Laravel Elixir] Scripts Merged!
+[15:49:56] Finished 'scripts' after 560 ms

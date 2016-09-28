@@ -13,9 +13,7 @@ class CreateClubsTable extends Migration
     public function up()
     {
         Schema::create('clubs', function (Blueprint $table) {
-            //$table->increments('id');
-            $table->timestamps();
-            $table->char('club_id', 15)->unique()->primary();
+            $table->increments('id');
             $table->string('club_name');
             $table->integer('number_of_holes');
             $table->string('address')->nullable();
@@ -27,6 +25,9 @@ class CreateClubsTable extends Migration
             $table->string('website')->nullable();
             $table->float('longitude')->nullable();
             $table->float('latitude')->nullable();
+            $table->timestamps();
+
+
         });
     }
 

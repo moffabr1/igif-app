@@ -11,7 +11,6 @@ class Club extends Model
     protected $fillable =
 
     [
-        'id',
         'club_name',
         'number_of_holes',
         'address',
@@ -33,9 +32,9 @@ class Club extends Model
 
     }
 
-    public function scorecards() {
+    public function scorecard() {
 
-        return $this->hasMany('App\Scorecards');
+        return $this->hasMany('App\Scorecard');
 
     }
 

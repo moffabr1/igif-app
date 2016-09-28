@@ -13,14 +13,14 @@ class CreateCoursesTable extends Migration
     public function up()
     {
         Schema::create('courses', function (Blueprint $table) {
-            //$table->increments('id');
-            $table->timestamps();
-
-            $table->char('course_id', 15)->primary()->unique();
-            $table->char('club_id', 15)->index();
+            $table->increments('id');
+            $table->char('club_id', 20)->unsigned()->index();
             $table->string('course_name');
             $table->integer('holes');
             $table->integer('par');
+            $table->timestamps();
+
+            $table->foreign('club_id')->references('id')->on('clubs')->onDelete('cascade');
 
         });
     }

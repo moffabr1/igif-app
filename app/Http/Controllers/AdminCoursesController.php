@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Club;
 use App\Course;
 use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 
 class AdminCoursesController extends Controller
 {
@@ -20,9 +22,8 @@ class AdminCoursesController extends Controller
         //
 
         $courses = Course::all();
-        $scorecards = Scorecard::all();
 
-        return view('igif.admin.courses.index', compact('courses', 'scorecards'));
+        return view('igif.admin.courses.index', compact('courses'));
 
     }
 
@@ -34,6 +35,8 @@ class AdminCoursesController extends Controller
     public function create()
     {
         //
+        $clubs = Club::lists('club_name','id')->all();
+        return view('igif.admin.courses.create', compact('clubs'));
     }
 
     /**
@@ -45,6 +48,20 @@ class AdminCoursesController extends Controller
     public function store(Request $request)
     {
         //
+//        $input = $request->all();
+//        return $input;
+
+//        $input = $request->all();
+//        Course::create($input);
+
+        Course::create($request->all());
+
+        Session::flash('message', 'The Golf Course has been Created');
+        Session::flash('message_style', 'bg-success');
+
+        //return $input;
+        return redirect('/igif/admin/courses');
+
     }
 
     /**

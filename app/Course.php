@@ -9,16 +9,15 @@ class Course extends Model
     //
 
     protected $fillable =
-
         [
-//            'course_id',
-            'club_id'.
-            'course_name'.
-            'holes'.
+            'club_id',
+            'course_name',
+            'holes',
             'par'
         ];
 
-    public $incrementing = false;
+    public $incrementing = true;
+
 
     public function club(){
 

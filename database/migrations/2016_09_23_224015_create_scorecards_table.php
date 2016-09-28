@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 
 class CreateScorecardsTable extends Migration
 {
@@ -13,11 +14,9 @@ class CreateScorecardsTable extends Migration
     public function up()
     {
         Schema::create('scorecards', function (Blueprint $table) {
-            //$table->increments('id');
-            $table->timestamps();
-            $table->char('tee_id', 15)->primary()->unique();
-            $table->char('course_id', 15)->index();
-            $table->string('tee_name');
+            $table->increments('id');
+
+            $table->char('course_id', 20)->index();
             $table->string('tee_color');
             $table->integer('course_par_for_tee');
             $table->float('rating');
@@ -77,6 +76,9 @@ class CreateScorecardsTable extends Migration
             $table->integer('hole16_handicap');
             $table->integer('hole17_handicap');
             $table->integer('hole18_handicap');
+            $table->timestamps();
+
+            $table->foreign('course_id')->references('id')->on('course')->onDelete('cascade');
 
         });
     }
