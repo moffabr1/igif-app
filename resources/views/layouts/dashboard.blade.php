@@ -392,6 +392,21 @@
                     @endif
 <!-- /END ADMIN Navigation -->
 
+<!-- /PLAYER:SCORES Navigation -->
+                        <li >
+                            <a href="#"><i class="fa fa-pencil fa-fw"></i> Scores<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/scores') }}">View Scores</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/scores/create' ) }}">Enter Scores</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+<!-- /PLAYER:SCORES Navigation -->
+                        <!-- /END ADMIN:SCORECARDS Navigation -->
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
                             <!-- /.nav-second-level -->

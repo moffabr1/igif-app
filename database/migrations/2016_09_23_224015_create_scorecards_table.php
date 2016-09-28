@@ -16,7 +16,7 @@ class CreateScorecardsTable extends Migration
         Schema::create('scorecards', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->char('course_id', 20)->index();
+            $table->integer('course_id')->unsigned()->index();
             $table->string('tee_color');
             $table->integer('course_par_for_tee');
             $table->float('rating');
@@ -78,7 +78,7 @@ class CreateScorecardsTable extends Migration
             $table->integer('hole18_handicap');
             $table->timestamps();
 
-            $table->foreign('course_id')->references('id')->on('course')->onDelete('cascade');
+            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
 
         });
     }

@@ -54,11 +54,15 @@ Route::group(['middleware' => 'igif'], function () {
 //        // Uses Auth Middleware
 //    });
 
+
+    Route::resource('igif/player/scores', 'PlayerScoresController');
+
+
+
+
     Route::get('/igif', 'HomeController@index');
 
     //Route::resource('igif/admin/users', 'AdminUsersController');
-
-
 
     Route::get('/igif/charts', function()
     {
