@@ -22,6 +22,9 @@
  * Route from SB Admin Theme
  */
 
+
+use Illuminate\Support\Facades\Input;
+
 Route::get('/', function()
 {
     //return View::make('home');
@@ -119,9 +122,37 @@ Route::group(['middleware' => 'igif'], function () {
     {
         return View::make('igif.documentation');
     });
+
+    Route::get('/ajax-call', function(){
+
+        if(Input::get('state') != '') {
+
+            $id = Request::get('state');
+            $clubs = \App\Club::where('state_province_name', '=', $id )->get();
+            return Response::json($clubs);
+
+        }
+        elseif (Input::get('club_id') != '') {
+
+            $id = Request::get('club_id');
+            $courses = \App\Course::where('club_id', '=', $id )->get();
+            return Response::json($courses);
+        }
+        elseif (Input::get('course_id') != '') {
+
+            $id = Request::get('course_id');
+            $scorecards = \App\Scorecard::where('course_id', '=', $id )->get();
+            return Response::json($scorecards);
+        }
+
+
+    });
+
 });
 
 Route::group(['middleware' => 'admin'], function () {
+
+    Route::get('igif/admin/clubs/autocomplete', ['uses' => 'AdminClubsController@autocomplete', 'as' => 'igif.admin.clubs.autocomplete']);
 
     Route::resource('igif/admin/users', 'AdminUsersController');
     Route::resource('igif/admin/courses', 'AdminCoursesController');
@@ -129,8 +160,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('igif/admin/scorecards', 'AdminScorecardsController');
 
 });
-
-
 
 
 //Route::get('/', function()

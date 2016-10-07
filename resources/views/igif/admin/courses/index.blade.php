@@ -42,8 +42,8 @@
                             <a href="{{route('igif.admin.scorecards.edit', $course->id)}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit" title="Edit Course"></i></a>
 
                         </td>
-                        <td>{{$course->created_at->diffForHumans()}}</td>
-                        <td>{{$course->updated_at->diffForHumans()}}</td>
+                        <td>{{ ($course->created_at != null) ? $course->created_at->diffForHumans() : "No Date" }}</td>
+                        <td>{{ ($course->updated_at != null) ? $course->updated_at->diffForHumans() : "No Date" }}</td>
 
                     </tr>
 
@@ -55,6 +55,12 @@
         </table>
     </div>
 
+    <div class="text-center">
+        <nav>
+            {{--{!! $contacts->links() !!}--}}
+            {!! $courses->appends( Request::query())->render() !!}
+        </nav>
+    </div>
 
 
 

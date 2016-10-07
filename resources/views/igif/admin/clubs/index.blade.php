@@ -8,10 +8,25 @@
     @endif
 
     <div class="container">
-        <table class="table table-striped">
+        <table border="0" class="table table-striped">
             <thead>
             <tr>
-                <td colspan="10" align="right">add club: <a href="{{route('igif.admin.clubs.create')}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Club"></i></a></td>
+                <td colspan="2">
+                    <div align="left">
+                    {{--<form action="http://contactmgr.dev/contacts" class="navbar-form navbar-right" role="search">--}}
+                        <form action="{{ route("igif.admin.clubs.index") }}" class="navbar-form navbar-right" role="search">
+                            <div class="input-group">
+                                <input type="text" name="term" value="{{ Request::get("term") }}" class="form-control" placeholder="Search....." />
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">
+                                        <i class="glyphicon glyphicon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </td>
+                <td colspan="8" align="right">add club: <a href="{{route('igif.admin.clubs.create')}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-plus-sign" title="Add New Club"></i></a></td>
             </tr>
             <tr>
                 <th>Id</th>
@@ -41,8 +56,9 @@
                             <a href="{{route('igif.admin.clubs.edit', $club->id)}}" class="btn btn-default btn-sm"><i class="glyphicon glyphicon-edit" title="Edit Club"></i></a>
 
                         </td>
-                        <td>{{$club->created_at->diffForHumans()}}</td>
-                        <td>{{$club->updated_at->diffForHumans()}}</td>
+                        <td>{{ ($club->created_at != null) ? $club->created_at->diffForHumans() : "No Date" }}</td>
+                        <td>{{ ($club->updated_at != null) ? $club->updated_at->diffForHumans() : "No Date" }}</td>
+
 
                     </tr>
 
@@ -54,7 +70,12 @@
         </table>
     </div>
 
-
+    <div class="text-center">
+        <nav>
+            {{--{!! $contacts->links() !!}--}}
+            {!! $clubs->appends( Request::query())->render() !!}
+        </nav>
+    </div>
 
 
 

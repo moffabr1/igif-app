@@ -13,9 +13,25 @@
 	<meta content="" name="author"/>
 
 	<link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
+	<link rel="stylesheet" href="{{ asset("assets/jquery-ui/jquery-ui.min.css") }}" />
 </head>
 <body>
 	@yield('body')
 	<script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
+	<script src="{{ asset("assets/jquery-ui/jquery-ui.min.js") }}" type="text/javascript"></script>
+	<script>
+		$(function() {
+			$("input[name=term]").autocomplete({
+				source: "{{ route("igif.admin.clubs.autocomplete") }}",
+				minLength: 3,
+				select: function(event, ui) {
+					$($this).val(ui.term.value);
+				}
+
+			});
+
+		});
+
+	</script>
 </body>
 </html>

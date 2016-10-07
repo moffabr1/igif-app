@@ -133,6 +133,25 @@ class CreateScoresTable extends Migration
             $table->integer('hole17_number_of_chips');
             $table->integer('hole18_number_of_chips');
 
+            $table->integer('hole1_sand');
+            $table->integer('hole2_sand');
+            $table->integer('hole3_sand');
+            $table->integer('hole4_sand');
+            $table->integer('hole5_sand');
+            $table->integer('hole6_sand');
+            $table->integer('hole7_sand');
+            $table->integer('hole8_sand');
+            $table->integer('hole9_sand');
+            $table->integer('hole10_sand');
+            $table->integer('hole11_sand');
+            $table->integer('hole12_sand');
+            $table->integer('hole13_sand');
+            $table->integer('hole14_sand');
+            $table->integer('hole15_sand');
+            $table->integer('hole16_sand');
+            $table->integer('hole17_sand');
+            $table->integer('hole18_sand');
+
             $table->integer('hole1_number_of_putts');
             $table->integer('hole2_number_of_putts');
             $table->integer('hole3_number_of_putts');

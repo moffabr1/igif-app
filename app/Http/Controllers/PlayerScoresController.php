@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Club;
+use App\Course;
+use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PlayerScoresController extends Controller
 {
@@ -16,6 +21,7 @@ class PlayerScoresController extends Controller
     public function index()
     {
         //
+
         return view('igif.player.scores.index');
 
     }
@@ -27,8 +33,16 @@ class PlayerScoresController extends Controller
      */
     public function create()
     {
-        //
-        return view('igif.player.scores.create');
+
+        $courses = Course::lists('course_name', 'id')->all();
+
+        $states = DB::table('clubs')
+            ->select('state_province_name')
+            ->groupBy('state_province_name')
+            ->get();
+
+        return view('igif.player.scores.create', compact('states', 'courses'));
+
     }
 
     /**

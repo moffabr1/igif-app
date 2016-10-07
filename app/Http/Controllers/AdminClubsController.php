@@ -17,15 +17,58 @@ class AdminClubsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    private $limit = 10;
+
+    public function autocomplete(Request $request)
+    {
+        if ($request->ajax())
+        {
+            return Club::select(['id', 'club_name as value'])->where(function($query) use ($request) {
+
+                if ( ( $term = $request->get("term")) ) {
+
+                    $keywords = '%' . $term . '%';
+                    $query->orWhere("club_name", 'LIKE', $keywords);
+//                    $query->orWhere("city_name", 'LIKE', $keywords);
+//                    $query->orWhere("state_province_name", 'LIKE', $keywords);
+                }
+
+            })
+                ->orderBy('club_name', 'asc')
+                ->take(5)
+                ->get();
+        }
+    }
+
+
+    public function index(Request $request)
     {
         //
+// ORIGINAL WORKING CODE
+//        $clubs = Club::all();
+//        $courses = Course::all();
+//        $scorecards = Scorecard::all();
+//
+//        return view('igif.admin.clubs.index', compact('clubs', 'courses', 'scorecards'));
+//END ORIGINAL WORKING CODE
 
-        $clubs = Club::all();
-        $courses = Course::all();
-        $scorecards = Scorecard::all();
+        $clubs = Club::where(function($query) use ($request) {
 
-        return view('igif.admin.clubs.index', compact('clubs', 'courses', 'scorecards'));
+            if ( ( $term = $request->get("term")) ) {
+
+                $keywords = '%' . $term . '%';
+                $query->orWhere("club_name", 'LIKE', $keywords);
+                $query->orWhere("city_name", 'LIKE', $keywords);
+                $query->orWhere("state_province_name", 'LIKE', $keywords);
+            }
+
+        })
+
+            ->orderBy('club_name', 'asc')
+            ->paginate($this->limit);
+
+
+        return view('igif.admin.clubs.index', compact('clubs'));
 
 
     }
@@ -130,4 +173,27 @@ class AdminClubsController extends Controller
     {
         //
     }
+//
+//    public function autocomplete(Request $request)
+//    {
+//        if ($request->ajax())
+//        {
+////            return Club::select(['id', 'club_name as value'])->where(function($query) use ($request) {
+//            //return Club::where(function($query) use ($request) {
+//
+//                if ( ( $term = $request->get("term")) ) {
+//
+//                    $keywords = '%' . $term . '%';
+//                    $query->orWhere("club_name", 'LIKE', $keywords);
+//                    $query->orWhere("city_name", 'LIKE', $keywords);
+//                    $query->orWhere("state_province_name", 'LIKE', $keywords);
+//                }
+//
+//            })
+//                ->orderBy('club_name', 'asc')
+//                ->take(5)
+//                ->get();
+//        }
+////        return ("TEST");
+////    }
 }

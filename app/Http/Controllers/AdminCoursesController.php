@@ -8,6 +8,7 @@ use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class AdminCoursesController extends Controller
@@ -17,13 +18,33 @@ class AdminCoursesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+    private $limit = 10;
+
+    public function index(Request $request)
     {
         //
+//        $courses = Course::all();
+//        return view('igif.admin.courses.index', compact('courses'));
 
-        $courses = Course::all();
+        $courses = Course::where(function($query) use ($request) {
+
+            if ( ( $term = $request->get("term")) ) {
+
+                $keywords = '%' . $term . '%';
+                $query->orWhere("course_name", 'LIKE', $keywords);
+//                $query->orWhere("city_name", 'LIKE', $keywords);
+//                $query->orWhere("state_province_name", 'LIKE', $keywords);
+            }
+
+        })
+
+            ->orderBy('course_name', 'asc')
+            ->paginate($this->limit);
+
 
         return view('igif.admin.courses.index', compact('courses'));
+
 
     }
 
@@ -35,8 +56,22 @@ class AdminCoursesController extends Controller
     public function create()
     {
         //
-        $clubs = Club::lists('club_name','id')->all();
+//        $clubs = Club::lists('club_name','id')->all();
+
+
+        $clubs = Club::select('id', DB::raw('CONCAT(club_name, " - ", state_province_name) AS club_name_list'))
+            ->orderBy('club_name')
+            ->lists('club_name_list', 'id')->all();
+
+//        $clubs = Club::orderBy('club_name','asc')->lists('club_name','id')->all();
         return view('igif.admin.courses.create', compact('clubs'));
+
+
+
+
+
+
+
     }
 
     /**

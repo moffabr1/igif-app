@@ -16,8 +16,9 @@
                 {{--<div class="form-group">--}}
                     {{--{!! Form::label('', 'Select Course:') !!}--}}
                     {{--{!! Form::select('role_id', [''=>'Choose Options'] + $roles , null, ['class'=>'form-control'])!!}--}}
-                {!! Form::select('course_id', [''=>'Choose Golf Course'] + $courses , null, ['class'=>'form-control'])!!}
+                    {!! Form::select('course_id', [''=>'Choose Golf Course'] + $courses , null, ['class'=>'form-control'])!!}
                 {{--</div>--}}
+
             </th>
             <th class="info" colspan="9">
                 <div class="text-center">Hole Yardages</div>
@@ -586,5 +587,10 @@
             }
         });
     </script>
+
+
+
+
+
 
 @stop
