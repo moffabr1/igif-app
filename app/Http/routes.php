@@ -144,6 +144,12 @@ Route::group(['middleware' => 'igif'], function () {
             $scorecards = \App\Scorecard::where('course_id', '=', $id )->get();
             return Response::json($scorecards);
         }
+        elseif (Input::get('scorecard_id') != '') {
+
+            $id = Request::get('scorecard_id');
+            $scorecards = \App\Scorecard::where('id', '=', $id )->get();
+            return Response::json($scorecards);
+        }
 
 
     });
