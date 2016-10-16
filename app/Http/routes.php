@@ -61,8 +61,6 @@ Route::group(['middleware' => 'igif'], function () {
     Route::resource('igif/player/scores', 'PlayerScoresController');
 
 
-
-
     Route::get('/igif', 'HomeController@index');
 
     //Route::resource('igif/admin/users', 'AdminUsersController');
@@ -128,14 +126,15 @@ Route::group(['middleware' => 'igif'], function () {
         if(Input::get('state') != '') {
 
             $id = Request::get('state');
-            $clubs = \App\Club::where('state_province_name', '=', $id )->get();
+//            $clubs = \App\Club::where('state_province_name', '=', $id )->get();
+            $clubs = \App\Club::where('state_province_name', '=', $id )->orderBy('club_name', 'ASC')->get();
             return Response::json($clubs);
 
         }
         elseif (Input::get('club_id') != '') {
 
             $id = Request::get('club_id');
-            $courses = \App\Course::where('club_id', '=', $id )->get();
+            $courses = \App\Course::where('club_id', '=', $id )->orderBy('course_name', 'ASC')->get();
             return Response::json($courses);
         }
         elseif (Input::get('course_id') != '') {

@@ -65,6 +65,8 @@ class PlayerScoresController extends Controller
     public function show($id)
     {
         //
+//        return view('igif.player.scores.create');
+        return($id);
     }
 
     /**
