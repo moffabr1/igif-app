@@ -86,4 +86,6 @@ class Scorecard extends Model
         return $this->belongsTo('App\Club');
 
     }
+
+
 }

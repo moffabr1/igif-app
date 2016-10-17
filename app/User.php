@@ -31,6 +31,12 @@ class User extends Authenticatable
 
     }
 
+    public function scores() {
+
+        return $this->hasMany('App\Scores');
+
+    }
+
     public function photo(){
 
         return $this->belongsTo('App\Photo');

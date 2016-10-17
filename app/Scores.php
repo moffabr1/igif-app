@@ -7,10 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 class Scores extends Model
 {
     //
+
+//    public static function boot()
+//    {
+//        // Update field update_by with current user id each time article is updated.
+//        static::updating(function ($scores) {
+//            $scores->user_id = Auth::user()->id;
+//        });
+//    }
+
+
+
     protected $fillable =
         [
             'user_id',
             'scorecard_id',
+            'total_score',
             'hole1_score',
             'hole2_score',
             'hole3_score',
@@ -203,4 +215,18 @@ class Scores extends Model
 
 
         ];
+
+    public function user(){
+
+        return $this->belongsTo('App\User');
+
+    }
+
+    public function scorecard(){
+
+        return $this->belongsTo('App\Scorecard');
+
+    }
+
+
 }

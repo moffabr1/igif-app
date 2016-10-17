@@ -24,7 +24,7 @@
 
     </style>
 
-    {{--{!! Form::open(['method'=>'GET', 'action'=> 'PlayerScoresController@show', 1]) !!}--}}
+
         <div class="col-md-2">
             <div id="states_div" class="form-group">
                 <label>Select a State</label>
@@ -70,11 +70,13 @@
         {!! Form::open(['method'=>'POST', 'action'=> 'PlayerScoresController@store', 'id'=> 'scorecardForm']) !!}
         <input type="hidden" id="hidden_club_name" name="club-name" value="" />
         <input type="hidden" id="hidden_course_name" name="course-name" value="" />
-        <input type="hidden" id="hidden_scorecard_id" name="scorecard-id" value="" />
+        <input type="hidden" id="hidden_scorecard_id" name="scorecard_id" value="" />
         <input type="hidden" id="hidden_tee_name" name="tee-name" value="" />
+        <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
         {{--<input type="hidden" id="hidden_scorecard_id" value="">--}}
-        <h2 id="course_name_header"></h2>
+
         <div class="col-md-8" role="complementary">
+            <div id="course_name_header"><h5></h5></div>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <table class="table table-bordered table-condensed table-nowrap" id="cssTable">
@@ -151,14 +153,12 @@
                                 Score
                             </th>
                             @for ($i = 1; $i < 10; $i++)
-                                {{--<td id="hole{!! $i !!}_par" class="hole1_par"></td>--}}
                                 <td>
-                                {!! Form::text('hole'.$i.'_strokes', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_strokes', 'maxlength' => 2 ])!!}
+                                {!! Form::text('hole'.$i.'_score', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_score', 'maxlength' => 2 ])!!}
                                 </td>
                             @endfor
                             <td>
-                                {{--<input type="text" class="form-control input-sm" maxlength="2">--}}
-                                {!! Form::text('strokes_front_nine', null, ['class'=>'form-control', 'id' => 'strokes_front_nine', 'readonly' => 'true'])!!}
+                                {!! Form::text('score_front_nine', null, ['class'=>'form-control', 'id' => 'score_front_nine', 'readonly' => 'true'])!!}
                             </td>
 
                         </tr>
@@ -167,555 +167,107 @@
                                 Par
                             </th>
                             @for ($i = 1; $i < 10; $i++)
-                                {{--<td id="hole{!! $i !!}_par" class="hole{!! $i !!}_par"></td>--}}
                                 <td id="hole{!! $i !!}_par"></td>
                             @endfor
                             <td id="result_front_nine_par">
-                                {{--<input type="text" class="form-control input-sm" maxlength="2">--}}
-                                {{--{!! Form::text('result_front_nine_par', null, ['class'=>'form-control', 'id' => 'result_front_nine_par', 'readonly' => 'true'])!!}--}}
                             </td>
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Drive Distance
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_drive_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_drive_distance', 'maxlength' => 3 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Fairway Hit
                             </th>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::checkbox('hole'.$i.'_fw_hit')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Approach Distance
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_distance_to_green', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_distance_to_green', 'maxlength' => 3 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Green Hit
                             </th>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::checkbox('hole'.$i.'_gir')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Chips
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-
+                                @for ($i = 1; $i < 10; $i++)
+                                    <td align="center">
+                                        {!! Form::select('hole'.$i.'_number_of_chips', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}
+                                    </td>
+                                @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Sand
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td align="center">
+                                    {{--{!! Form::select('hole'.$i.'_number_of_sand', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}--}}
+                                    {!! Form::checkbox('hole'.$i.'_sand')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putts
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td align="center">
+                                    {!! Form::select('hole'.$i.'_number_of_putts', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putt 1 Length
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_1st_putt_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_1st_putt_distance', 'maxlength' => 2 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putt 2 Length
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 1; $i < 10; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_2nd_putt_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_2nd_putt_distance', 'maxlength' => 2 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <td id="9-hole-submit-button" style="display:none" colspan="4">
                                 <button type="button" class="btn btn-primary">Submit 9 Hole Score</button>
                             </td>
                         </tr>
-
-
-
-
-
                         </tbody>
                     </table>
 
@@ -788,56 +340,19 @@
                             <td>
                                 Out
                             </td>
-                            <!--
-                                        <td>
-                                            123
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            123
-                                        </td>
-                             -->
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Score
                             </th>
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_score', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_score', 'maxlength' => 2 ])!!}
+                                </td>
+                            @endfor
                             <td>
-                                <input type="text" class="form-control input-sm">
+                                {!! Form::text('score_back_nine', null, ['class'=>'form-control', 'id' => 'score_back_nine', 'readonly' => 'true'])!!}
                             </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            123
-                                        </td>
-                             -->
 
                         </tr>
                         <tr class="active">
@@ -854,536 +369,97 @@
                             <th colspan="2">
                                 Drive Distance
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_drive_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_drive_distance', 'maxlength' => 3 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Fairway Hit
                             </th>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::checkbox('hole'.$i.'_fw_hit')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Approach Distance
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_distance_to_green', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_distance_to_green', 'maxlength' => 3 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Green Hit
                             </th>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td align="center">
-                                <input type="checkbox" name="" value="" checked="checked">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::checkbox('hole'.$i.'_gir')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Chips
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-
+                            @for ($i = 10; $i < 19; $i++)
+                                <td align="center">
+                                    {!! Form::select('hole'.$i.'_number_of_chips', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Sand
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td align="center">
+                                    {{--{!! Form::select('hole'.$i.'_number_of_sand', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}--}}
+                                    {!! Form::checkbox('hole'.$i.'_sand')!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putts
                             </th>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td align="center">
-                                <select>
-                                    <option>0</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td align="center">
+                                    {!! Form::select('hole'.$i.'_number_of_putts', array(0 => '0', 1 => '1', 2 => '2', 3 => '3'), 0, ['class'=>'form-control input-sm'])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putt 1 Length
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_1st_putt_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_1st_putt_distance', 'maxlength' => 2 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <th colspan="2">
                                 Putt 2 Length
                             </th>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <td>
-                                <input type="text" class="form-control input-sm">
-                            </td>
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                             -->
-                            <!--
-                                        <td>
-                                            289
-                                        </td>
-                                        <td>
-                                            289
-                                        </td>
-                             -->
+                            @for ($i = 10; $i < 19; $i++)
+                                <td>
+                                    {!! Form::text('hole'.$i.'_2nd_putt_distance', null, ['class'=>'form-control', 'id' => 'hole'.$i.'_2nd_putt_distance', 'maxlength' => 2 ])!!}
+                                </td>
+                            @endfor
                         </tr>
                         <tr>
                             <td colspan="4">
-                                <button type="button" class="btn btn-primary">Submit 18 Hole Score</button>
+                                {{--<button type="button" class="btn btn-primary">Submit 18 Hole Score</button>--}}
+                                {!! Form::submit('Create 18 Hole Score', ['class'=>'btn btn-primary']) !!}
                             </td>
                         </tr>
 
@@ -1392,6 +468,7 @@
 
                         </tbody>
                     </table>
+    {!! Form::close() !!}
 </div>
 
 
@@ -1421,47 +498,47 @@
 
     <script>
         $(function() {
-            $("#hole1_strokes, #hole2_strokes, " +
-                    "#hole3_strokes, " +
-                    "#hole4_strokes, " +
-                    "#hole5_strokes, " +
-                    "#hole6_strokes, " +
-                    "#hole7_strokes, " +
-                    "#hole8_strokes, " +
-                    "#hole9_strokes, " +
-                    "#hole10_strokes, " +
-                    "#hole11_strokes, " +
-                    "#hole12_strokes, " +
-                    "#hole13_strokes, " +
-                    "#hole14_strokes, " +
-                    "#hole15_strokes, " +
-                    "#hole16_strokes, " +
-                    "#hole17_strokes, " +
-                    "#hole18_strokes").on("keydown keyup", sum);
+            $("#hole1_score, #hole2_score, " +
+                    "#hole3_score, " +
+                    "#hole4_score, " +
+                    "#hole5_score, " +
+                    "#hole6_score, " +
+                    "#hole7_score, " +
+                    "#hole8_score, " +
+                    "#hole9_score, " +
+                    "#hole10_score, " +
+                    "#hole11_score, " +
+                    "#hole12_score, " +
+                    "#hole13_score, " +
+                    "#hole14_score, " +
+                    "#hole15_score, " +
+                    "#hole16_score, " +
+                    "#hole17_score, " +
+                    "#hole18_score").on("keydown keyup", sum);
 
 
             function sum() {
-                $("#strokes_front_nine").val(
-                        Number($("#hole1_strokes").val()) +
-                        Number($("#hole2_strokes").val()) +
-                        Number($("#hole3_strokes").val()) +
-                        Number($("#hole4_strokes").val()) +
-                        Number($("#hole5_strokes").val()) +
-                        Number($("#hole6_strokes").val()) +
-                        Number($("#hole7_strokes").val()) +
-                        Number($("#hole8_strokes").val()) +
-                        Number($("#hole9_strokes").val()));
+                $("#score_front_nine").val(
+                        Number($("#hole1_score").val()) +
+                        Number($("#hole2_score").val()) +
+                        Number($("#hole3_score").val()) +
+                        Number($("#hole4_score").val()) +
+                        Number($("#hole5_score").val()) +
+                        Number($("#hole6_score").val()) +
+                        Number($("#hole7_score").val()) +
+                        Number($("#hole8_score").val()) +
+                        Number($("#hole9_score").val()));
 
-                $("#strokes_back_nine").val(
-                        Number($("#hole10_strokes").val()) +
-                        Number($("#hole11_strokes").val()) +
-                        Number($("#hole12_strokes").val()) +
-                        Number($("#hole13_strokes").val()) +
-                        Number($("#hole14_strokes").val()) +
-                        Number($("#hole15_strokes").val()) +
-                        Number($("#hole16_strokes").val()) +
-                        Number($("#hole17_strokes").val()) +
-                        Number($("#hole18_strokes").val()));
+                $("#score_back_nine").val(
+                        Number($("#hole10_score").val()) +
+                        Number($("#hole11_score").val()) +
+                        Number($("#hole12_score").val()) +
+                        Number($("#hole13_score").val()) +
+                        Number($("#hole14_score").val()) +
+                        Number($("#hole15_score").val()) +
+                        Number($("#hole16_score").val()) +
+                        Number($("#hole17_score").val()) +
+                        Number($("#hole18_score").val()));
             }
         });
     </script>
@@ -1520,9 +597,11 @@
             var course = e.target.value;
 
             var course_name = $( "#courses option:selected" ).text();
-            alert(course_name);
+//            alert(course_name);
             $("#hidden_course_name").val(course_name);
-            alert($('#hidden_course_name').val());
+//            alert($('#hidden_course_name').val());
+            $("#course_name_header h5").html(course_name);
+
 
 
             //ajax
@@ -1571,8 +650,8 @@
 //            alert(scorecard_id);
             $("#hidden_scorecard_id").val(scorecard_id);
             $("#hidden_tee_name").val(tee_name);
-            alert($('#hidden_scorecard_id').val());
-            alert($('#hidden_tee_name').val());
+//            alert($('#hidden_scorecard_id').val());
+//            alert($('#hidden_tee_name').val());
 
 
 
@@ -1585,6 +664,8 @@
 
                 $('#tee_color').empty();
                 $('#rating_slope').empty();
+
+                $('#states').find('option:first').attr('selected', 'selected');
 
                     $.each(data, function (index, teeObj) {
 
@@ -1614,6 +695,7 @@
                             if(teeObj.hole10_distance != null) {
 
                                 $('#back-9-table').show();
+                                $('#9-hole-submit-button').hide();
 
                                 $('#hole10_distance').append(teeObj.hole10_distance);
                                 $('#hole11_distance').append(teeObj.hole11_distance);
