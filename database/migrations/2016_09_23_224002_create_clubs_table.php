@@ -20,8 +20,8 @@ class CreateClubsTable extends Migration
             $table->string('city_name')->nullable();
             $table->string('state_province_name')->nullable();
             $table->string('country_name')->nullable();
-            $table->char('postal_code', 10)->nullable();
-            $table->char('phone_number', 10)->nullable();
+            $table->char('postal_code', 15)->nullable();
+            $table->char('phone_number', 20)->nullable();
             $table->string('website')->nullable();
             $table->float('longitude')->nullable();
             $table->float('latitude')->nullable();

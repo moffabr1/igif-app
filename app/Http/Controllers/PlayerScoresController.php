@@ -23,7 +23,13 @@ class PlayerScoresController extends Controller
     public function index()
     {
         //
-        $scores = Scores::paginate(10);
+        $user = Auth::user()->id;
+
+        $scores = Scores::where('user_id', '=', $user)
+            ->paginate(10);
+
+//        $scores = Scores::paginate(10);
+
 
         return view('igif.player.scores.index', compact('scores'));
 
@@ -66,13 +72,14 @@ class PlayerScoresController extends Controller
 
 ////        $product = Product::Create($inputs);
 ////
-        $request->merge([ 'total_score' => '500' ]);
-        echo $request['total_score'];
+//        $request->merge([ 'total_score' => '500' ]);
+//        echo $request['total_score'];
+
         $input = $request->all();
         Scores::create($input);
 //
-//        Session::flash('message', 'The Score has been Entered');
-//        Session::flash('message_style', 'bg-success');
+        Session::flash('message', 'The Score has been Entered');
+        Session::flash('message_style', 'bg-success');
 //
 //        return $input;
         return redirect('/igif/player/scores');

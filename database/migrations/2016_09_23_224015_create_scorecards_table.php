@@ -16,6 +16,7 @@ class CreateScorecardsTable extends Migration
         Schema::create('scorecards', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->integer('club_id')->unsigned()->index();
             $table->integer('course_id')->unsigned()->index();
             $table->string('tee_color');
             $table->integer('course_par_for_tee');

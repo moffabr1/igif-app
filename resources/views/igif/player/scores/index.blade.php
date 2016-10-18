@@ -10,11 +10,11 @@
         <thead>
         <tr>
             <th>Id</th>
+            <th>Score</th>
             <th>Date</th>
             <th>Course</th>
             <th>Tees</th>
             <th>CR/Slope</th>
-            <th>Score</th>
         </tr>
         </thead>
         <tbody>
@@ -26,6 +26,7 @@
 
                 <tr>
                     <td>{{$score->id}}</td>
+                    <td>{{$score->total_score}}</td>
                     {{--<td><img height="100" width="100" src="{{ $post->photo ? $post->photo->file : 'http://placehold.it/100x100' }}" alt=""></td>--}}
                     <td>January, 1 1999</td>
                     <td>{{$score->scorecard->course->course_name}}</td>
