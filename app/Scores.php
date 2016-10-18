@@ -23,6 +23,7 @@ class Scores extends Model
             'user_id',
             'scorecard_id',
             'total_score',
+            'round_date',
             'hole1_score',
             'hole2_score',
             'hole3_score',

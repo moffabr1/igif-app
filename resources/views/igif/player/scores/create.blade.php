@@ -67,6 +67,8 @@
     {{--</script>--}}
 
     <div id="cardform_div" style="display:none" class="form-group">
+
+
         {!! Form::open(['method'=>'POST', 'action'=> 'PlayerScoresController@store', 'id'=> 'scorecardForm']) !!}
         <input type="hidden" id="hidden_club_name" name="club-name" value="" />
         <input type="hidden" id="hidden_course_name" name="course-name" value="" />
@@ -77,8 +79,38 @@
 
         <div class="col-md-8" role="complementary">
             <div id="course_name_header"><h5></h5></div>
+
             <div class="panel panel-default">
                 <div class="panel-body">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class='col-sm-2'>
+                                <div class="form-group">
+
+                                    <div class='input-group date' id='datetimepicker1'>
+                                        {{--<input type='text' class="form-control" id='date'/>--}}
+
+                                        {!! Form::text('round_date', null, ['class'=>'form-control', 'id' => 'round_date'])!!}
+
+                                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    $('#datetimepicker1').datetimepicker({
+                                        format: 'YYYY-MM-DD'
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+
+
+
                     <table class="table table-bordered table-condensed table-nowrap" id="cssTable">
                         <tbody>
                         <tr>
@@ -478,7 +510,7 @@
         </div>
 
     </div>
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+    {{--<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>--}}
 
 {{--<script>--}}
     {{--$(document).ready(function () {--}}

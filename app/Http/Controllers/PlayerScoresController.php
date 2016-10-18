@@ -74,7 +74,7 @@ class PlayerScoresController extends Controller
 //        Session::flash('message', 'The Score has been Entered');
 //        Session::flash('message_style', 'bg-success');
 //
-//        //return $input;
+//        return $input;
         return redirect('/igif/player/scores');
     }
 
