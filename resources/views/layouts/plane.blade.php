@@ -14,9 +14,9 @@
 
 	<link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
 	<link rel="stylesheet" href="{{ asset("assets/jquery-ui/jquery-ui.min.css") }}" />
+	<script src="{{ asset("assets/jquery-ui/jquery-ui.min.js") }}" type="text/javascript"></script>
 
 	<script src="{{ asset("assets/scripts/compiledjs.js") }}" type="text/javascript"></script>
-	<script src="{{ asset("assets/jquery-ui/jquery-ui.min.js") }}" type="text/javascript"></script>
 
 
 	{{--<script type="text/javascript" src="/bower_components/jquery/jquery.min.js"></script>--}}
@@ -34,6 +34,9 @@
 	@yield('body')
 	{{--<script src="{{ asset("assets/scripts/compiledjs.js") }}" type="text/javascript"></script>--}}
 	{{--<script src="{{ asset("assets/jquery-ui/jquery-ui.min.js") }}" type="text/javascript"></script>--}}
+
+	{{--<script src="{{ asset("assets/scripts/compiledjs.js") }}" type="text/javascript"></script>--}}
+
 	<script>
 		$(function() {
 			$("input[name=term]").autocomplete({

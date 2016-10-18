@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
 class ScoresTableSeeder extends Seeder
@@ -14,9 +15,18 @@ class ScoresTableSeeder extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $limit = 3;
+        $limit = 4;
 
         for ($i = 0; $i < $limit; $i++) {
+
+            $year = rand(2009, 2016);
+            $month = rand(1, 12);
+            $day = rand(1, 28);
+
+            $date = Carbon::create($year,$month ,$day , 0, 0, 0);
+
+
+
             DB::table('scores')->insert([ //,
 //                'name' => $faker->name,
 //                'email' => $faker->unique()->email,
@@ -24,9 +34,10 @@ class ScoresTableSeeder extends Seeder
 
                 'user_id' => $faker->numberBetween($min = 1, $max = 1),
                 'scorecard_id' => $faker->numberBetween($min = 1, $max = 2000),
-                'total_score' => $faker->numberBetween($min = 64, $max = 120),
-                'round_date' => date($format = 'Y-m-d'),
-                'round_type' => 18,
+                'total_score' => $faker->numberBetween($min = 64, $max = 90),
+//                'round_date' => date($format = 'Y-m-d'),
+                'round_date' => $date->format('Y-m-d'),
+                'round_type' => 9,
                 'hole1_score' => $faker->numberBetween($min = 3, $max = 6),
                 'hole2_score' => $faker->numberBetween($min = 3, $max = 6),
                 'hole3_score' => $faker->numberBetween($min = 3, $max = 6),

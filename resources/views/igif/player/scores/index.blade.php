@@ -25,7 +25,7 @@
 
 
                 <tr>
-                    <td>{{$score->id}}</td>
+                    <td>{{$score->id}} - {{$score->user_id}}</td>
                     <td>{{$score->total_score}}</td>
                     {{--<td><img height="100" width="100" src="{{ $post->photo ? $post->photo->file : 'http://placehold.it/100x100' }}" alt=""></td>--}}
                     <td>January, 1 1999</td>
