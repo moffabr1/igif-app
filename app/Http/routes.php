@@ -59,7 +59,13 @@ Route::group(['middleware' => 'igif'], function () {
 
 
     Route::resource('igif/player/scores', 'PlayerScoresController');
+    Route::resource('igif/player/scorecards', 'PlayerScorecardsController');
 
+    Route::get('/igif/player/stats', 'PlayerStatsController@index');
+    Route::get('/igif/player/stats/gir', 'PlayerStatsController@gir');
+
+
+//    Route::get('/igif/player/scores/cards', 'PlayerScoresCardsController@index');
 
     Route::get('/igif', 'HomeController@index');
 

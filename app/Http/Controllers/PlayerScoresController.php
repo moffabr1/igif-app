@@ -6,6 +6,7 @@ use App\Club;
 use App\Course;
 use App\Scorecard;
 use App\Scores;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -75,13 +76,21 @@ class PlayerScoresController extends Controller
 //        $request->merge([ 'total_score' => '500' ]);
 //        echo $request['total_score'];
 
+        //active date piece
+//        $round_date = $request['round_date'];
+//        Carbon::createFromFormat('Y-m-d', $round_date);
+//        $request->merge([ 'round_date' => $round_date]);
+
+
+
+//        return $request['round_date'];
+
         $input = $request->all();
         Scores::create($input);
-//
+
         Session::flash('message', 'The Score has been Entered');
         Session::flash('message_style', 'bg-success');
-//
-//        return $input;
+
         return redirect('/igif/player/scores');
     }
 
@@ -94,8 +103,7 @@ class PlayerScoresController extends Controller
     public function show($id)
     {
         //
-//        return view('igif.player.scores.create');
-        return($id);
+
     }
 
     /**

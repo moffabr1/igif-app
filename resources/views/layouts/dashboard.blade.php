@@ -400,12 +400,29 @@
                                     <a href="{{ url ('igif/player/scores') }}">View Scores</a>
                                 </li>
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/scorecards' ) }}">View Scorecards</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('igif/player/scores/create' ) }}">Enter Scores</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
 <!-- /PLAYER:SCORES Navigation -->
+<!-- /PLAYER:STATS Navigation -->
+                        <li >
+                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stats<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/stats') }}">View stats</a>
+                                </li>
+                                {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/player/scores/create' ) }}">Enter Scores</a>--}}
+                                {{--</li>--}}
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+<!-- /PLAYER:STATS Navigation -->
                         <!-- /END ADMIN:SCORECARDS Navigation -->
                         <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
                             <a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>

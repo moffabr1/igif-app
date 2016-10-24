@@ -15,7 +15,7 @@ class ScoresTableSeeder extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $limit = 4;
+        $limit = 60;
 
         for ($i = 0; $i < $limit; $i++) {
 
@@ -32,12 +32,13 @@ class ScoresTableSeeder extends Seeder
 //                'email' => $faker->unique()->email,
 //                'contact_number' => $faker->phoneNumber,
 
-                'user_id' => $faker->numberBetween($min = 1, $max = 1),
+                'user_id' => $faker->numberBetween($min = 1, $max = 2),
                 'scorecard_id' => $faker->numberBetween($min = 1, $max = 2000),
                 'total_score' => $faker->numberBetween($min = 64, $max = 90),
 //                'round_date' => date($format = 'Y-m-d'),
-                'round_date' => $date->format('Y-m-d'),
-                'round_type' => 9,
+                //'round_date' => $date->format('Y-m-d'),
+                'round_date' => $date,
+                'round_type' => 18,
                 'hole1_score' => $faker->numberBetween($min = 3, $max = 6),
                 'hole2_score' => $faker->numberBetween($min = 3, $max = 6),
                 'hole3_score' => $faker->numberBetween($min = 3, $max = 6),

@@ -34,4 +34,7 @@
 	
 	
 </div>
+
+<script src="{{ asset("assets/scripts/Chart.min.js") }}" type="text/javascript"></script>
+
 @stop

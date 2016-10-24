@@ -2,21 +2,22 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Scores extends Model
 {
     //
 
-//    public static function boot()
-//    {
-//        // Update field update_by with current user id each time article is updated.
-//        static::updating(function ($scores) {
-//            $scores->user_id = Auth::user()->id;
-//        });
-//    }
+    public function scopeScoreingavg($query)
+    {
+//        return $query->where('votes', '>', 100);
+        return $query->where('user_id', Auth::user()->id)->first()->avg('total_score');
+    }
 
-
+    public function getRoundDateAttribute(){
+        return date('m-d-Y', strtotime($this->attributes['round_date']));
+    }
 
     protected $fillable =
         [
@@ -217,16 +218,19 @@ class Scores extends Model
 
         ];
 
+    protected $dates = ['round_date'];
+
+
     public function user(){
-
         return $this->belongsTo('App\User');
-
     }
 
     public function scorecard(){
-
         return $this->belongsTo('App\Scorecard');
+    }
 
+    public function course() {
+        return $this->belongsTo('App\Course');
     }
 
 

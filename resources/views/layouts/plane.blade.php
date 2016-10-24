@@ -22,12 +22,12 @@
 <body>
 	@yield('body')
 
-
+	{{--<script src="{{ asset("assets/scripts/jquery.min.js") }}" type="text/javascript"></script>--}}
 
 	<script src="{{ asset("assets/scripts/bootstrap.min.js") }}" type="text/javascript"></script>
 	<script src="{{ asset("assets/jquery-ui/jquery-ui.min.js") }}" type="text/javascript"></script>
 	<script src="{{ asset("assets/scripts/moment.min.js") }}" type="text/javascript"></script>
-	<script src="{{ asset("assets/scripts/Chart.min.js") }}" type="text/javascript"></script>
+	{{--<script src="{{ asset("assets/scripts/Chart.min.js") }}" type="text/javascript"></script>--}}
 	<script src="{{ asset("assets/scripts/metisMenu.min.js") }}" type="text/javascript"></script>
 	<script src="{{ asset("assets/scripts/bootstrap-datetimepicker.min.js") }}" type="text/javascript"></script>
 	<script src="{{ asset("assets/scripts/sb-admin-2.js") }}" type="text/javascript"></script>

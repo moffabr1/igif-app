@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('page_heading','Dashboard')
+@section('page_heading', 'Dashboard')
 @section('section')
 
     <!-- /.row -->
@@ -210,17 +210,18 @@
 
                     <!-- /.panel-body -->
 
-                    <!-- /.panel -->
+<script src="{{ asset("assets/scripts/Chart.min.js") }}" type="text/javascript"></script>
                 @endsection
                 @include('widgets.panel', array('header'=>true, 'as'=>'pane2'))
             </div>
-            <!-- /.col-lg-8 -->
+<!-- CHART -->
             <div class="col-lg-4">
                 @section ('cchart11_panel_title','Line Chart')
                 @section ('cchart11_panel_body')
                     @include('widgets.charts.clinechart')
                 @endsection
                 @include('widgets.panel', array('header'=>true, 'as'=>'cchart11'))
+<!-- / CHART -->
 
                 @section ('pane1_panel_title', 'Notifications Panel')
                 @section ('pane1_panel_body')
