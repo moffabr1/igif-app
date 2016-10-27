@@ -18,6 +18,8 @@ class CreateScoresTable extends Migration
 
             $table->integer('user_id')->unsigned()->index();
             $table->integer('scorecard_id')->unsigned()->index();
+            $table->integer('course_id')->unsigned()->index();
+            $table->integer('club_id')->unsigned()->index();
             $table->integer('total_score');
             $table->date('round_date');
             $table->date('round_type');

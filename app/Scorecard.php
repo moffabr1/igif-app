@@ -87,5 +87,10 @@ class Scorecard extends Model
 
     }
 
+    public function score() {
+
+        return $this->hasMany('App\Score');
+
+    }
 
 }

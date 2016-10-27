@@ -34,6 +34,8 @@ class ScoresTableSeeder extends Seeder
 
                 'user_id' => $faker->numberBetween($min = 1, $max = 2),
                 'scorecard_id' => $faker->numberBetween($min = 1, $max = 2000),
+                'course_id' => $faker->numberBetween($min = 1, $max = 2000),
+                'club_id' => $faker->numberBetween($min = 1, $max = 2000),
                 'total_score' => $faker->numberBetween($min = 64, $max = 90),
 //                'round_date' => date($format = 'Y-m-d'),
                 //'round_date' => $date->format('Y-m-d'),

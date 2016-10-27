@@ -71,7 +71,9 @@
 
         {!! Form::open(['method'=>'POST', 'action'=> 'PlayerScoresController@store', 'id'=> 'scorecardForm']) !!}
         <input type="hidden" id="hidden_club_name" name="club-name" value="" />
+        <input type="hidden" id="hidden_club_id" name="club_id" value="" />
         <input type="hidden" id="hidden_course_name" name="course-name" value="" />
+        <input type="hidden" id="hidden_course_id" name="course_id" value="" />
         <input type="hidden" id="hidden_scorecard_id" name="scorecard_id" value="" />
         <input type="hidden" id="hidden_tee_name" name="tee-name" value="" />
         <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
@@ -606,8 +608,10 @@
             var club = e.target.value;
 
             var club_name = $( "#clubs option:selected" ).text();
+            var club_id = $( "#clubs option:selected" ).val();
 //            alert(club_name);
             $("#hidden_club_name").val(club_name);
+            $("#hidden_club_id").val(club_id);
 //            alert($('#hidden_club_name').val());
 
 
@@ -629,8 +633,11 @@
             var course = e.target.value;
 
             var course_name = $( "#courses option:selected" ).text();
+            var course_id = $( "#courses option:selected" ).val();
+            alert(course_id);
 //            alert(course_name);
             $("#hidden_course_name").val(course_name);
+            $("#hidden_course_id").val(course_id);
 //            alert($('#hidden_course_name').val());
             $("#course_name_header h5").html(course_name);
 

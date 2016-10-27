@@ -23,6 +23,8 @@ class Scores extends Model
         [
             'user_id',
             'scorecard_id',
+            'club_id',
+            'course_id',
             'total_score',
             'round_date',
             'hole1_score',
@@ -233,5 +235,7 @@ class Scores extends Model
         return $this->belongsTo('App\Course');
     }
 
-
+    public function club() {
+        return $this->belongsTo('App\Course');
+    }
 }

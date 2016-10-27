@@ -27,6 +27,7 @@ class PlayerScoresController extends Controller
         $user = Auth::user()->id;
 
         $scores = Scores::where('user_id', '=', $user)
+            ->orderBy('round_date', 'DESC')
             ->paginate(10);
 
 //        $scores = Scores::paginate(10);

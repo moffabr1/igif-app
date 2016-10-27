@@ -19,9 +19,16 @@ class AdminScorecardsController extends Controller
     {
         //
 
-        $cards = Scorecard::all();
-//        return $cards;
-        return view('igif.admin.scorecards.index', compact('cards'));
+//        $cards = Scorecard::all();
+////        return $cards;
+//        return view('igif.admin.scorecards.index', compact('cards'));
+
+
+        //$scorecards = Scorecard::all();
+
+        return view('igif.admin.scorecards.index');
+
+
     }
 
     /**
