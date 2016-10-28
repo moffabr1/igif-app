@@ -381,13 +381,13 @@
                 </tbody>
             </table>
 
- {{--Round Stats Table--}}
+ Round Stats Table
             <table class="table table-sm table-striped table-bordered table-responsive" id="statstable">
                 <thead>
                 <tr>
                     <th>Stat Category</th>
-                    <th>Round Numbers</th>
                     <th>Round Stats</th>
+                    <th>Historical Stats</th>
                     <th>Trend</th>
                 </tr>
                 </thead>
@@ -431,8 +431,8 @@
                 <tr>
                     <th>Driving Accuracy</th>
                     <td>{{ number_format($roundstats['fwpercentage'], 2) * 100 . '%' }} &nbsp;&nbsp;({{$roundstats['fairways']}}/{{$roundstats['drivingholes']}})</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_fw_percentage'], 2) * 100 . '%' }}  ({{$cumulativeData['total_fw_hit']}}/{{$cumulativeData['total_fw']}})</td>
+                    <td>@if($roundstats['fwpercentage'] < $cumulativeData['total_fw_percentage']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($roundstats['fwpercentage'] > $cumulativeData['total_fw_percentage']){!! Html::image('app_images/trend_up_arrow.png') !!} @endif</td>
                 </tr>
                 <tr>
                     <th>Greens in Regulation (GIR)</th>
@@ -455,8 +455,8 @@
                 <tr>
                     <th>GIR %</th>
                     <td>{{ number_format($roundstats['girpercentage'], 2) * 100 . '%' }} &nbsp;&nbsp;({{$roundstats['greens']}}/18)</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_gir_percentage'], 2) * 100 . '%' }}  ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_gir']}})</td>
+                    <td>@if($roundstats['girpercentage'] < $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_down_arrow.png') }}@elseif ($roundstats['girpercentage'] > $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_up_arrow.png') }} @endif</td>
                 </tr>
                 <tr>
                     <th>Putts per Hole</th>

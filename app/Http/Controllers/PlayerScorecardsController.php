@@ -19,38 +19,29 @@ class PlayerScorecardsController extends Controller
      */
     public function index(Request $request)
     {
+        $user = Auth::user()->id;
+        $rounds = Scores::where('user_id', '=', $user)
+            ->orderBy('round_date', 'desc')
+            ->get();
+
         if ( !empty ( $request->scorecard ) ) {
-
             $round_id = $request->input('scorecard');
+        }
+        else {
+            $round_id = $rounds->first()->id;
 
-            $score = Scores::with('scorecard.course')->find($round_id);
-
-            $rounds = Scores::where('user_id', '=', Auth::user()->id)
-                ->orderBy('round_date', 'desc')
-                ->get();
-
-//            dd($this->getHoleResults($score));
-//            dd($this->getRoundStats($score));
+        }
+//        dd($round_id);
+        $score = Scores::with('scorecard.course')->find($round_id);
 
             $holeresults = $this->getHoleResults($score);
             $roundstats = $this->getRoundStats($score);
-
+            $cumulativeData = $this->getCumulativeData($rounds);
             //flash the selected id
             Session::flash('scorecard_id', $round_id);
 
-            return view('igif.player.scorecards.index', compact('score', 'rounds', 'holeresults', 'roundstats'));
-
-
+            return view('igif.player.scorecards.index', compact('score', 'rounds', 'holeresults', 'roundstats', 'cumulativeData'));
         }
-        else {
-            $user = Auth::user()->id;
-            $rounds = Scores::where('user_id', '=', $user)
-                ->orderBy('round_date', 'desc')
-                ->get();
-            return view('igif.player.scorecards.index', compact('rounds'));
-        }
-
-    }
 
     public function getHoleResults($score) {
         $holeresults_array = [];
@@ -111,7 +102,6 @@ class PlayerScorecardsController extends Controller
         $puttscount = 0;
         $drivingholescount = 0;
         $sandsavescount = 0;
-
         $fwpercentage = 0;
         $girpercentage = 0;
         $puttsperhole = 0;
@@ -125,7 +115,7 @@ class PlayerScorecardsController extends Controller
             $holesand = 'hole'.$i.'_sand';
             $holeputts = 'hole'.$i.'_number_of_putts';
 
-            if($score->$holefw){
+            if($score->$holefw == 1 && $score->scorecard->$holepar > 3){
                 ++$fwhitcount;
             }
             if($score->$holegir){
@@ -148,8 +138,6 @@ class PlayerScorecardsController extends Controller
         $puttsperhole = $puttscount / 18;
         $puttspergir = $puttscount / $gircount;
 
-
-
         $roundstats_array = array_add($roundstats_array, 'fairways', $fwhitcount);
         $roundstats_array = array_add($roundstats_array, 'greens', $gircount);
         $roundstats_array = array_add($roundstats_array, 'putts', $puttscount);
@@ -160,11 +148,65 @@ class PlayerScorecardsController extends Controller
         $roundstats_array = array_add($roundstats_array, 'puttsperhole', $puttsperhole);
         $roundstats_array = array_add($roundstats_array, 'puttspergir', $puttspergir);
 
-
-
-
-
         return $roundstats_array;
+    }
+
+    public function getCumulativeData($rounds) {
+        //Grab the data to produce the trending stats
+        $cumulativedata_array = [];
+
+        $fwhitcount = 0;
+        $fwmissedcount = 0;
+        $totalfw = 0;
+        $totalfwavg = 0;
+
+        $gircount = 0;
+        $girmissedcount = 0;
+        $totalgir = 0;
+        $totalgiravg = 0;
+
+        foreach($rounds as $key => $round){
+            for($i = 1;$i<19;$i++) {
+                $holefw = 'hole' . $i . '_fw_hit';
+                $holepar = 'hole'.$i.'_par';
+                $holegir = 'hole' . $i . '_gir';
+
+                if($round->$holefw == 1 && $round->scorecard->$holepar > 3){
+                    ++$fwhitcount;
+                } elseif ($round->$holefw == 0 && $round->scorecard->$holepar > 3) {
+                    ++$fwmissedcount;
+                }
+
+                if($round->$holegir == 1){
+                    ++$gircount;
+                } else {
+                    ++$girmissedcount;
+                }
+            }
+
+        }
+
+        //dd($key);
+
+        $totalfw = $fwhitcount + $fwmissedcount;
+        $totalfwavg = $fwhitcount / $totalfw;
+
+        $totalgir = $gircount + $girmissedcount;
+        $totalgiravg = $gircount / $totalgir;
+//        dd($totalgiravg);
+
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_fw', $totalfw);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_fw_hit', $fwhitcount);
+//        $cumulativedata_array = array_add($cumulativedata_array, 'total_fw_missed', $fwmissedcount);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_fw_percentage', $totalfwavg);
+
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_gir', $totalgir);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_hit', $gircount);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_percentage', $totalgiravg);
+
+        return $cumulativedata_array;
+
+
     }
 
 //    public function index()
