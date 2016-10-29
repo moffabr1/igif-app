@@ -227,6 +227,8 @@
                     </td>
                 </tr>
 {{-- START Back 9 Rows--}}
+
+@if($score->round_type == 18)
                 <tr>
                     <td colspan="11">
                         Back 9
@@ -373,6 +375,7 @@
                     </td>
                 </tr>
 {{--END Back 9 Rows--}}
+@endif
                 <tr class="legend_row">
                     <td class="legend_cell" colspan="11">
                         Legend

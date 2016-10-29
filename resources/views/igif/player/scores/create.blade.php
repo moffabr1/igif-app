@@ -297,9 +297,15 @@
                                 </td>
                             @endfor
                         </tr>
+                        {{--<tr>--}}
+                            {{--<td id="9-hole-submit-button" style="display:none" colspan="4">--}}
+                                {{--<button type="button" class="btn btn-primary">Submit 9 Hole Score</button>--}}
+                            {{--</td>--}}
+                        {{--</tr>--}}
                         <tr>
-                            <td id="9-hole-submit-button" style="display:none" colspan="4">
-                                <button type="button" class="btn btn-primary">Submit 9 Hole Score</button>
+                            <td colspan="4">
+                                {{--<button type="button" class="btn btn-primary">Submit 18 Hole Score</button>--}}
+                                {!! Form::submit('Create 9 Hole Score', ['class'=>'btn btn-primary']) !!}
                             </td>
                         </tr>
                         </tbody>
@@ -634,7 +640,7 @@
 
             var course_name = $( "#courses option:selected" ).text();
             var course_id = $( "#courses option:selected" ).val();
-            alert(course_id);
+//            alert(course_id);
 //            alert(course_name);
             $("#hidden_course_name").val(course_name);
             $("#hidden_course_id").val(course_id);
@@ -730,8 +736,8 @@
                         $('#hole7_par').append(teeObj.hole7_par);
                         $('#hole8_par').append(teeObj.hole8_par);
                         $('#hole9_par').append(teeObj.hole9_par);
-
-                            if(teeObj.hole10_distance != null) {
+alert(teeObj.hole10_distance);
+                            if(teeObj.hole10_distance != 0) {
 
                                 $('#back-9-table').show();
                                 $('#9-hole-submit-button').hide();

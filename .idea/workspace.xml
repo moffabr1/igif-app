@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c8b00-ad81-4aab-af6e-a3f0f9812851" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app_images/trend_down_arrow.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app_images/trend_up_arrow.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" />
     </list>
     <ignored path="igif-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,61 +26,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PlayerScorecardsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayerScorecardsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+            <state relative-caret-position="165">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="436" column="20" selection-start-line="436" selection-start-column="20" selection-end-line="436" selection-end-column="20" />
+            <state relative-caret-position="165">
+              <caret line="273" column="27" selection-start-line="273" selection-start-column="27" selection-end-line="273" selection-end-column="27" />
               <folding>
-                <marker date="1477688577000" expanded="false" signature="15640:15646" ph=" " />
-                <marker date="1477688577000" expanded="false" signature="15646:15652" ph=" " />
-                <marker date="1477688577000" expanded="false" signature="16978:16984" ph=" " />
-                <marker date="1477688577000" expanded="false" signature="16984:16990" ph=" " />
-                <marker date="1477688577000" expanded="true" signature="18104:18165" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18116:18164" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18251:18312" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18263:18311" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18397:18458" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18409:18457" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18542:18603" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18554:18602" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18691:23465" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18704:23464" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18766:23457" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="18784:23456" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="20242:20584" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="20426:20584" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="20627:20818" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="20861:21062" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="21104:21298" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="21947:22102" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="22150:22295" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="22343:22498" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="22545:22693" ph="..." />
-                <marker date="1477688577000" expanded="true" signature="23475:24496" ph="//..." />
-                <marker date="1477688577000" expanded="true" signature="24602:25129" ph="//..." />
-                <marker date="1477688577000" expanded="true" signature="25137:25968" ph="//..." />
+                <marker date="1477740791000" expanded="false" signature="15678:15684" ph=" " />
+                <marker date="1477740791000" expanded="false" signature="15684:15690" ph=" " />
+                <marker date="1477740791000" expanded="false" signature="17016:17022" ph=" " />
+                <marker date="1477740791000" expanded="false" signature="17022:17028" ph=" " />
+                <marker date="1477740791000" expanded="true" signature="18142:18203" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18154:18202" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18289:18350" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18301:18349" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18435:18496" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18447:18495" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18580:18641" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18592:18640" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18729:23503" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18742:23502" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18804:23495" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="18822:23494" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="20280:20622" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="20464:20622" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="20665:20856" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="20899:21100" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="21142:21336" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="21985:22140" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="22188:22333" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="22381:22536" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="22583:22731" ph="..." />
+                <marker date="1477740791000" expanded="true" signature="23513:24534" ph="//..." />
+                <marker date="1477740791000" expanded="true" signature="24640:25167" ph="//..." />
+                <marker date="1477740791000" expanded="true" signature="25175:26006" ph="//..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/app.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-315">
-              <caret line="162" column="3" selection-start-line="162" selection-start-column="3" selection-end-line="165" selection-end-column="3" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -106,7 +92,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/assets/sass/app.scss" />
         <option value="$PROJECT_DIR$/resources/assets/less/app.less" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminUsersController.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/admin/courses/create.blade.php" />
@@ -149,14 +134,15 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_09_28_152714_create_scores_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/ScoresTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerScoresController.php" />
-        <option value="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Scores.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/admin/scorecards/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminScorecardsController.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" />
+        <option value="$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
       </list>
     </option>
   </component>
@@ -236,7 +222,25 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="database" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="seeds" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -410,12 +414,12 @@
       <workItem from="1477528076845" duration="14849000" />
       <workItem from="1477621145276" duration="344000" />
       <workItem from="1477651364629" duration="1621000" />
-      <workItem from="1477682931174" duration="3380000" />
+      <workItem from="1477682931174" duration="6129000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="286129000" />
+    <option name="totallyTimeSpent" value="288878000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1226" height="688" extended-state="0" />
@@ -428,7 +432,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.05704698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23825504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26616916" sideWeight="0.22469983" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -481,13 +485,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bower_components/Chart.js/Chart.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="19881" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/Chart.js/Chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27572">
@@ -667,13 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Scores.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -692,13 +682,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8471">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="439">
-          <caret line="563" column="57" selection-start-line="553" selection-start-column="12" selection-end-line="563" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -807,48 +790,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php">
+    <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="436" column="20" selection-start-line="436" selection-start-column="20" selection-end-line="436" selection-end-column="20" />
+        <state relative-caret-position="225">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
           <folding>
-            <marker date="1477688577000" expanded="false" signature="15640:15646" ph=" " />
-            <marker date="1477688577000" expanded="false" signature="15646:15652" ph=" " />
-            <marker date="1477688577000" expanded="false" signature="16978:16984" ph=" " />
-            <marker date="1477688577000" expanded="false" signature="16984:16990" ph=" " />
-            <marker date="1477688577000" expanded="true" signature="18104:18165" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18116:18164" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18251:18312" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18263:18311" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18397:18458" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18409:18457" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18542:18603" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18554:18602" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18691:23465" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18704:23464" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18766:23457" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="18784:23456" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="20242:20584" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="20426:20584" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="20627:20818" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="20861:21062" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="21104:21298" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="21947:22102" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="22150:22295" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="22343:22498" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="22545:22693" ph="..." />
-            <marker date="1477688577000" expanded="true" signature="23475:24496" ph="//..." />
-            <marker date="1477688577000" expanded="true" signature="24602:25129" ph="//..." />
-            <marker date="1477688577000" expanded="true" signature="25137:25968" ph="//..." />
+            <element signature="e#7#25#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="235" selection-end-column="9" />
+          <folding>
+            <element signature="e#7#25#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="310" column="32" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
+          <folding>
+            <element signature="e#13828#13848#0#HTML" expanded="true" />
+            <marker date="1477739469000" expanded="false" signature="13156:13168" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        <state relative-caret-position="165">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="273" column="27" selection-start-line="273" selection-start-column="27" selection-end-line="273" selection-end-column="27" />
+          <folding>
+            <marker date="1477740791000" expanded="false" signature="15678:15684" ph=" " />
+            <marker date="1477740791000" expanded="false" signature="15684:15690" ph=" " />
+            <marker date="1477740791000" expanded="false" signature="17016:17022" ph=" " />
+            <marker date="1477740791000" expanded="false" signature="17022:17028" ph=" " />
+            <marker date="1477740791000" expanded="true" signature="18142:18203" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18154:18202" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18289:18350" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18301:18349" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18435:18496" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18447:18495" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18580:18641" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18592:18640" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18729:23503" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18742:23502" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18804:23495" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="18822:23494" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="20280:20622" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="20464:20622" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="20665:20856" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="20899:21100" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="21142:21336" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="21985:22140" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="22188:22333" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="22381:22536" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="22583:22731" ph="..." />
+            <marker date="1477740791000" expanded="true" signature="23513:24534" ph="//..." />
+            <marker date="1477740791000" expanded="true" signature="24640:25167" ph="//..." />
+            <marker date="1477740791000" expanded="true" signature="25175:26006" ph="//..." />
+          </folding>
         </state>
       </provider>
     </entry>

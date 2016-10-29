@@ -34,6 +34,8 @@ class PlayerScorecardsController extends Controller
 //        dd($round_id);
         $score = Scores::with('scorecard.course')->find($round_id);
 
+//        dd($score->round_type);
+
             $holeresults = $this->getHoleResults($score);
             $roundstats = $this->getRoundStats($score);
             $cumulativeData = $this->getCumulativeData($rounds);
@@ -52,6 +54,9 @@ class PlayerScorecardsController extends Controller
         $bogeycount = 0;
         $dblbogeycount = 0;
         $tripleplusbogeycount = 0;
+
+        //get the number of holes in the round is it 18 or 9
+
 
         for($i = 1;$i<19;$i++) {
             $holepar = 'hole'.$i.'_par';
