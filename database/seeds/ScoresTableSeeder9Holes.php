@@ -16,7 +16,7 @@ class ScoresTableSeeder9Holes extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $limit = 5;
+        $limit = 10;
 
         for ($i = 0; $i < $limit; $i++) {
 
@@ -38,9 +38,9 @@ class ScoresTableSeeder9Holes extends Seeder
 //                'contact_number' => $faker->phoneNumber,
 
                 'user_id' => $faker->numberBetween($min = 1, $max = 1),
-                'scorecard_id' => $faker->numberBetween($min = 1, $max = 2000),
-                'course_id' => $faker->numberBetween($min = 1, $max = 2000),
-                'club_id' => $faker->numberBetween($min = 1, $max = 2000),
+                'scorecard_id' => $faker->numberBetween($min = 59, $max = 61),
+                'course_id' => $faker->numberBetween($min = 26, $max = 26),
+                'club_id' => $faker->numberBetween($min = 26, $max = 26),
                 'total_score' => $faker->numberBetween($min = 30, $max = 50),
 //                'round_date' => date($format = 'Y-m-d'),
                 //'round_date' => $date->format('Y-m-d'),
@@ -179,14 +179,14 @@ class ScoresTableSeeder9Holes extends Seeder
 //                'hole17_sand' => $faker->numberBetween($min = 0, $max = 1),
 //                'hole18_sand' => $faker->numberBetween($min = 0, $max = 1),
 
-                'hole1_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
+                'hole1_number_of_putts' => $faker->numberBetween($min = 0, $max = 3),
                 'hole2_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
                 'hole3_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
                 'hole4_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
-                'hole5_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
+                'hole5_number_of_putts' => $faker->numberBetween($min = 0, $max = 3),
                 'hole6_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
                 'hole7_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
-                'hole8_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
+                'hole8_number_of_putts' => $faker->numberBetween($min = 0, $max = 3),
                 'hole9_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
 //                'hole10_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),
 //                'hole11_number_of_putts' => $faker->numberBetween($min = 0, $max = 2),

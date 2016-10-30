@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c8b00-ad81-4aab-af6e-a3f0f9812851" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/app_images/trend_even_dash.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php" afterPath="$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/scores/create.blade.php" />
     </list>
     <ignored path="igif-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,48 +31,81 @@
       <file leaf-file-name="PlayerScorecardsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="48" column="178" selection-start-line="48" selection-start-column="154" selection-end-line="48" selection-end-column="178" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="273" column="27" selection-start-line="273" selection-start-column="27" selection-end-line="273" selection-end-column="27" />
+            <state relative-caret-position="865">
+              <caret line="551" column="615" selection-start-line="551" selection-start-column="615" selection-end-line="551" selection-end-column="615" />
               <folding>
-                <marker date="1477740791000" expanded="false" signature="15678:15684" ph=" " />
-                <marker date="1477740791000" expanded="false" signature="15684:15690" ph=" " />
-                <marker date="1477740791000" expanded="false" signature="17016:17022" ph=" " />
-                <marker date="1477740791000" expanded="false" signature="17022:17028" ph=" " />
-                <marker date="1477740791000" expanded="true" signature="18142:18203" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18154:18202" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18289:18350" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18301:18349" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18435:18496" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18447:18495" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18580:18641" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18592:18640" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18729:23503" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18742:23502" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18804:23495" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="18822:23494" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="20280:20622" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="20464:20622" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="20665:20856" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="20899:21100" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="21142:21336" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="21985:22140" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="22188:22333" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="22381:22536" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="22583:22731" ph="..." />
-                <marker date="1477740791000" expanded="true" signature="23513:24534" ph="//..." />
-                <marker date="1477740791000" expanded="true" signature="24640:25167" ph="//..." />
-                <marker date="1477740791000" expanded="true" signature="25175:26006" ph="//..." />
+                <marker date="1477788587000" expanded="false" signature="19051:19057" ph=" " />
+                <marker date="1477788587000" expanded="false" signature="19057:19063" ph=" " />
+                <marker date="1477788587000" expanded="true" signature="36776:36805" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="36877:36938" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="36889:36937" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37024:37085" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37036:37084" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37149:37439" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37193:37254" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37205:37253" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37338:37399" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37350:37398" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37490:42198" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37503:42197" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37565:42190" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="37583:42189" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="38006:38829" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="38970:39048" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="39088:39432" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="39272:39432" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="39475:39666" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="39709:39910" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="39952:40146" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="40773:42160" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="40818:40973" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="41021:41166" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="41214:41369" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="41416:41564" ph="..." />
+                <marker date="1477788587000" expanded="true" signature="42208:43229" ph="//..." />
+                <marker date="1477788587000" expanded="true" signature="43335:43862" ph="//..." />
+                <marker date="1477788587000" expanded="true" signature="43870:44701" ph="//..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/index.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerStatsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="325">
+              <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -121,7 +156,6 @@
         <option value="$PROJECT_DIR$/resources/views/igif/player/scores/cards.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsCardsController.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/stats/cards.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/scores/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/cards/index.blade.php" />
@@ -143,6 +177,7 @@
         <option value="$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" />
       </list>
     </option>
   </component>
@@ -222,7 +257,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -236,11 +275,171 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="database" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="seeds" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="player" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stats" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="player" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app_images" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="igif-app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -414,12 +613,12 @@
       <workItem from="1477528076845" duration="14849000" />
       <workItem from="1477621145276" duration="344000" />
       <workItem from="1477651364629" duration="1621000" />
-      <workItem from="1477682931174" duration="6129000" />
+      <workItem from="1477682931174" duration="29331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="288878000" />
+    <option name="totallyTimeSpent" value="312080000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="21" y="23" width="1226" height="688" extended-state="0" />
@@ -432,7 +631,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32885906" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23825504" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.115771815" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26616916" sideWeight="0.22469983" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -480,7 +679,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -541,13 +740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/gir.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -587,13 +779,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/igif/player/cards/index.blade.php" />
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/stylesheets/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60225">
@@ -743,14 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerScoresController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -790,22 +967,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
-          <folding>
-            <element signature="e#7#25#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="235" selection-end-column="9" />
           <folding>
-            <element signature="e#7#25#0#PHP" expanded="true" />
+            <element signature="e#7#25#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -823,46 +990,83 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerScorecardsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="48" column="178" selection-start-line="48" selection-start-column="154" selection-end-line="48" selection-end-column="178" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/ScoresTableSeeder9Holes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding>
+            <element signature="e#7#25#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="273" column="27" selection-start-line="273" selection-start-column="27" selection-end-line="273" selection-end-column="27" />
+        <state relative-caret-position="865">
+          <caret line="551" column="615" selection-start-line="551" selection-start-column="615" selection-end-line="551" selection-end-column="615" />
           <folding>
-            <marker date="1477740791000" expanded="false" signature="15678:15684" ph=" " />
-            <marker date="1477740791000" expanded="false" signature="15684:15690" ph=" " />
-            <marker date="1477740791000" expanded="false" signature="17016:17022" ph=" " />
-            <marker date="1477740791000" expanded="false" signature="17022:17028" ph=" " />
-            <marker date="1477740791000" expanded="true" signature="18142:18203" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18154:18202" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18289:18350" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18301:18349" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18435:18496" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18447:18495" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18580:18641" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18592:18640" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18729:23503" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18742:23502" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18804:23495" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="18822:23494" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="20280:20622" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="20464:20622" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="20665:20856" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="20899:21100" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="21142:21336" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="21985:22140" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="22188:22333" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="22381:22536" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="22583:22731" ph="..." />
-            <marker date="1477740791000" expanded="true" signature="23513:24534" ph="//..." />
-            <marker date="1477740791000" expanded="true" signature="24640:25167" ph="//..." />
-            <marker date="1477740791000" expanded="true" signature="25175:26006" ph="//..." />
+            <marker date="1477788587000" expanded="false" signature="19051:19057" ph=" " />
+            <marker date="1477788587000" expanded="false" signature="19057:19063" ph=" " />
+            <marker date="1477788587000" expanded="true" signature="36776:36805" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="36877:36938" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="36889:36937" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37024:37085" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37036:37084" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37149:37439" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37193:37254" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37205:37253" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37338:37399" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37350:37398" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37490:42198" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37503:42197" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37565:42190" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="37583:42189" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="38006:38829" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="38970:39048" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="39088:39432" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="39272:39432" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="39475:39666" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="39709:39910" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="39952:40146" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="40773:42160" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="40818:40973" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="41021:41166" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="41214:41369" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="41416:41564" ph="..." />
+            <marker date="1477788587000" expanded="true" signature="42208:43229" ph="//..." />
+            <marker date="1477788587000" expanded="true" signature="43335:43862" ph="//..." />
+            <marker date="1477788587000" expanded="true" signature="43870:44701" ph="//..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

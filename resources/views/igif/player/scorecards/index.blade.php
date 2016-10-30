@@ -229,7 +229,7 @@
 {{-- START Back 9 Rows--}}
 
 @if($score->round_type == 18)
-                <tr>
+                <tr id="{{$score->round_type}}" class="back9rows">
                     <td colspan="11">
                         Back 9
                     </td>
@@ -395,41 +395,41 @@
                 </tr>
                 </thead>
                 <tbody>
+{{--{!! html_entity_decode( HTML::link("#", HTML::image("img/logo.png", "Logo") ) ) !!}--}}
                 <tr>
                     <th>Eagles</th>
                     <td>{{ $holeresults['eagles'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_eagles_round'], 2)}} ({{$cumulativeData['total_eagles']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
                 </tr>
                 <tr>
                     <th>Birdies</th>
                     <td>{{ $holeresults['birdies'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_birdies_round'], 2)}} ({{$cumulativeData['total_birdies']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['birdies'] < $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['birdies'] > $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['birdies'] = $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
                 </tr>
                 <tr>
                     <th>Pars</th>
                     <td>{{ $holeresults['pars'] }}</td>
-                    <td></td>
-                    <td></td>
-                </tr>
+                    <td>{{ number_format($cumulativeData['total_pars_round'], 2)}} ({{$cumulativeData['total_pars']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['pars'] < $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['pars'] > $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['pars'] = $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
                 <tr>
                     <th>Bogeys</th>
                     <td>{{ $holeresults['bogeys'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_bogeys_round'], 2)}} ({{$cumulativeData['total_bogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['bogeys'] < $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['bogeys'] > $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['bogeys'] = $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
                 </tr>
                 <tr>
                     <th>Dbl Bogeys</th>
                     <td>{{ $holeresults['dblbogeys'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_dblbogeys_round'], 2)}} ({{$cumulativeData['total_dblbogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['dblbogeys'] < $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['dblbogeys'] > $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['dblbogeys'] = $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
                 </tr>
                 <tr>
                     <th>3+ Bogeys</th>
                     <td>{{ $holeresults['tripleplusbogeys'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_3plusbogeys_round'], 2)}} ({{$cumulativeData['total_3plusbogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($holeresults['tripleplusbogeys'] < $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['tripleplusbogeys'] > $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['tripleplusbogeys'] = $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
                 </tr>
                 <tr>
                     <th>Driving Accuracy</th>
@@ -440,14 +440,51 @@
                 <tr>
                     <th>Greens in Regulation (GIR)</th>
                     <td>{{ $roundstats['greens'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_gir_round'], 2)}} ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($roundstats['greens'] < $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($roundstats['greens'] > $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($roundstats['greens'] = $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+                <tr>
+                    <th>GIR %</th>
+                    <td>{{ number_format($roundstats['girpercentage'], 2) * 100 . '%' }} &nbsp;&nbsp;({{$roundstats['greens']}}/{{$score->round_type }})</td>
+                    <td>{{ number_format($cumulativeData['total_gir_percentage'], 2) * 100 . '%' }}  ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_gir']}})</td>
+                    <td>@if($roundstats['girpercentage'] < $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_down_arrow.png') }}@elseif ($roundstats['girpercentage'] > $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_up_arrow.png') }} @elseif ($roundstats['girpercentage'] = $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_even_dash.png') }}@endif</td>
                 </tr>
                 <tr>
                     <th>Number of Putts</th>
                     <td>{{ $roundstats['putts'] }}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ number_format($cumulativeData['total_putts_round'], 2)}} ({{$cumulativeData['total_putts']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($roundstats['putts'] > $cumulativeData['total_putts_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['putts'] < $cumulativeData['total_putts_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['putts'] = $cumulativeData['total_putts_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+                <tr>
+                    <th>3 Putts</th>
+                    <td>{{ $roundstats['threeputts'] }}</td>
+                    <td>{{ number_format($cumulativeData['total_threeputts_round'], 2) }} ({{$cumulativeData['total_threeputts']}}/{{$cumulativeData['total_rounds']}})</td>
+                    <td>@if($roundstats['threeputts'] > $cumulativeData['total_threeputts_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['threeputts'] < $cumulativeData['total_threeputts_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['threeputts'] = $cumulativeData['total_threeputts_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+
+                <tr>
+                    <th>Putts per Hole</th>
+                    <td>{{ number_format($roundstats['puttsperhole'], 2) }}</td>
+                    <td>{{ number_format($cumulativeData['total_putts_hole'], 2) }} ({{$cumulativeData['total_putts']}}/{{$cumulativeData['total_holes']}})</td>
+                    <td>@if($roundstats['puttsperhole'] > $cumulativeData['total_putts_hole']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['puttsperhole'] < $cumulativeData['total_putts_hole']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['puttsperhole'] = $cumulativeData['total_putts_hole']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+                <tr>
+                    <th>Putts per GIR</th>
+                    <td>{{ number_format($roundstats['puttspergir'], 2) }}</td>
+                    <td>{{ number_format($cumulativeData['total_putts_gir'], 2) }} ({{$cumulativeData['total_putts']}}/{{$cumulativeData['total_gir_hit']}})</td>
+                    <td>@if($roundstats['puttspergir'] > $cumulativeData['total_putts_gir']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['puttspergir'] < $cumulativeData['total_putts_gir']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['puttspergir'] = $cumulativeData['total_putts_gir']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+                <tr>
+                    <th>Number of Chips</th>
+                    <td>{{ $roundstats['chips'] }}</td>
+                    <td>{{ number_format($cumulativeData['total_chips_round'], 2)}} ({{$cumulativeData['total_chips']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($roundstats['chips'] > $cumulativeData['total_chips_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['chips'] < $cumulativeData['total_chips_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['chips'] = $cumulativeData['total_chips_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
+                </tr>
+                <tr>
+                    <th>2 Chips</th>
+                    <td>{{ $roundstats['twochips'] }}</td>
+                    <td>{{ number_format($cumulativeData['total_two_chips_round'], 2)}} ({{$cumulativeData['total_two_chips']}}/{{$cumulativeData['total_rounds']}}) </td>
+                    <td>@if($roundstats['twochips'] > $cumulativeData['total_two_chips_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($roundstats['twochips'] < $cumulativeData['total_two_chips_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($roundstats['twochips'] = $cumulativeData['total_two_chips_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>                </tr>
                 </tr>
                 <tr>
                     <th>Sand Saves</th>
@@ -455,36 +492,80 @@
                     <td></td>
                     <td></td>
                 </tr>
-                <tr>
-                    <th>GIR %</th>
-                    <td>{{ number_format($roundstats['girpercentage'], 2) * 100 . '%' }} &nbsp;&nbsp;({{$roundstats['greens']}}/18)</td>
-                    <td>{{ number_format($cumulativeData['total_gir_percentage'], 2) * 100 . '%' }}  ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_gir']}})</td>
-                    <td>@if($roundstats['girpercentage'] < $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_down_arrow.png') }}@elseif ($roundstats['girpercentage'] > $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_up_arrow.png') }} @endif</td>
+                <tr class="proximitystats_row">
+                    <th colspan="11">
+                        Proximity to the Hole Stats
+                    </th>
                 </tr>
                 <tr>
-                    <th>Putts per Hole</th>
-                    <td>{{ number_format($roundstats['puttsperhole'], 2) }}</td>
-                    <td></td>
-                    <td></td>
+                    <th>200+ Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_200yds'] == 'No Data' ? $proximityStatsRound['prox_200yds'] : number_format($proximityStatsRound['prox_200yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_200yds'] == 'No Data' ? $cumulativeproximitystats['prox_200yds'] : number_format($cumulativeproximitystats['prox_200yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_200yds'] == 'No Data' || $cumulativeproximitystats['prox_200yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_200yds'] > $cumulativeproximitystats['prox_200yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_200yds'] < $cumulativeproximitystats['prox_200yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_200yds'] = $cumulativeproximitystats['prox_200yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
                 </tr>
                 <tr>
-                    <th>Putts per GIR</th>
-                    <td>{{ number_format($roundstats['puttspergir'], 2) }}</td>
-                    <td></td>
-                    <td></td>
+                    <th>175-200 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_175_200yds'] == 'No Data' ? $proximityStatsRound['prox_175_200yds'] : number_format($proximityStatsRound['prox_175_200yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_175_200yds'] == 'No Data' ? $cumulativeproximitystats['prox_175_200yds'] : number_format($cumulativeproximitystats['prox_175_200yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_175_200yds'] == 'No Data' || $cumulativeproximitystats['prox_175_200yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_175_200yds'] > $cumulativeproximitystats['prox_175_200yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_175_200yds'] < $cumulativeproximitystats['prox_175_200yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_175_200yds'] = $cumulativeproximitystats['prox_175_200yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
                 </tr>
-
+                <tr>
+                    <th>150-175 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_150_175yds'] == 'No Data' ? $proximityStatsRound['prox_150_175yds'] : number_format($proximityStatsRound['prox_150_175yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_150_175yds'] == 'No Data' ? $cumulativeproximitystats['prox_150_175yds'] : number_format($cumulativeproximitystats['prox_150_175yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_150_175yds'] == 'No Data' || $cumulativeproximitystats['prox_150_175yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_150_175yds'] > $cumulativeproximitystats['prox_150_175yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_150_175yds'] < $cumulativeproximitystats['prox_150_175yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_150_175yds'] = $cumulativeproximitystats['prox_150_175yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
+                </tr>
+                <tr>
+                    <th>130-150 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_130_150yds'] == 'No Data' ? $proximityStatsRound['prox_130_150yds'] : number_format($proximityStatsRound['prox_130_150yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_130_150yds'] == 'No Data' ? $cumulativeproximitystats['prox_130_150yds'] : number_format($cumulativeproximitystats['prox_130_150yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_130_150yds'] == 'No Data' || $cumulativeproximitystats['prox_130_150yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_130_150yds'] > $cumulativeproximitystats['prox_130_150yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_130_150yds'] < $cumulativeproximitystats['prox_130_150yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_130_150yds'] = $cumulativeproximitystats['prox_130_150yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
+                </tr>
+                <tr>
+                    <th>120-130 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_120_130yds'] == 'No Data' ? $proximityStatsRound['prox_120_130yds'] : number_format($proximityStatsRound['prox_120_130yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_120_130yds'] == 'No Data' ? $cumulativeproximitystats['prox_120_130yds'] : number_format($cumulativeproximitystats['prox_120_130yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_120_130yds'] == 'No Data' || $cumulativeproximitystats['prox_120_130yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_120_130yds'] > $cumulativeproximitystats['prox_120_130yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_120_130yds'] < $cumulativeproximitystats['prox_120_130yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_120_130yds'] = $cumulativeproximitystats['prox_120_130yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
+                </tr>
+                <tr>
+                    <th>110-120 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_110_120yds'] == 'No Data' ? $proximityStatsRound['prox_110_120yds'] : number_format($proximityStatsRound['prox_110_120yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_110_120yds'] == 'No Data' ? $cumulativeproximitystats['prox_110_120yds'] : number_format($cumulativeproximitystats['prox_110_120yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_110_120yds'] == 'No Data' || $cumulativeproximitystats['prox_110_120yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_110_120yds'] > $cumulativeproximitystats['prox_110_120yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_110_120yds'] < $cumulativeproximitystats['prox_110_120yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_110_120yds'] = $cumulativeproximitystats['prox_110_120yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
+                </tr>
+                <tr>
+                    <th>100-110 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_100_110yds'] == 'No Data' ? $proximityStatsRound['prox_100_110yds'] : number_format($proximityStatsRound['prox_100_110yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_100_110yds'] == 'No Data' ? $cumulativeproximitystats['prox_100_110yds'] : number_format($cumulativeproximitystats['prox_100_110yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_100_110yds'] == 'No Data' || $cumulativeproximitystats['prox_100_110yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif($proximityStatsRound['prox_100_110yds'] > $cumulativeproximitystats['prox_100_110yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_100_110yds'] < $cumulativeproximitystats['prox_100_110yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_100_110yds'] = $cumulativeproximitystats['prox_100_110yds']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
+                </tr>
+                <tr>
+                    <th>90-100 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_90_100yds'] == 'No Data' ? $proximityStatsRound['prox_90_100yds'] : number_format($proximityStatsRound['prox_90_100yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_90_100yds'] == 'No Data' ? $cumulativeproximitystats['prox_90_100yds'] : number_format($cumulativeproximitystats['prox_90_100yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_90_100yds'] == 'No Data' || $cumulativeproximitystats['prox_90_100yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif ($proximityStatsRound['prox_90_100yds'] > $cumulativeproximitystats['prox_90_100yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_90_100yds'] < $cumulativeproximitystats['prox_90_100yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_90_100yds'] == $cumulativeproximitystats['prox_90_100yds']){!! Html::image('app_images/trend_even_dash.png') !!} @endif</td>
+                </tr>
+                <tr>
+                    <th>Inside 90 Yards</th>
+                    <td>{{ ($proximityStatsRound['prox_inside_90yds'] == 'No Data' ? $proximityStatsRound['prox_inside_90yds'] : number_format($proximityStatsRound['prox_inside_90yds'], 0) . "'") }}</td>
+                    <td>{{ ($cumulativeproximitystats['prox_inside_90yds'] == 'No Data' ? $cumulativeproximitystats['prox_inside_90yds'] : number_format($cumulativeproximitystats['prox_inside_90yds'], 0) . "'") }}</td>
+                    <td>@if($proximityStatsRound['prox_inside_90yds'] == 'No Data' || $cumulativeproximitystats['prox_inside_90yds'] == 'No Data'){!! Html::image('app_images/trend_even_dash.png') !!} @elseif ($proximityStatsRound['prox_inside_90yds'] > $cumulativeproximitystats['prox_inside_90yds']){!! Html::image('app_images/trend_up_arrow_red.png') !!}@elseif ($proximityStatsRound['prox_inside_90yds'] < $cumulativeproximitystats['prox_inside_90yds']){!! Html::image('app_images/trend_down_arrow_green.png') !!} @elseif ($proximityStatsRound['prox_inside_90yds'] == $cumulativeproximitystats['prox_inside_90yds']){!! Html::image('app_images/trend_even_dash.png') !!} @endif</td>
+                </tr>
                 </tbody>
             </table>
-
-
-
-
 
     </div>
 </div>
 </div>
 <script>
+
+//    $('#templateSite tr.highlight').attr('id').val()
+    var round_type = $('#scorestable tr.back9rows').attr('id');
+if(round_type == 9){
+    $('.back9rows').hide();
+}
+//    alert(round_type);
+
     var sum = 0;
     $('.front9_pars').each(function() {
         sum += parseFloat($(this).text());
@@ -497,6 +578,7 @@
     });
     $('.front9_out_scores').html(sum)
 
+if(round_type == 18) {
     var sum = 0;
     $('.back9_pars').each(function() {
         sum += parseFloat($(this).text());
@@ -508,6 +590,8 @@
         sum += parseFloat($(this).text());
     });
     $('.back9_out_scores').html(sum)
+}
+
 
 
 
@@ -521,6 +605,7 @@
             var statusCell = $(this).closest('tr').next('tr').next('tr').find('td').eq(i).length > 0
                     ? $(this).closest('tr').next('tr').next('tr').find('td').eq(i) : null;
 
+if(round_type == 18){
             var back9parsCell = $(this).closest('tr').next('tr').next('tr').next('tr').next('tr').find('td').eq(i).length > 0
                     ? $(this).closest('tr').next('tr').next('tr').next('tr').next('tr').next('tr').find('td').eq(i) : null;
 
@@ -529,19 +614,20 @@
 
             var back9statusCell = $(this).closest('tr').next('tr').next('tr').next('tr').next('tr').next('tr').next('tr').find('td').eq(i).length > 0
                     ? $(this).closest('tr').next('tr').next('tr').next('tr').next('tr').next('tr').next('tr').next('tr').find('td').eq(i) : null;
-
+}
 
 //            alert(back9statusCell.attr('class'));
 
             var status = nextCell.text() - currentCell.text();
+if(round_type == 18) {
             var back9status = back9scoresCell.text() - back9parsCell.text();
-
+}
 
                 if ( status == -3 ) {
                     statusCell.css('backgroundColor', 'chartreuse');
 //                    statusCell.append().text(status);
                     statusCell.append().text('Dbl Eagle');
-                    back9statusCell.css('backgroundColor', 'chartreuse');
+//                    back9statusCell.css('backgroundColor', 'chartreuse');
 //                    back9statusCell.append().text(back9status);
 
                 }
@@ -573,6 +659,8 @@
                     statusCell.css('backgroundColor', 'violet');
                     statusCell.append().text('3+ Bogey');
                 }
+if(round_type == 18){
+
 
                 if ( back9status == -3 ) {
                     back9statusCell.css('backgroundColor', 'chartreuse');
@@ -603,9 +691,7 @@
                     back9statusCell.append().text('3+ Bogey');
                 }
 
-//            if ( currentCell.text() !== nextCell.text()) {
-//                statusCell.css('backgroundColor', 'yellow');
-//            }
+}
             i=i+1;
         });
     });
