@@ -403,44 +403,44 @@
                     <td>{{ $holeresults['eagles'] }}</td>
                     <td>{{ number_format($cumulativeData['total_eagles_round'], 2)}} ({{$cumulativeData['total_eagles']}}/{{$cumulativeData['total_rounds']}}) </td>
                     {{--<td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>--}}
-                    {{--<td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories',['data'=>$cumulativeData['total_eagles_round']] ) }}"><img src="/app_images/trend_down_arrow.png"></a>@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories',['data'=>$cumulativeData['total_eagles_round']] ) }}"><img src="/app_images/trend_up_arrow.png"></a> @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories',['data'=>$cumulativeData['total_rounds']] ) }}"><img src="/app_images/trend_even_dash.png"></a>@endif</td>--}}
-                    <td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories') }}"><img src="/app_images/trend_down_arrow.png"></a>@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories') }}"><img src="/app_images/trend_up_arrow.png"></a> @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round'])<a href="{{ route('scorecategories') }}"><img src="/app_images/trend_even_dash.png"></a>@endif</td>
+                    {{--<td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round'])<a href="{{ route('scoring',['data'=>$cumulativeData['total_eagles_round']] ) }}"><img src="/app_images/trend_down_arrow.png"></a>@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round'])<a href="{{ route('scoring',['data'=>$cumulativeData['total_eagles_round']] ) }}"><img src="/app_images/trend_up_arrow.png"></a> @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round'])<a href="{{ route('scoring',['data'=>$cumulativeData['total_rounds']] ) }}"><img src="/app_images/trend_even_dash.png"></a>@endif</td>--}}
+                    <td>@if($holeresults['eagles'] < $cumulativeData['total_eagles_round'])<a href="{{ route('scoring') }}"><img src="/app_images/trend_down_arrow.png"></a>@elseif ($holeresults['eagles'] > $cumulativeData['total_eagles_round'])<a href="{{ route('scoring') }}"><img src="/app_images/trend_up_arrow.png"></a> @elseif ($holeresults['eagles'] = $cumulativeData['total_eagles_round'])<a href="{{ route('scoring') }}"><img src="/app_images/trend_even_dash.png"></a>@endif</td>
                     {{--route('remindHelper',['event'=>$eventId,'user'=>$userId])--}}
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>Birdies</th>
                     <td>{{ $holeresults['birdies'] }}</td>
                     <td>{{ number_format($cumulativeData['total_birdies_round'], 2)}} ({{$cumulativeData['total_birdies']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($holeresults['birdies'] < $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['birdies'] > $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['birdies'] = $cumulativeData['total_birdies_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>Pars</th>
                     <td>{{ $holeresults['pars'] }}</td>
                     <td>{{ number_format($cumulativeData['total_pars_round'], 2)}} ({{$cumulativeData['total_pars']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($holeresults['pars'] < $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($holeresults['pars'] > $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($holeresults['pars'] = $cumulativeData['total_pars_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 <tr>
                     <th>Bogeys</th>
                     <td>{{ $holeresults['bogeys'] }}</td>
                     <td>{{ number_format($cumulativeData['total_bogeys_round'], 2)}} ({{$cumulativeData['total_bogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($holeresults['bogeys'] < $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['bogeys'] > $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['bogeys'] = $cumulativeData['total_bogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>Dbl Bogeys</th>
                     <td>{{ $holeresults['dblbogeys'] }}</td>
                     <td>{{ number_format($cumulativeData['total_dblbogeys_round'], 2)}} ({{$cumulativeData['total_dblbogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($holeresults['dblbogeys'] < $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['dblbogeys'] > $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['dblbogeys'] = $cumulativeData['total_dblbogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>3+ Bogeys</th>
                     <td>{{ $holeresults['tripleplusbogeys'] }}</td>
                     <td>{{ number_format($cumulativeData['total_3plusbogeys_round'], 2)}} ({{$cumulativeData['total_3plusbogeys']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($holeresults['tripleplusbogeys'] < $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_down_arrow_green.png') !!}@elseif ($holeresults['tripleplusbogeys'] > $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_up_arrow_red.png') !!} @elseif ($holeresults['tripleplusbogeys'] = $cumulativeData['total_3plusbogeys_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>Driving Accuracy</th>
@@ -454,7 +454,7 @@
                     <td>{{ $roundstats['greens'] }}</td>
                     <td>{{ number_format($cumulativeData['total_gir_round'], 2)}} ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($roundstats['greens'] < $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($roundstats['greens'] > $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($roundstats['greens'] = $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scorecategories') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>GIR %</th>

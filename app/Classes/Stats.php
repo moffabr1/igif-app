@@ -265,9 +265,13 @@ class Stats
             ->take($n)
             ->get();
 
+//        $fw_hit_reversed = $fw_hit->reverse();
+        $fw_hit_reversed = array_reverse($fw_hit, false);
 
-        return($fw_hit);
+//        dd($fw_hit_reversed);
 
+//        return($fw_hit);
+        return($fw_hit_reversed);
 
     }
 }

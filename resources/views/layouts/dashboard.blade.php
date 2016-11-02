@@ -414,7 +414,16 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stats<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/player/stats') }}">View stats</a>
+                                    <a href="{{ url ('igif/player/stats/dashboard') }}">Dashboard</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/stats') }}">Scores</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/stats/scoring') }}">Scoring</a>
+                                </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/stats/fairways') }}">Driving Accuracy</a>
                                 </li>
                                 {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
                                     {{--<a href="{{ url ('igif/player/scores/create' ) }}">Enter Scores</a>--}}
