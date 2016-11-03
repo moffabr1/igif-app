@@ -67,6 +67,9 @@ Route::group(['middleware' => 'igif'], function () {
     Route::get('/igif/player/stats/scoring', 'PlayerStatsController@scoring')->name('scoring');
     Route::get('/igif/player/stats/proximity', 'PlayerStatsController@proximity')->name('proximity');
     Route::get('/igif/player/stats/fairways', 'PlayerStatsController@fairways')->name('fairways');
+    Route::get('/igif/player/stats/gir', 'PlayerStatsController@gir')->name('gir');
+    Route::get('/igif/player/stats/putting', 'PlayerStatsController@putting')->name('putting');
+
 
     Route::get('/igif/player/stats/dashboard', function()
     {

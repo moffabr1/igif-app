@@ -454,13 +454,14 @@
                     <td>{{ $roundstats['greens'] }}</td>
                     <td>{{ number_format($cumulativeData['total_gir_round'], 2)}} ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_rounds']}}) </td>
                     <td>@if($roundstats['greens'] < $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_down_arrow.png') !!}@elseif ($roundstats['greens'] > $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_up_arrow.png') !!} @elseif ($roundstats['greens'] = $cumulativeData['total_gir_round']){!! Html::image('app_images/trend_even_dash.png') !!}@endif</td>
-                    <td><a href="{{ route('scoring') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
+                    <td><a href="{{ route('gir') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>GIR %</th>
                     <td>{{ number_format($roundstats['girpercentage'], 2) * 100 . '%' }} &nbsp;&nbsp;({{$roundstats['greens']}}/{{$score->round_type }})</td>
                     <td>{{ number_format($cumulativeData['total_gir_percentage'], 2) * 100 . '%' }}  ({{$cumulativeData['total_gir_hit']}}/{{$cumulativeData['total_gir']}})</td>
                     <td>@if($roundstats['girpercentage'] < $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_down_arrow.png') }}@elseif ($roundstats['girpercentage'] > $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_up_arrow.png') }} @elseif ($roundstats['girpercentage'] = $cumulativeData['total_gir_percentage']){{ Html::image('app_images/trend_even_dash.png') }}@endif</td>
+                    <td><a href="{{ route('gir') }}"><i class="fa fa-line-chart fa-2x" aria-hidden="true"></i></a></td>
                 </tr>
                 <tr>
                     <th>Number of Putts</th>

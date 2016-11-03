@@ -11,6 +11,7 @@ class Stats
 //        $user = Auth::user()->id;
         $rounds = Scores::where('user_id', '=', $user)
             ->get();
+//        dd($rounds);
         return $rounds;
     }
 
@@ -98,6 +99,11 @@ class Stats
         $totalputts_round = 0;
         $totalthreeputts = 0;
         $totalthreeputts_round = 0;
+        $totalzeroputts = 0;
+        $totaloneputts = 0;
+        $totaltwoputts = 0;
+
+
 
 
         $totalchips = 0;
@@ -127,6 +133,7 @@ class Stats
                 $totalputts = $totalputts + $round->$holeputts;
                 $totalchips = $totalchips + $round->$holechips;
                 $totalsand = $totalsand + $round->$holesand;
+
 
                 if($round->$holefw == 1 && $round->scorecard->$holepar > 3){
                     ++$fwhitcount;
@@ -168,6 +175,12 @@ class Stats
 
                 if($round->$holeputts == 3) {
                     ++$totalthreeputts;
+                } elseif($round->$holeputts == 2) {
+                    ++$totaltwoputts;
+                } elseif($round->$holeputts == 1) {
+                    ++$totaloneputts;
+                } elseif($round->$holeputts == 0) {
+                    ++$totalzeroputts;
                 }
 
                 if($round->$holechips == 2) {
@@ -196,6 +209,9 @@ class Stats
         $totalchips_round = $totalchips / $totalrounds;
         $total_2chips_round = $total_2chips / $totalrounds;
         $totalsandsaveavg = $totalsandsaves / $totalsand;
+
+        $total_gir_percentage_formatted = number_format($totalgiravg, 2) * 100 . ' %';
+
         $cumulativedata_array = array_add($cumulativedata_array, 'total_rounds', $totalrounds);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_holes', $totalholes);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_pars', $totalpars);
@@ -218,6 +234,7 @@ class Stats
         $cumulativedata_array = array_add($cumulativedata_array, 'total_gir', $totalgir);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_hit', $gircount);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_percentage', $totalgiravg);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_percentage_formatted', $total_gir_percentage_formatted);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_gir_round', $totalgir_round);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_putts', $totalputts);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_putts_round', $totalputts_round);
@@ -225,6 +242,10 @@ class Stats
         $cumulativedata_array = array_add($cumulativedata_array, 'total_putts_gir', $totalputts_gir);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_threeputts', $totalthreeputts);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_threeputts_round', $totalthreeputts_round);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_zeroputts', $totalzeroputts);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_oneputts', $totaloneputts);
+        $cumulativedata_array = array_add($cumulativedata_array, 'total_twoputts', $totaltwoputts);
+
         $cumulativedata_array = array_add($cumulativedata_array, 'total_chips', $totalchips);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_chips_round', $totalchips_round);
         $cumulativedata_array = array_add($cumulativedata_array, 'total_two_chips', $total_2chips);
@@ -274,4 +295,79 @@ class Stats
         return($fw_hit_reversed);
 
     }
+
+    public static function gir($n) {
+
+        $gir = DB::table('scores')
+            ->select('round_date', 'round_type', 'scorecard_id', 'user_id',
+                DB::raw('sum(hole1_gir + 
+                                hole2_gir + 
+                                hole4_gir + 
+                                hole5_gir + 
+                                hole6_gir + 
+                                hole7_gir + 
+                                hole8_gir + 
+                                hole9_gir + 
+                                hole10_gir + 
+                                hole11_gir + 
+                                hole12_gir + 
+                                hole13_gir + 
+                                hole14_gir + 
+                                hole15_gir + 
+                                hole16_gir + 
+                                hole17_gir + 
+                                hole18_gir) as gir'))
+            ->where('user_id', '=', Auth::user()->id)
+            ->groupBy('round_date')
+            ->orderBy('round_date','desc')
+            ->take($n)
+            ->get();
+
+//        $fw_hit_reversed = $fw_hit->reverse();
+        $gir_reversed = array_reverse($gir, false);
+
+//        dd($fw_hit_reversed);
+
+//        return($fw_hit);
+        return($gir_reversed);
+
+    }
+
+    public static function putting($n) {
+
+//        $rounds = Stats::getUserRounds(Auth::user()->id);
+
+        $putting_stats = DB::table('scores')
+            ->select('round_date', 'round_type', 'scorecard_id', 'user_id',
+                DB::raw('sum(hole1_number_of_putts + 
+                                hole2_number_of_putts + 
+                                hole4_number_of_putts + 
+                                hole5_number_of_putts + 
+                                hole6_number_of_putts + 
+                                hole7_number_of_putts + 
+                                hole8_number_of_putts + 
+                                hole9_number_of_putts + 
+                                hole10_number_of_putts + 
+                                hole11_number_of_putts + 
+                                hole12_number_of_putts + 
+                                hole13_number_of_putts + 
+                                hole14_number_of_putts + 
+                                hole15_number_of_putts + 
+                                hole16_number_of_putts + 
+                                hole17_number_of_putts + 
+                                hole18_number_of_putts) as putts'))
+            ->where('user_id', '=', Auth::user()->id)
+            ->groupBy('round_date')
+            ->orderBy('round_date','desc')
+            ->take($n)
+            ->get();
+
+        $putting_stats_reversed = array_reverse($putting_stats, false);
+
+        return $putting_stats_reversed;
+
+
+    }
+
+
 }
