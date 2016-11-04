@@ -2,6 +2,21 @@
 @section('page_heading','Scoring Stats')
 @section('section')
 
+    <div class="row">
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Scores (last 20 rounds)
+                </div>
+                <div class="panel-body">
+                    <div style="max-width:800px; margin:0 auto;">
+                        <canvas id="player-score-history" width="800" height="300"></canvas>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     <div class="col-sm-12">
         <div class="row">
@@ -40,21 +55,7 @@
 
         {{--new row--}}
 
-        <div class="row">
-            <div class="col-sm-12">
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Scores (last 20 rounds)
-                    </div>
-                    <div class="panel-body">
-                        <div style="max-width:800px; margin:0 auto;">
-                            <canvas id="player-score-history" width="800" height="400"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
             {{--<div class="col-sm-6">--}}
 
                 {{--<div class="panel panel-default">--}}

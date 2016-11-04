@@ -431,6 +431,9 @@
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('igif/player/stats/putting') }}">Putting</a>
                                 </li>
+                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                    <a href="{{ url ('igif/player/stats/proximity') }}">Proximity</a>
+                                </li>
                                 {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
                                     {{--<a href="{{ url ('igif/player/scores/create' ) }}">Enter Scores</a>--}}
                                 {{--</li>--}}

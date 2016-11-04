@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Proximity;
+use App\Classes\Rounds;
 use App\Classes\Stats;
 use App\Scores;
 use Carbon\Carbon;
@@ -18,52 +20,32 @@ class PlayerStatsController extends Controller
     public function index()
     {
         $n = 20;
-        $scoresData = Scores::orderBy('round_date','desc')->take($n)->get();
-        $scoresDataReversed = $scoresData->reverse();
-//dd($scoresData);
+//        $scores = Stats::getScores(Auth::user()->id, $n);
+        $rounds = Rounds::roundsAll(Auth::user()->id, $n);
+        $roundsReversed = $rounds->reverse();
+
         return View::make('igif.player.stats.index')
             ->with([
-                'dates' => $scoresDataReversed->pluck('round_date'),
-                'scores' => $scoresDataReversed->pluck('total_score')
+                'dates' => $roundsReversed->pluck('round_date'),
+                'scores' => $roundsReversed->pluck('total_score')
             ]);
     }
 
-// Working code below
-//    {
-//        $n = 20;
-//        $scoresData = Scores::orderBy('round_date','desc')->take($n)->get();
-//        $scoresDataReversed = $scoresData->reverse();
-//
-////        dd($scoresDataReversed->pluck('total_score'));
-//
-//        return View::make('igif.player.stats.index')
-//            ->with([
-//                'dates' => $scoresDataReversed->pluck('round_date'),
-//                'scores' => $scoresDataReversed->pluck('total_score')
-//            ]);
-//
-//    }
-
     public function scoring() {
-        //here I want to get a count of all the eagles, birdies, pars, bogeys ....
-        //and show them in a bar graph
+
         $n = 20;
-        $scoresData = Scores::orderBy('round_date','desc')->take($n)->get();
-        $scoresDataReversed = $scoresData->reverse();
+//        $scores = Stats::getScores(Auth::user()->id, 20);
+        $rounds = Rounds::roundsAll(Auth::user()->id, $n);
 
-//        $user = Auth::user()->id;
-        $rounds = Stats::getUserRounds(Auth::user()->id);
-        $cumulativeData = Stats::getCumulativeData($rounds);
+        $roundsReversed = $rounds->reverse();
 
-//        dd($rounds);
-//        dd($cumulativeData['total_eagles']);
+        $cumulativeData = Stats::getCumulativeData(Auth::user()->id);
 
-//        return View::make('igif.player.stats.scoring', compact('cumulativeData'));
         return View::make('igif.player.stats.scoring')
             ->with(compact('cumulativeData'))
             ->with([
-                'dates' => $scoresDataReversed->pluck('round_date'),
-                'scores' => $scoresDataReversed->pluck('total_score')
+                'dates' => $roundsReversed->pluck('round_date'),
+                'scores' => $roundsReversed->pluck('total_score')
             ]);
 
     }
@@ -75,16 +57,20 @@ class PlayerStatsController extends Controller
         $fw_hit_data = array_pluck($fw_hit, 'fw_hit');
         $new_dates_data = array_map(array($this, 'date_adj'), $dates_data);
 
+//        dd($dates_data);
+
         $n = 20;
-        $scoresData = Scores::orderBy('round_date','desc')->take($n)->get();
-        $scoresDataReversed = $scoresData->reverse();
+//        $scores = Stats::getScores(Auth::user()->id, 20);
+        $rounds = Rounds::roundsAll(Auth::user()->id, $n);
+        $roundsReversed = $rounds->reverse();
+
+//        dd($roundsReversed);
 
         return View::make('igif.player.stats.fairways')
             ->with([
                 'dates' => $new_dates_data,
                 'fw_hit' => $fw_hit_data,
-//                'dates' => $scoresDataReversed->pluck('round_date'),
-                'scores' => $scoresDataReversed->pluck('total_score')
+                'scores' => $roundsReversed->pluck('total_score')
             ]);
     }
 
@@ -95,8 +81,7 @@ class PlayerStatsController extends Controller
         $gir_data = array_pluck($gir, 'gir');
         $new_gir_dates = array_map(array($this, 'date_adj'), $gir_dates);
 
-        $rounds = Stats::getUserRounds(Auth::user()->id);
-        $cumulative_data = Stats::getCumulativeData($rounds);
+        $cumulative_data = Stats::getCumulativeData(Auth::user()->id);
 
         $total_gir = $cumulative_data['total_gir'];
 
@@ -106,9 +91,6 @@ class PlayerStatsController extends Controller
         $n = 20;
         $scoresData = Scores::orderBy('round_date','desc')->take($n)->get();
         $scoresDataReversed = $scoresData->reverse();
-
-//        dd($total_gir_missed);
-
 
         return View::make('igif.player.stats.gir')
             ->with([
@@ -132,7 +114,7 @@ class PlayerStatsController extends Controller
         $putting_data = array_pluck($putting, 'putts');
 
 
-        $total_putting_data = Stats::getCumulativeData(Stats::getUserRounds(Auth::user()->id));
+        $total_putting_data = Stats::getCumulativeData(Auth::user()->id);
 
         $total_putts = $total_putting_data['total_putts'];
         $total_putts_round = $total_putting_data['total_putts_round'];
@@ -146,9 +128,6 @@ class PlayerStatsController extends Controller
         $total_twoputts = $total_putting_data['total_twoputts'];
 
 
-//        dd($putting);
-
-
         return View::make('igif.player.stats.putting')
             ->with([
                 'putting_dates' => $new_putting_dates,
@@ -160,26 +139,20 @@ class PlayerStatsController extends Controller
 
             ]);
 
-//        dd(number_format($total_putts_hole, 2));
-
-//        dd($rounds);
-//        dd($putting);
-
-
-
-
     }
-
-
-
-
-
-
-
 
     public function proximity() {
 
-        return ("proximity");
+        $user = Auth::user()->id;
+        $rounds = Rounds::roundsAll($user, null);
+        $cumulativeproximitystats = Proximity::getCumulativeProximityStats($rounds);
+
+//      dd($cumulativeproximitystats);
+
+        return View::make('igif.player.stats.proximity')
+            ->with([
+                'proximity_totals' => $cumulativeproximitystats
+            ]);
     }
 
     private function date_adj($dates_data){

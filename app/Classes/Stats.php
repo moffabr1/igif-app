@@ -7,12 +7,78 @@ use Illuminate\Support\Facades\DB;
 
 class Stats
 {
-    public static function getUserRounds($user) {
-//        $user = Auth::user()->id;
-        $rounds = Scores::where('user_id', '=', $user)
-            ->get();
-//        dd($rounds);
-        return $rounds;
+    public static function getRoundStats($round) {
+
+        $roundstats_array = [];
+        $fwhitcount = 0;
+        $gircount = 0;
+        $puttscount = 0;
+        $threeputtscount = 0;
+        $chipscount = 0;
+        $twochipscount = 0;
+        $drivingholescount = 0;
+        $sandsavescount = 0;
+        $fwpercentage = 0;
+        $girpercentage = 0;
+        $puttsperhole = 0;
+        $puttspergir = 0;
+
+
+        for($i = 1;$i<$round->round_type+1;$i++) {
+            $holefw = 'hole' . $i . '_fw_hit';
+            $holegir = 'hole' . $i . '_gir';
+            $holepar = 'hole'.$i.'_par';
+            $holesand = 'hole'.$i.'_sand';
+            $holeputts = 'hole'.$i.'_number_of_putts';
+            $holechips = 'hole'.$i.'_number_of_chips';
+
+            if($round->$holefw == 1 && $round->scorecard->$holepar > 3){
+                ++$fwhitcount;
+            }
+            if($round->$holegir){
+                ++$gircount;
+            }
+            if($round->$holeputts){
+                $puttscount += $round->$holeputts;
+            }
+            if($round->$holeputts > 2) {
+                ++$threeputtscount;
+            }
+            if($round->$holechips){
+                $chipscount += $round->$holechips;
+            }
+            if($round->$holechips >= 2) {
+                ++$twochipscount;
+            }
+
+            if($round->scorecard->$holepar > 3) {
+                ++$drivingholescount;
+            }
+            if($round->$holesand && ($round->$holeputts == 1)) {
+                ++$sandsavescount;
+            }
+        }
+//dd($fwhitcount);
+        //calculate fw hit %
+        $fwpercentage = $fwhitcount / $drivingholescount;
+        $girpercentage = $gircount / $round->round_type;
+        $puttsperhole = $puttscount / $round->round_type;
+        $puttspergir = $puttscount / $gircount;
+
+        $roundstats_array = array_add($roundstats_array, 'fairways', $fwhitcount);
+        $roundstats_array = array_add($roundstats_array, 'greens', $gircount);
+        $roundstats_array = array_add($roundstats_array, 'putts', $puttscount);
+        $roundstats_array = array_add($roundstats_array, 'threeputts', $threeputtscount);
+        $roundstats_array = array_add($roundstats_array, 'chips', $chipscount);
+        $roundstats_array = array_add($roundstats_array, 'twochips', $twochipscount);
+        $roundstats_array = array_add($roundstats_array, 'drivingholes', $drivingholescount);
+        $roundstats_array = array_add($roundstats_array, 'sandsaves', $sandsavescount);
+        $roundstats_array = array_add($roundstats_array, 'fwpercentage', $fwpercentage);
+        $roundstats_array = array_add($roundstats_array, 'girpercentage', $girpercentage);
+        $roundstats_array = array_add($roundstats_array, 'puttsperhole', $puttsperhole);
+        $roundstats_array = array_add($roundstats_array, 'puttspergir', $puttspergir);
+
+        return $roundstats_array;
     }
 
     public static function getHoleResults($score) {
@@ -26,7 +92,6 @@ class Stats
         $tripleplusbogeycount = 0;
 
         //get the number of holes in the round is it 18 or 9
-
 
         for($i = 1;$i<$score->round_type+1 ;$i++) {
             $holepar = 'hole'.$i.'_par';
@@ -69,8 +134,15 @@ class Stats
         return $holeresults_array;
     }
 
-    public static function getCumulativeData($rounds) {
+    public static function getCumulativeData($user) {
         //Grab the data to produce the trending stats
+
+//        $rounds = self::getRounds($user);
+        $rounds = Rounds::roundsAll($user, null);
+
+
+//        dd($rounds);
+
         $cumulativedata_array = [];
 
         $totalrounds = 0;
@@ -103,9 +175,6 @@ class Stats
         $totaloneputts = 0;
         $totaltwoputts = 0;
 
-
-
-
         $totalchips = 0;
         $totalchips_round = 0;
         $total_2chips = 0;
@@ -118,6 +187,8 @@ class Stats
         foreach($rounds as $key => $round){
 
             $totalrounds = $totalrounds + 1;
+
+//            dd($totalrounds);
 
             for($i = 1;$i<$round->round_type+1;$i++) {
                 $holefw = 'hole' . $i . '_fw_hit';

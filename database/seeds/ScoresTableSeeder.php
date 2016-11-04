@@ -15,7 +15,7 @@ class ScoresTableSeeder extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $limit = 60;
+        $limit = 20;
 
         for ($i = 0; $i < $limit; $i++) {
 
@@ -193,24 +193,24 @@ class ScoresTableSeeder extends Seeder
                 'hole17_number_of_putts' => $faker->numberBetween($min = 1, $max = 3),
                 'hole18_number_of_putts' => $faker->numberBetween($min = 1, $max = 2),
 
-                'hole1_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole2_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole3_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole4_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole5_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole6_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole7_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole8_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole9_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole10_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole11_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole12_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole13_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole14_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole15_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole16_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole17_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
-                'hole18_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 50),
+                'hole1_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole2_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole3_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole4_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole5_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole6_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole7_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole8_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole9_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole10_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole11_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole12_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole13_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole14_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole15_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole16_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole17_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
+                'hole18_1st_putt_distance' => $faker->numberBetween($min = 3, $max = 25),
 
                 'hole1_2nd_putt_distance' => $faker->numberBetween($min = 1, $max = 10),
                 'hole2_2nd_putt_distance' => $faker->numberBetween($min = 1, $max = 10),
