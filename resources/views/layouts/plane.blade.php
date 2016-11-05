@@ -39,9 +39,9 @@
 			$("input[name=term]").autocomplete({
 				source: "{{ route("igif.admin.clubs.autocomplete") }}",
 				minLength: 3,
-				select: function(event, ui) {
-					$($this).val(ui.term.value);
-				}
+//				select: function(event, ui) {
+//					$($this).val(ui.term.value);
+//				}
 
 			});
 

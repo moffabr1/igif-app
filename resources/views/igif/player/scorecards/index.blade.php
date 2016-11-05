@@ -53,7 +53,6 @@
                 <option value="">Select a Scorecard</option>
 
                 {{--@if( ! empty($rounds))--}}
-
                     @foreach($rounds as $round)
 
                         <option value="{{$round->id}}" @if (session('scorecard_id') == $round->id) selected="selected" @endif>{{$round->total_score}}   -   {{$round->round_date}} : {{$round->scorecard->course->course_name}} </option>
@@ -71,14 +70,14 @@
     </div>
 </div>
 {!! Form::close() !!}
-{{--{{ "User ID" . $rounds->first()->user_id }}--}}
+{{--{{ "User ID" . $round->round_date  }}--}}
 <div class="row">
     <div class="container">
         <div class="col-sm-10">
         <h3 id="card_header">
-            {{ isset($round) ? $round->round_date : $rounds->first()->round_date }} : {{ isset($round) ? $round->scorecard->course->course_name :  $rounds->first()->scorecard->course->course_name}}
-            {{--{{$round->round_date}} : {{$round->scorecard->course->course_name}}--}}
-            {{--{{Carbon\Carbon::parse($round->round_date)->toFormattedDateString()}}--}}
+            {{ isset($round) ? $single_round->round_date : $rounds->first()->round_date }} : {{ isset($single_round) ? $single_round->scorecard->course->course_name :  $rounds->first()->scorecard->course->course_name}}
+            {{--{{$single_round->round_date}} : {{$single_round->scorecard->course->course_name}}--}}
+            {{--{{Carbon\Carbon::parse($single_round->round_date)->toFormattedDateString()}}--}}
         </h3>
             <table class="table table-sm table-bordered table-responsive" id="scorestable">
                 <tbody>
@@ -127,31 +126,31 @@
                         Par
                     </th>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole1_par : $rounds->first()->scorecard->hole1_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole1_par : $rounds->first()->scorecard->hole1_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole2_par : $rounds->first()->scorecard->hole2_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole2_par : $rounds->first()->scorecard->hole2_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole3_par : $rounds->first()->scorecard->hole3_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole3_par : $rounds->first()->scorecard->hole3_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole4_par : $rounds->first()->scorecard->hole4_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole4_par : $rounds->first()->scorecard->hole4_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole5_par : $rounds->first()->scorecard->hole5_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole5_par : $rounds->first()->scorecard->hole5_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole6_par : $rounds->first()->scorecard->hole6_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole6_par : $rounds->first()->scorecard->hole6_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole7_par : $rounds->first()->scorecard->hole7_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole7_par : $rounds->first()->scorecard->hole7_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole8_par : $rounds->first()->scorecard->hole8_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole8_par : $rounds->first()->scorecard->hole8_par }}
                     </td>
                     <td class="front9_pars">
-                        {{ isset($round) ? $round->scorecard->hole9_par : $rounds->first()->scorecard->hole9_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole9_par : $rounds->first()->scorecard->hole9_par }}
                     </td>
                     <td class="front9_out_pars">
 
@@ -162,31 +161,31 @@
                         Score
                     </th>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole1_score : $rounds->first()->hole1_score }}
+                        {{ isset($single_round) ? $single_round->hole1_score : $rounds->first()->hole1_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole2_score : $rounds->first()->hole2_score }}
+                        {{ isset($single_round) ? $single_round->hole2_score : $rounds->first()->hole2_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole3_score : $rounds->first()->hole3_score }}
+                        {{ isset($single_round) ? $single_round->hole3_score : $rounds->first()->hole3_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole4_score : $rounds->first()->hole4_score }}
+                        {{ isset($single_round) ? $single_round->hole4_score : $rounds->first()->hole4_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole5_score : $rounds->first()->hole5_score }}
+                        {{ isset($single_round) ? $single_round->hole5_score : $rounds->first()->hole5_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole6_score : $rounds->first()->hole6_score }}
+                        {{ isset($single_round) ? $single_round->hole6_score : $rounds->first()->hole6_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole7_score : $rounds->first()->hole7_score }}
+                        {{ isset($single_round) ? $single_round->hole7_score : $rounds->first()->hole7_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole8_score : $rounds->first()->hole8_score }}
+                        {{ isset($single_round) ? $single_round->hole8_score : $rounds->first()->hole8_score }}
                     </td>
                     <td class="front9_scores">
-                        {{ isset($round) ? $round->hole9_score : $rounds->first()->hole9_score }}
+                        {{ isset($single_round) ? $single_round->hole9_score : $rounds->first()->hole9_score }}
                     </td>
                     <td class="front9_out_scores">
 
@@ -229,8 +228,8 @@
                 </tr>
 {{-- START Back 9 Rows--}}
 
-@if($round->round_type == 18)
-                <tr id="{{$round->round_type}}" class="back9rows">
+@if($single_round->round_type == 18)
+                <tr id="{{$single_round->round_type}}" class="back9rows">
                     <td colspan="11">
                         Back 9
                     </td>
@@ -275,31 +274,31 @@
                         Par
                     </th>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole10_par : $rounds->first()->scorecard->hole10_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole10_par : $rounds->first()->scorecard->hole10_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole11_par : $rounds->first()->scorecard->hole11_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole11_par : $rounds->first()->scorecard->hole11_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole12_par : $rounds->first()->scorecard->hole12_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole12_par : $rounds->first()->scorecard->hole12_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole13_par : $rounds->first()->scorecard->hole13_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole13_par : $rounds->first()->scorecard->hole13_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole14_par : $rounds->first()->scorecard->hole14_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole14_par : $rounds->first()->scorecard->hole14_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole15_par : $rounds->first()->scorecard->hole15_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole15_par : $rounds->first()->scorecard->hole15_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole16_par : $rounds->first()->scorecard->hole16_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole16_par : $rounds->first()->scorecard->hole16_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole17_par : $rounds->first()->scorecard->hole17_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole17_par : $rounds->first()->scorecard->hole17_par }}
                     </td>
                     <td class="back9_pars">
-                        {{ isset($round) ? $round->scorecard->hole18_par : $rounds->first()->scorecard->hole18_par }}
+                        {{ isset($single_round) ? $single_round->scorecard->hole18_par : $rounds->first()->scorecard->hole18_par }}
                     </td>
                     <td class="back9_out_pars">
 
@@ -310,31 +309,31 @@
                         Score
                     </th>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole10_score : $rounds->first()->hole10_score }}
+                        {{ isset($single_round) ? $single_round->hole10_score : $rounds->first()->hole10_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole11_score : $rounds->first()->hole11_score }}
+                        {{ isset($single_round) ? $single_round->hole11_score : $rounds->first()->hole11_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole12_score : $rounds->first()->hole12_score }}
+                        {{ isset($single_round) ? $single_round->hole12_score : $rounds->first()->hole12_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole13_score : $rounds->first()->hole13_score }}
+                        {{ isset($single_round) ? $single_round->hole13_score : $rounds->first()->hole13_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole14_score : $rounds->first()->hole14_score }}
+                        {{ isset($single_round) ? $single_round->hole14_score : $rounds->first()->hole14_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole15_score : $rounds->first()->hole15_score }}
+                        {{ isset($single_round) ? $single_round->hole15_score : $rounds->first()->hole15_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole16_score : $rounds->first()->hole16_score }}
+                        {{ isset($single_round) ? $single_round->hole16_score : $rounds->first()->hole16_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole17_score : $rounds->first()->hole17_score }}
+                        {{ isset($single_round) ? $single_round->hole17_score : $rounds->first()->hole17_score }}
                     </td>
                     <td class="back9_scores">
-                        {{ isset($round) ? $round->hole18_score : $rounds->first()->hole18_score }}
+                        {{ isset($single_round) ? $single_round->hole18_score : $rounds->first()->hole18_score }}
                     </td>
                     <td class="back9_out_scores">
 

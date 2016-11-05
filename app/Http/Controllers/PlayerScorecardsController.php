@@ -37,22 +37,31 @@ class PlayerScorecardsController extends Controller
 
         }
 
-            $round = Scores::with('scorecard.course')->find($round_id);
 
-            $holeresults = Stats::getHoleResults($round);
+            $single_round = Rounds::roundById($round_id);
 
-            $roundstats = Stats::getRoundStats($round);
+            $holeresults = Stats::getHoleResults($single_round);
+
+            $roundstats = Stats::getRoundStats($single_round);
 
             $cumulativeData = Stats::getCumulativeData($user);
 
-            $proximityStatsRound = Proximity::getProximityStatsRound($round);
+            $proximityStatsRound = Proximity::getProximityStatsRound($single_round);
             $cumulativeproximitystats = Proximity::getCumulativeProximityStats($rounds);
-
 
             //flash the selected id
             Session::flash('scorecard_id', $round_id);
 
-            return view('igif.player.scorecards.index', compact('round', 'rounds', 'holeresults', 'roundstats', 'cumulativeData', 'proximityStatsRound', 'cumulativeproximitystats'));
+            return view('igif.player.scorecards.index',
+            compact(
+                'single_round',
+                'rounds',
+                'holeresults',
+                'roundstats',
+                'cumulativeData',
+                'proximityStatsRound',
+                'cumulativeproximitystats'
+            ));
         }
 
 
