@@ -33,11 +33,10 @@
 
             {{--@if($cards)--}}
 
-                {{--@foreach($cards->sortBy('course_id') as $card)--}}
+                {{--@foreach($cards as $card)--}}
 
                     {{--<tr>--}}
                         {{--<td>{{$card->id}}</td>--}}
-                        {{--$user->photo->file--}}
                         {{--<td><a href="{{route('igif.admin.clubs.edit', $card->course->club->id)}}">{{$card->course->club->club_name}}</a></td>--}}
                         {{--<td><a href="{{route('igif.admin.courses.edit', $card->course_id)}}">{{$card->course->course_name}}</a></td>--}}
                         {{--<td>{{$card->tee_color}}</td>--}}

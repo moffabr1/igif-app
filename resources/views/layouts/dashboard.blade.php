@@ -414,11 +414,11 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Stats<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/player/stats/dashboard') }}">Dashboard</a>
+                                    <a href="{{ url ('igif/player/stats') }}">Dashboard</a>
                                 </li>
-                                <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/player/stats') }}">Scores</a>
-                                </li>
+                                {{--<li {{ (Request::is('*admin') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/player/stats') }}">Scores</a>--}}
+                                {{--</li>--}}
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('igif/player/stats/scoring') }}">Scoring</a>
                                 </li>
@@ -441,56 +441,56 @@
                             <!-- /.nav-second-level -->
                         </li>
 <!-- /PLAYER:STATS Navigation -->
-                        <!-- /END ADMIN:SCORECARDS Navigation -->
-                        <li {{ (Request::is('*charts') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li {{ (Request::is('*tables') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('igif/tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>
-                        </li>
-                        <li {{ (Request::is('*forms') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                        </li>
-                        <li >
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*panels') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/panels') }}">Panels and Collapsibles</a>
-                                </li>
-                                <li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/buttons' ) }}">Buttons</a>
-                                </li>
-                                <li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>
-                                    <a href="{{ url('igif/notifications') }}">Alerts</a>
-                                </li>
-                                <li {{ (Request::is('*typography') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/typography') }}">Typography</a>
-                                </li>
-                                <li {{ (Request::is('*icons') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/icons') }}"> Icons</a>
-                                </li>
-                                <li {{ (Request::is('*grid') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/grid') }}">Grid</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li {{ (Request::is('*blank') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/blank') }}">Blank Page</a>
-                                </li>
-                                <li>
-                                    <a href="{{ url ('login') }}">Login Page</a>
-                                </li>
-                            </ul>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>
-                            <a href="{{ url ('igif/documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>
-                        </li>
+<!-- /END ADMIN:SCORECARDS Navigation -->
+                        {{--<li {{ (Request::is('*charts') ? 'class="active"' : '') }}>--}}
+                            {{--<a href="{{ url ('igif/charts') }}"><i class="fa fa-bar-chart-o fa-fw"></i> Charts</a>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
+                        {{--<li {{ (Request::is('*tables') ? 'class="active"' : '') }}>--}}
+                            {{--<a href="{{ url ('igif/tables') }}"><i class="fa fa-table fa-fw"></i> Tables</a>--}}
+                        {{--</li>--}}
+                        {{--<li {{ (Request::is('*forms') ? 'class="active"' : '') }}>--}}
+                            {{--<a href="{{ url ('forms') }}"><i class="fa fa-edit fa-fw"></i> Forms</a>--}}
+                        {{--</li>--}}
+                        {{--<li >--}}
+                            {{--<a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>--}}
+                            {{--<ul class="nav nav-second-level">--}}
+                                {{--<li {{ (Request::is('*panels') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/panels') }}">Panels and Collapsibles</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*buttons') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/buttons' ) }}">Buttons</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*notifications') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url('igif/notifications') }}">Alerts</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*typography') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/typography') }}">Typography</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*icons') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/icons') }}"> Icons</a>--}}
+                                {{--</li>--}}
+                                {{--<li {{ (Request::is('*grid') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/grid') }}">Grid</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>--}}
+                            {{--<ul class="nav nav-second-level">--}}
+                                {{--<li {{ (Request::is('*blank') ? 'class="active"' : '') }}>--}}
+                                    {{--<a href="{{ url ('igif/blank') }}">Blank Page</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="{{ url ('login') }}">Login Page</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                            {{--<!-- /.nav-second-level -->--}}
+                        {{--</li>--}}
+                        {{--<li {{ (Request::is('*documentation') ? 'class="active"' : '') }}>--}}
+                            {{--<a href="{{ url ('igif/documentation') }}"><i class="fa fa-file-word-o fa-fw"></i> Documentation</a>--}}
+                        {{--</li>--}}
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

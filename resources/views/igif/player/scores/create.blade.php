@@ -79,7 +79,7 @@
         <input type="hidden" name="user_id" value="{{Auth::user()->id}}"/>
         {{--<input type="hidden" id="hidden_scorecard_id" value="">--}}
 
-        <div class="col-md-8" role="complementary">
+        <div class="col-md-12" role="complementary">
             <div id="course_name_header"><h5></h5></div>
 
             <div class="panel panel-default">
@@ -736,7 +736,7 @@
                         $('#hole7_par').append(teeObj.hole7_par);
                         $('#hole8_par').append(teeObj.hole8_par);
                         $('#hole9_par').append(teeObj.hole9_par);
-alert(teeObj.hole10_distance);
+//alert(teeObj.hole10_distance);
                             if(teeObj.hole10_distance != 0) {
 
                                 $('#back-9-table').show();

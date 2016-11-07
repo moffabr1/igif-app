@@ -265,7 +265,8 @@ class Stats
         $totalfwavg = $fwhitcount / $totalfw;
         $totalgir = $gircount + $girmissedcount;
         $totalgiravg = $gircount / $totalgir;
-        $totalgir_round = $totalgir / $totalrounds;
+        $totalgir_round = $gircount / $totalrounds;
+//        dd($totalgir_round);
         $totalpars_round = $totalpars / $totalrounds;
         $totalbirdies_round = $totalbirdies / $totalrounds;
         $totaleagles_round = $totaleagles / $totalrounds;
@@ -356,6 +357,8 @@ class Stats
             ->orderBy('round_date','desc')
             ->take($n)
             ->get();
+
+//        dd($fw_hit);
 
 //        $fw_hit_reversed = $fw_hit->reverse();
         $fw_hit_reversed = array_reverse($fw_hit, false);

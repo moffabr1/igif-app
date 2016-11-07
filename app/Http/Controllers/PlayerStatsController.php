@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Classes\Proximity;
 use App\Classes\Rounds;
 use App\Classes\Stats;
+use App\Classes\Putting;
+
 use App\Scores;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -53,6 +55,7 @@ class PlayerStatsController extends Controller
     public function fairways() {
 
         $fw_hit = Stats::fw_hit(10);
+
         $dates_data = array_pluck($fw_hit, 'round_date');
         $fw_hit_data = array_pluck($fw_hit, 'fw_hit');
         $new_dates_data = array_map(array($this, 'date_adj'), $dates_data);
@@ -83,6 +86,8 @@ class PlayerStatsController extends Controller
 
         $cumulative_data = Stats::getCumulativeData(Auth::user()->id);
 
+//        dd($cumulative_data);
+
         $total_gir = $cumulative_data['total_gir'];
 
         $total_gir_hit = $cumulative_data['total_gir_hit'];
@@ -104,6 +109,12 @@ class PlayerStatsController extends Controller
 
     }
     public function putting() {
+        $user = Auth::user()->id;
+        $rounds = Rounds::roundsAll($user, null);
+
+        $cumputtingstats = Putting::getCululativePuttingStats($rounds);
+
+//        dd($cumputtingstats);
 
         $n = 10;
         $putting = Stats::putting($n);
@@ -113,6 +124,7 @@ class PlayerStatsController extends Controller
 
         $putting_data = array_pluck($putting, 'putts');
 
+//dd($putting_data);
 
         $total_putting_data = Stats::getCumulativeData(Auth::user()->id);
 
@@ -136,6 +148,8 @@ class PlayerStatsController extends Controller
                 'oneputts' => $total_oneputts,
                 'twoputts' => $total_twoputts,
                 'threeputts' => $total_threeputts,
+                'total_putts_round' => $total_putts_round,
+                'cumputtingstats' => $cumputtingstats
 
             ]);
 

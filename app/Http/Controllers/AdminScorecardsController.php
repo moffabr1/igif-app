@@ -7,6 +7,7 @@ use App\Scorecard;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\DB;
 
 class AdminScorecardsController extends Controller
 {
@@ -15,12 +16,52 @@ class AdminScorecardsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    private $limit = 10;
+
     public function index()
     {
         //
+//
+//        $cards = Scorecard::all()->take(10)
+//            ->paginate($this->limit);
 
-//        $cards = Scorecard::all();
-////        return $cards;
+//        $cards = DB::table('scorecards')
+//            ->get([
+//                'id',
+//                'course_id'
+//            ]);
+
+//        $cards = Scorecard::get([
+//                'id',
+//                'course_id',
+//            ])
+//            -with('course');
+
+//        $cards = Scorecard::with('course', 'club')->get(['id', 'course_id', 'club_id'])->take(10);
+
+
+//        $cards = Scorecard::with('clubs', 'courses')
+//            ->get(
+//                'clubs.id',
+//                'clubs.club_name'
+//            );
+
+
+
+//        $cards = Scorecard::get(['id', 'club_id'])
+//            ->where('club_id' == 4)
+//            ->get();
+
+//        $cards = DB::table('scorecards')->where('club_id', '=', 4)->get();
+
+//        $cards = DB::table('scorecards')
+//            ->get()
+//            ->paginate($this->limit);
+
+
+//        dd($cards);
+
 //        return view('igif.admin.scorecards.index', compact('cards'));
 
 

@@ -50,6 +50,7 @@
                     </div>
                     <div class="panel-body">
                         <div style="max-width:400px; margin:0 auto;">
+                            <canvas id="gir_score" width="800" height="500"></canvas>
                         </div>
                     </div>
                 </div>
@@ -103,7 +104,7 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero:false
+                                beginAtZero:true
                             }
                         }]
                     },
@@ -201,9 +202,59 @@
             });
 
         })();
+    </script>
+    <script>
+        (function() {
+            var ctx3 = document.getElementById("gir_score");
+            var chart = new Chart(ctx3, {
+                type: 'line',
+                data: {
+                    labels: <?php echo json_encode($gir_dates) ?>,
+                    datasets: [{
+                        data: [
+                            {{implode(", ", $gir)}}
+                        ],
+                        label: 'Greens in Regulation',
+                        borderWidth: 1,
+                        backgroundColor: "rgba(0, 200, 81, 0.3)",
+                        borderColor: "rgba(46, 100, 1, 1)"
+                    },
+                        {
+                        data:{{$scores}},
 
+                        label: 'Scores',
+                        borderWidth: 1,
+                        backgroundColor: "rgba(255, 206, 86, 0.2)",
+                        borderColor: "rgba(46, 100, 1, 1)"
 
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    },
+                    title: {
+                        display: true,
+                        text: 'GIR'
+                    },
+                    hover: {
+                        // Overrides the global setting
+                        mode: 'label'
+                    },
+                    legend: {
+                        display: true,
+                        labels: {
+                            fontColor: 'rgb(54, 162, 235)'
+                        }
+                    }
+                }
+            });
 
+        })();
 
     </script>
 

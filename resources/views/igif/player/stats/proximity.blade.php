@@ -48,8 +48,11 @@
 
 
     <script>
-        var polarData = {
-            labels: [
+        var ctx = document.getElementById("proximity_totals").getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+                labels: [
                     '200+ Yards',
                     '175-200 Yards',
                     '150-175 Yards',
@@ -59,95 +62,40 @@
                     '100-110 Yards',
                     '90-100 Yards',
                     'Inside 90 Yards'
-            ],
-            datasets: [
-                {
-                    data: [
-                        {{number_format($proximity_totals['prox_200yds'], 0)}},
-                        {{number_format($proximity_totals['prox_175_200yds'], 0)}},
-                        {{number_format($proximity_totals['prox_150_175yds'], 0)}},
-                        {{number_format($proximity_totals['prox_130_150yds'], 0)}},
-                        {{number_format($proximity_totals['prox_120_130yds'], 0)}},
-                        {{number_format($proximity_totals['prox_110_120yds'], 0)}},
-                        {{number_format($proximity_totals['prox_100_110yds'], 0)}},
-                        {{number_format($proximity_totals['prox_90_100yds'], 0)}},
-                        {{number_format($proximity_totals['prox_inside_90yds'], 0)}}
-                    ],
+                ],
+                datasets: [{
                     backgroundColor: [
-                        "#F7464A",
-                        "#46BFBD",
-                        "#FDB45C",
-                        "#949FB1",
-                        "#4D5360"
+                        "#2ecc71",
+                        "#3498db",
+                        "#95a5a6",
+                        "#9b59b6",
+                        "#f1c40f",
+                        "#e74c3c",
+                        "#34495e",
+                        "#caebf2",
+                        "#a9a9a9"
                     ],
-                    hoverBackgroundColor: [
-                        "#FF5A5E",
-                        "#5AD3D1",
-                        "#FFC870",
-                        "#A8B3C5",
-                        "#616774"
+                    data: [
+                        {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_175_200yds'] > 0) ? number_format($proximity_totals['prox_175_200yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_150_175yds'] > 0) ? number_format($proximity_totals['prox_150_175yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_130_150yds'] > 0) ? number_format($proximity_totals['prox_130_150yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_120_130yds'] > 0) ? number_format($proximity_totals['prox_120_130yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_110_120yds'] > 0) ? number_format($proximity_totals['prox_110_120yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_90_100yds'] > 0) ? number_format($proximity_totals['prox_90_100yds'], 0) : 0 }},
+                        {{ ($proximity_totals['prox_inside_90yds'] > 0) ? number_format($proximity_totals['prox_inside_90yds'], 0) : 0 }}
+
                     ]
                 }]
-        };
-
-
-        window.onload = function(){
-            var ctx = document.getElementById("proximity_totals").getContext("2d");
-
-            window.myPolarArea = new Chart(ctx, {
-//            var myDoughnutChart = new Chart(ctx, {
-                type: 'polarArea',
-                data: polarData,
-                options: {
-
-                    legend: {
-                        display: true,
-                        position: 'left'
-                    },
-                    legendCallback: function(chart) {
-                        console.log(chart.data);
-                        var text = [];
-                        text.push('<ul>');
-                        for (var i=0; i<chart.data.datasets[0].data.length; i++) {
-                            text.push('<li>');
-                            text.push('<span style="background-color:' + chart.data.datasets[0].backgroundColor[i] + '">' + chart.data.datasets[0].data[i] + '</span>');
-                            if (chart.data.labels[i]) {
-                                text.push(chart.data.labels[i]);
-                            }
-                            text.push('</li>');
-                        }
-                        text.push('</ul>');
-                        return text.join("");
-                    },
-                    responsive: true,
-                    elements: {
-                        arc: {
-                            borderColor: "#000000"
-                        }
-                    },
-                    tooltips: {
-                        callbacks: {
-                            label: function(tooltipItem, data) {
-                                var dataset = data.datasets[tooltipItem.datasetIndex];
-                                var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
-                                    return previousValue + currentValue;
-                                });
-                                var currentValue = dataset.data[tooltipItem.index];
-//                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);
-                                return currentValue + "'";
-                            }
-                        }
-                    }
-
-                },
-                animation:{
-                    animateScale: true
+            },
+            options: {
+                legend: {
+                    display: true,
+                    position: 'left'
                 }
-            });
-        };
-
-//        document.getElementById('js-legend').innerHTML = myPolarArea.generateLegend();
-
+            }
+        });
     </script>
 
     <script>
@@ -170,16 +118,33 @@
                     datasets: [{
                         label: 'Proximity',
                         data: [
-                            {{number_format($proximity_totals['prox_200yds'], 0)}},
-                            {{number_format($proximity_totals['prox_175_200yds'], 0)}},
-                            {{number_format($proximity_totals['prox_150_175yds'], 0)}},
-                            {{number_format($proximity_totals['prox_130_150yds'], 0)}},
-                            {{number_format($proximity_totals['prox_120_130yds'], 0)}},
-                            {{number_format($proximity_totals['prox_110_120yds'], 0)}},
-                            {{number_format($proximity_totals['prox_100_110yds'], 0)}},
-                            {{number_format($proximity_totals['prox_90_100yds'], 0)}},
-                            {{number_format($proximity_totals['prox_inside_90yds'], 0)}}
+                            {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+                            {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+                            {{ ($proximity_totals['prox_175_200yds'] > 0) ? number_format($proximity_totals['prox_175_200yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_150_175yds'] > 0) ? number_format($proximity_totals['prox_150_175yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_130_150yds'] > 0) ? number_format($proximity_totals['prox_130_150yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_120_130yds'] > 0) ? number_format($proximity_totals['prox_120_130yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_110_120yds'] > 0) ? number_format($proximity_totals['prox_110_120yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_90_100yds'] > 0) ? number_format($proximity_totals['prox_90_100yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_inside_90yds'] > 0) ? number_format($proximity_totals['prox_inside_90yds'], 0) : 0 }}
+
                         ],
+                        {{--{{number_format($proximity_totals['prox_200yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_175_200yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_150_175yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_130_150yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_120_130yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_110_120yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_100_110yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_90_100yds'], 0)}},--}}
+                            {{--{{number_format($proximity_totals['prox_inside_90yds'], 0)}}--}}
+                        {{--],--}}
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -200,13 +165,21 @@
                     }]
                 },
                 options: {
+                    legend: {
+                        display:false
+                    },
                     scales: {
                         xAxes: [{
+                            display:false,
                             gridLines: {
                                 display:false
                             }
                         }],
                         yAxes: [{
+                            ticks: {
+                                beginAtZero:true,
+                                display: false
+                            },
                             gridLines: {
                                 display:false
                             }
@@ -215,16 +188,9 @@
                     gridLines: {
                         drawBorder: false
                     },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero:true
-                            }
-                        }]
-                    },
                     title: {
                         display: true,
-                        text: 'Chart of scoring results by type'
+                        text: 'Approach Proximity'
                     },
                     tooltips: {
                         callbacks: {

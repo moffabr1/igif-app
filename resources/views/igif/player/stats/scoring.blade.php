@@ -156,6 +156,7 @@
                 scales: {
                     yAxes: [{
                         ticks: {
+                            suggestedMin: 60,
                             beginAtZero:false
                         }
                     }]

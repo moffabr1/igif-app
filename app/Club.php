@@ -40,7 +40,7 @@ class Club extends Model
 
     public function score() {
 
-        return $this->hasMany('App\Score');
+        return $this->hasMany('App\Scores');
 
     }
 

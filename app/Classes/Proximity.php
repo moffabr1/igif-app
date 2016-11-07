@@ -66,63 +66,63 @@ class Proximity
             if($round->$holedistancetogreen >= 200){
                 //distance to green greater than 200
                 ++$approaches_from_200yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_200yds_totalfeet = $prox_200yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 175 && $round->$holedistancetogreen < 200){
                 //distance to green between 175 and 200 yards
                 ++$approaches_175_200yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_175_200yds_totalfeet = $prox_175_200yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 150 && $round->$holedistancetogreen < 175){
                 //distance to green between 150 and 175 yards
                 ++$approaches_150_175yds;;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_150_175yds_totalfeet = $prox_150_175yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 130 && $round->$holedistancetogreen < 150){
                 //distance to green between 130 and 150 yards
                 ++$approaches_130_150yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($holechips == 0 && $round->$holesand == 0) {
                     $prox_130_150yds_totalfeet = $prox_130_150yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 120 && $round->$holedistancetogreen < 130){
                 //distance to green between 120 and 130 yards
                 ++$approaches_120_130yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_120_130yds_totalfeet = $prox_120_130yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 110 && $round->$holedistancetogreen < 120){
                 //distance to green between 110 and 120 yards
                 ++$approaches_110_120yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_110_120yds_totalfeet = $prox_110_120yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 100 && $round->$holedistancetogreen < 110){
                 //distance to green between 100 and 110 yards
                 ++$approaches_100_110yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_100_110yds_totalfeet = $prox_100_110yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen >= 90 && $round->$holedistancetogreen < 100){
                 //distance to green between 100 and 110 yards
                 ++$approaches_90_100yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_90_100yds_totalfeet = $prox_90_100yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
             if($round->$holedistancetogreen > 0 && $round->$holedistancetogreen < 90){
                 //distance to green between 0 and 90 yards
                 ++$approaches_inside_90yds;
-                if($holechips == 0 && $holesand == 0) {
+                if($round->$holechips == 0 && $round->$holesand == 0) {
                     $prox_inside_90yds_totalfeet = $prox_inside_90yds_totalfeet + $round->$holefirstputtdistance;
                 }
             }
@@ -247,63 +247,65 @@ class Proximity
                 if($round->$holedistancetogreen >= 200){
                     //distance to green greater than 200
                     ++$approaches_from_200yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_200yds_totalfeet = $prox_200yds_totalfeet + $round->$holefirstputtdistance;
+
+//                        dd($approaches_from_200yds);
                     }
                 }
                 if($round->$holedistancetogreen >= 175 && $round->$holedistancetogreen < 200){
                     //distance to green between 175 and 200 yards
                     ++$approaches_175_200yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_175_200yds_totalfeet = $prox_175_200yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 150 && $round->$holedistancetogreen < 175){
                     //distance to green between 150 and 175 yards
                     ++$approaches_150_175yds;;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_150_175yds_totalfeet = $prox_150_175yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 130 && $round->$holedistancetogreen < 150){
                     //distance to green between 130 and 150 yards
                     ++$approaches_130_150yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_130_150yds_totalfeet = $prox_130_150yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 120 && $round->$holedistancetogreen < 130){
                     //distance to green between 120 and 130 yards
                     ++$approaches_120_130yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_120_130yds_totalfeet = $prox_120_130yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 110 && $round->$holedistancetogreen < 120){
                     //distance to green between 110 and 120 yards
                     ++$approaches_110_120yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_110_120yds_totalfeet = $prox_110_120yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 100 && $round->$holedistancetogreen < 110){
                     //distance to green between 100 and 110 yards
                     ++$approaches_100_110yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_100_110yds_totalfeet = $prox_100_110yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen >= 90 && $round->$holedistancetogreen < 100){
                     //distance to green between 100 and 110 yards
                     ++$approaches_90_100yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_90_100yds_totalfeet = $prox_90_100yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }
                 if($round->$holedistancetogreen > 0 && $round->$holedistancetogreen < 90){
                     //distance to green between 0 and 90 yards
                     ++$approaches_inside_90yds;
-                    if($holechips == 0 && $holesand == 0) {
+                    if($round->$holechips == 0 && $round->$holesand == 0) {
                         $prox_inside_90yds_totalfeet = $prox_inside_90yds_totalfeet + $round->$holefirstputtdistance;
                     }
                 }

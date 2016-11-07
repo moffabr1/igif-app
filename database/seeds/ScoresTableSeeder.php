@@ -15,11 +15,11 @@ class ScoresTableSeeder extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $limit = 20;
+        $limit = 2;
 
         for ($i = 0; $i < $limit; $i++) {
 
-            $year = rand(2009, 2016);
+            $year = rand(2009, 2015);
             $month = rand(1, 12);
             $day = rand(1, 28);
 
@@ -32,7 +32,7 @@ class ScoresTableSeeder extends Seeder
 //                'email' => $faker->unique()->email,
 //                'contact_number' => $faker->phoneNumber,
 
-                'user_id' => $faker->numberBetween($min = 1, $max = 2),
+                'user_id' => $faker->numberBetween($min = 1, $max = 1),
                 'scorecard_id' => $faker->numberBetween($min = 1, $max = 2000),
                 'course_id' => $faker->numberBetween($min = 1, $max = 2000),
                 'club_id' => $faker->numberBetween($min = 1, $max = 2000),

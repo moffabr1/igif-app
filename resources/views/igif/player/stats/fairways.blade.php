@@ -104,7 +104,7 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:false
+                            beginAtZero:true
                         }
                     }]
                 },
@@ -147,19 +147,19 @@
                     borderColor: "rgba(54, 162, 235, 1)"
 
                 },
-                    {
-                        data:{{ $scores }},
-                        label: 'Scores',
-                        borderWidth: 1,
-                        backgroundColor: "rgba(255, 206, 86, 0.2)",
-                        borderColor: "rgba(54, 162, 235, 1)"
-                    }]
+                {
+                    data:{{ $scores }},
+                    label: 'Scores',
+                    borderWidth: 1,
+                    backgroundColor: "rgba(255, 206, 86, 0.2)",
+                    borderColor: "rgba(54, 162, 235, 1)"
+                }]
             },
             options: {
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero:false
+                            beginAtZero:true
                         }
                     }]
                 },

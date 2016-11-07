@@ -46,6 +46,8 @@ class PlayerScorecardsController extends Controller
 
             $cumulativeData = Stats::getCumulativeData($user);
 
+//        dd($cumulativeData);
+
             $proximityStatsRound = Proximity::getProximityStatsRound($single_round);
             $cumulativeproximitystats = Proximity::getCumulativeProximityStats($rounds);
 

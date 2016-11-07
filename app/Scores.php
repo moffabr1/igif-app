@@ -236,6 +236,6 @@ class Scores extends Model
     }
 
     public function club() {
-        return $this->belongsTo('App\Course');
+        return $this->belongsTo('App\Club');
     }
 }
