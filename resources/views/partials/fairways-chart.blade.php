@@ -33,11 +33,11 @@
 
 <script>
     (function() {
-        var ctx = document.getElementById("fairways_hit");
-        var chart = new Chart(ctx, {
+        var ctx99 = document.getElementById("fairways_hit");
+        var chart = new Chart(ctx99, {
             type: 'line',
             data: {
-                labels: <?php echo json_encode($dates) ?>,
+                labels: ['label 1', 'label 2'],
                 datasets: [
                     {
                         label: "Fairways Hit",
@@ -61,7 +61,7 @@
                         hoverBorderWidth: 3,
                         data:
                                 [
-                                    {{implode(", ", $fw_hit)}}
+                                    1, 2
                                 ],
                         spanGaps: false,
                     }],

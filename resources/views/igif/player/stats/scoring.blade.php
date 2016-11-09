@@ -20,37 +20,35 @@
 
     <div class="col-sm-12">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         Scoring by Type (all rounds)
                     </div>
                     <div class="panel-body">
-                        <div style="max-width:400px; margin:0 auto;">
-                            <canvas id="player-score-type" width="800" height="400"></canvas>
+                        <div style="max-width:800px; margin:0 auto;">
+                            <canvas id="player-score-type" width="800" height=300"></canvas>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="col-sm-6">
+            {{--<div class="col-sm-6">--}}
 
-                <div class="panel panel-default">
+                {{--<div class="panel panel-default">--}}
 
-                    <div class="panel-heading">
+                    {{--<div class="panel-heading">--}}
 
-                    </div>
+                    {{--</div>--}}
 
-                    <div class="panel-body">
-                        <div style="max-width:400px; margin:0 auto;">
-                            body
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+                    {{--<div class="panel-body">--}}
+                        {{--<div style="max-width:400px; margin:0 auto;">--}}
+                            {{--body--}}
+                        {{--</div>--}}
+                    {{--</div>--}}
+                {{--</div>--}}
+            {{--</div>--}}
         </div>
 
         {{--new row--}}

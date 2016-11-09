@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class Putting
 {
 
-    public static function getCululativePuttingStats($rounds)
+    public static function puttingStats_total($rounds)
     {
         $putting_stats_array = [];
 
@@ -504,5 +504,11 @@ class Putting
         return $putting_stats_array;
 
     }
+
+    public static function puttingStats_round($round)
+    {
+
+    }
+
 
 }

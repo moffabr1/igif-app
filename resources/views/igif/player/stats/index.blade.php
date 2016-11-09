@@ -1,32 +1,16 @@
 @extends('layouts.dashboard')
-@section('page_heading','Stats')
+@section('page_heading','Stats Dashboard')
 @section('section')
 
 
-    <canvas id="player-scores" width="800" height="300"></canvas>
-
-    <script src="{{ asset("assets/scripts/Chart.min.js") }}" type="text/javascript"></script>
-
-    <script>
-        (function() {
-            var ctx = document.getElementById('player-scores').getContext('2d');
-            var chart = {
-                labels: <?php echo $dates ?>,
-                datasets: [{
-                    data: {{ $scores }},
-                    fillColor : "rgba(151,187,205,0.2)",
-                    strokeColor : "rgba(151,187,205,1)",
-                    pointColor : "rgba(151,187,205,1)",
-                    pointStrokeColor : "#fff",
-                    pointHighlightFill : "#fff",
-                    pointHighlightStroke : "rgba(151,187,205,1)",
-                }]
-            };
-
-//            new Chart(ctx).Bar(chart, { bezierCurve: false });
-            new Chart(ctx).Line(chart, { bezierCurve: true });
-        })();
-    </script>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                @include('partials.fairways-chart')
+            </div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4"></div>
+        </div>
+    </div>
 
 @stop

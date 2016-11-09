@@ -15,8 +15,9 @@
     </style>
 
     {{--<canvas id="proximity_totals" width="800" height="500"></canvas>--}}
-
-    <div class="col-md-8">
+<div class="col-md-12">
+    <div class="row">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Proximity to the Hole
@@ -29,7 +30,7 @@
         </div>
     </div>
 
-    <div class="col-md-8">
+    <div class="col-lg-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 Proximity to the Hole Radar
@@ -41,8 +42,8 @@
             </div>
         </div>
     </div>
-
-
+</div>
+</div>
 
     <script src="{{ asset("assets/scripts/Chart.2.3.min.js") }}" type="text/javascript"></script>
 
@@ -91,7 +92,7 @@
             },
             options: {
                 legend: {
-                    display: true,
+                    display: false,
                     position: 'left'
                 }
             }

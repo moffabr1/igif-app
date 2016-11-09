@@ -22,7 +22,7 @@ class Rounds
             ->orderBy('round_date', 'desc')
             ->take($n)
             ->get();
-
+//dd($rounds);
         return $rounds;
 
     }

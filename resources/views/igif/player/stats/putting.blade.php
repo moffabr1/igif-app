@@ -114,10 +114,9 @@
                                     ONE-PUTT PERCENTAGE
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_one_putt_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_one_putt_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    [CONTENT]
                                 </td>
                             </tr>
                             <tr>
@@ -125,7 +124,7 @@
                                     LAG PUTT EFFICIENCY
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['lag_putt_efficiency_formatted']}}
+                                    {{$puttingStats_total_array['lag_putt_efficiency_formatted']}}
                                 </td>
                                 <td>
                                     % of 2 Putts from 25+ feet
@@ -136,7 +135,7 @@
                                     3-PUTT AVOIDANCE
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['three_putt_avoidance']}}
+                                    {{$puttingStats_total_array['three_putt_avoidance']}}
                                 </td>
                                 <td>
                                     Total 3 Putts Divided by the Total # of Holes
@@ -147,7 +146,7 @@
                                     PUTTS PER ROUND
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['total_putts_round']}}
+                                    {{$puttingStats_total_array['total_putts_round']}}
                                 </td>
                                 <td>
                                     Putts per Round Average
@@ -158,10 +157,10 @@
                                     PUTTING FROM 3'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_three_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_three_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_three_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_three_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -169,10 +168,10 @@
                                     PUTTING FROM 4'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_four_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_four_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_four_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_four_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -180,10 +179,10 @@
                                     PUTTING FROM 5'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_five_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_five_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_five_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_five_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -191,10 +190,10 @@
                                     PUTTING FROM 6'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_six_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_six_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_six_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_six_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -202,10 +201,10 @@
                                     PUTTING FROM 7'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_seven_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_seven_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_seven_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_seven_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -213,10 +212,10 @@
                                     PUTTING FROM 8'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_eight_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_eight_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_eight_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_eight_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -224,10 +223,10 @@
                                     PUTTING FROM 9'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_nine_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_nine_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_nine_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_nine_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -235,10 +234,10 @@
                                     PUTTING FROM 10'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_ten_footer_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_ten_footer_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_ten_footer_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_ten_footer_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -246,10 +245,10 @@
                                     PUTTING FROM 4-8'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_four_to_eight_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_four_to_eight_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_four_to_eight_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_four_to_eight_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -257,10 +256,10 @@
                                     PUTTING FROM INSIDE 10'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_inside_ten_feet_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_inside_ten_feet_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_inside_ten_eight_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_inside_ten_eight_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -268,10 +267,10 @@
                                     PUTTING FROM 10-15'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_ten_to_fifteen_feet_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_ten_to_fifteen_feet_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_ten_to_fifteen_feet_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_ten_to_fifteen_feet_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -279,10 +278,10 @@
                                     PUTTING FROM 15-20'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_fiftenn_to_twenty_feet_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_fiftenn_to_twenty_feet_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_fiftenn_to_twenty_feet_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_fiftenn_to_twenty_feet_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -290,10 +289,10 @@
                                     PUTTING FROM 20-25'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_twenty_to_twentyfive_feet_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_twenty_to_twentyfive_feet_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_twenty_to_twentyfive_feet_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_twenty_to_twentyfive_feet_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -301,10 +300,10 @@
                                     PUTTING FROM > 25'
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_over_twentyfive_feet_make_percentage_formatted']}}
+                                    {{$puttingStats_total_array['putting_over_twentyfive_feet_make_percentage_formatted']}}
                                 </td>
                                 <td>
-                                    ATTEMPTS = {{$cumputtingstats['putting_over_twentyfive_feet_make_total']}}
+                                    ATTEMPTS = {{$puttingStats_total_array['putting_over_twentyfive_feet_make_total']}}
                                 </td>
                             </tr>
                             <tr>
@@ -312,10 +311,9 @@
                                     LONGEST PUTT
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['putting_longest_putt_feet']}}'
+                                    {{$puttingStats_total_array['putting_longest_putt_feet']}}'
                                 </td>
                                 <td>
-                                    [CONTENT]
                                 </td>
                             </tr>
                             <tr>
@@ -323,7 +321,7 @@
                                     APPROACH PUTT PERFORMANCE
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['total_approach_putt_performance']}}
+                                    {{$puttingStats_total_array['total_approach_putt_performance']}}
                                 </td>
                                 <td>
                                     Avg distance to the hole after the first putt
@@ -334,7 +332,7 @@
                                     BIRDIE OR BETTER CONVERSION PERCENTAGE
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['birdie_or_better_conversion_percentage_formatted']}}
+                                    {{$puttingStats_total_array['birdie_or_better_conversion_percentage_formatted']}}
                                 </td>
                                 <td>
                                     % showing Birdies or better are made per GIR
@@ -345,7 +343,7 @@
                                     PAR OR BETTER CONVERSION PERCENTAGE
                                 </th>
                                 <td>
-                                    {{$cumputtingstats['par_or_better_conversion_percentage_formatted']}}
+                                    {{$puttingStats_total_array['par_or_better_conversion_percentage_formatted']}}
                                 </td>
                                 <td>
                                     % showing Pars made per GIR
@@ -508,12 +506,12 @@
                     ],
                     datasets: [{
                         data: [
-                            {{$cumputtingstats['putting_four_to_eight_make_percentage']}},
-                            {{$cumputtingstats['putting_inside_ten_feet_make_percentage']}},
-                            {{$cumputtingstats['putting_ten_to_fifteen_feet_make_percentage']}},
-                            {{$cumputtingstats['putting_fiftenn_to_twenty_feet_make_percentage']}},
-                            {{$cumputtingstats['putting_twenty_to_twentyfive_feet_make_percentage']}},
-                            {{$cumputtingstats['putting_over_twentyfive_feet_make_percentage']}}
+                            {{$puttingStats_total_array['putting_four_to_eight_make_percentage']}},
+                            {{$puttingStats_total_array['putting_inside_ten_feet_make_percentage']}},
+                            {{$puttingStats_total_array['putting_ten_to_fifteen_feet_make_percentage']}},
+                            {{$puttingStats_total_array['putting_fiftenn_to_twenty_feet_make_percentage']}},
+                            {{$puttingStats_total_array['putting_twenty_to_twentyfive_feet_make_percentage']}},
+                            {{$puttingStats_total_array['putting_over_twentyfive_feet_make_percentage']}}
 
 
 

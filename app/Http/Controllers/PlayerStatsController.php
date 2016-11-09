@@ -112,7 +112,7 @@ class PlayerStatsController extends Controller
         $user = Auth::user()->id;
         $rounds = Rounds::roundsAll($user, null);
 
-        $cumputtingstats = Putting::getCululativePuttingStats($rounds);
+        $puttingStats_total = Putting::puttingStats_total($rounds);
 
 //        dd($cumputtingstats);
 
@@ -123,6 +123,7 @@ class PlayerStatsController extends Controller
         $new_putting_dates = array_map(array($this, 'date_adj'), $putting_dates);
 
         $putting_data = array_pluck($putting, 'putts');
+
 
 //dd($putting_data);
 
@@ -149,7 +150,7 @@ class PlayerStatsController extends Controller
                 'twoputts' => $total_twoputts,
                 'threeputts' => $total_threeputts,
                 'total_putts_round' => $total_putts_round,
-                'cumputtingstats' => $cumputtingstats
+                'puttingStats_total_array' => $puttingStats_total
 
             ]);
 

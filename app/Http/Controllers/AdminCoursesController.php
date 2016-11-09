@@ -21,6 +21,27 @@ class AdminCoursesController extends Controller
 
     private $limit = 10;
 
+    public function autocomplete(Request $request)
+    {
+        if ($request->ajax())
+        {
+            return Course::select(['id', 'course_name as value'])->where(function($query) use ($request) {
+
+                if ( ( $term = $request->get("term")) ) {
+
+                    $keywords = '%' . $term . '%';
+                    $query->orWhere("course_name", 'LIKE', $keywords);
+//                    $query->orWhere("city_name", 'LIKE', $keywords);
+//                    $query->orWhere("state_province_name", 'LIKE', $keywords);
+                }
+
+            })
+                ->orderBy('course_name', 'asc')
+                ->take(5)
+                ->get();
+        }
+    }
+
     public function index(Request $request)
     {
         //

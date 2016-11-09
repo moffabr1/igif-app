@@ -8,7 +8,8 @@
     @endif
 
     <div class="container">
-        <table border="0" class="table table-striped">
+        <div class="col-md-10">
+        <table class="table table-striped">
             <thead>
             <tr>
                 <td colspan="2">
@@ -69,6 +70,7 @@
             </tbody>
         </table>
     </div>
+</div>
 
     <div class="text-center">
         <nav>
