@@ -26,16 +26,16 @@ class Tee
         $totalrounds = 0;
         $totalholes = 0;
 
-        //Drive Distance Variables
-        $total_drive_holes = 0;
+        //DRIVING DISTANCE = The average number of yards for all drives
+        //Drive Distance variables
+        $total_drive_opportunities = 0;
         $total_drive_distance = 0;
         $avg_drive_distance_all_rounds = 0;
 
-        //DRIVING DISTANCE = The average number of yards for all drives
-        $driving_distance_avg = 0;
-
-        $myArray = array();
-        $aMemberships = [];
+        //Total Fairway Hit & Miss Data variables
+        $fwhitcount = 0;
+        $fwmissedcount = 0;
+        $totalfw_opportunities = 0;
 
         foreach($rounds as $key => $round) {
             ++$totalrounds;
@@ -52,33 +52,37 @@ class Tee
 
                 ++$totalholes;
 
-                $myArray[] = array(
-                    $holedrivedistance => $round->$holedrivedistance,
-                    $holechips => $round->$holechips,
-                    $holefw => $round->$holefw
-                );
-//                $myArray[] = $aMemberships[$round['ID']] = $round[$round->$holepar];
-
                 if($round->scorecard->$holepar > 3 && $round->$holedrivedistance > 0) {
                     //We have a driveable hole with a recorded drive. We dont want to
                     //count the holes where no drive data was entered
-                    ++$total_drive_holes;
+                    ++$total_drive_opportunities;
                     $total_drive_distance += $round->$holedrivedistance;
-
-
                 }
+                if($round->$holefw == 1 && $round->scorecard->$holepar > 3){
+                    ++$fwhitcount;
+                } elseif ($round->$holefw == 0 && $round->scorecard->$holepar > 3) {
+                    ++$fwmissedcount;
+                }
+
             }
         }
 
         //Avg Drive Distance per Driveable Hole and Hole that data was entered
-        $avg_drive_distance_all_rounds = $total_drive_distance / $total_drive_holes;
+        $avg_drive_distance_all_rounds = $total_drive_distance / $total_drive_opportunities;
 
-//        dd($avg_drive_distance_all_rounds);
-        dd($myArray);
+        //Avg Fairways Hit Percentage
+        $totalfw_opportunities = $fwhitcount + $fwmissedcount;
+        $totalfw_percentage = $fwhitcount / $totalfw_opportunities;
+        $total_fw_percentage_formatted = number_format($totalfw_percentage, 2) * 100 . '%';
 
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_fw_opportunities', $totalfw_opportunities);
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_fw_hit', $fwhitcount);
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_fw_percentage', $totalfw_percentage);
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_fw_percentage_formatted', $total_fw_percentage_formatted);
 
-
-        return $offthetee_data_array;
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_drive_distance', $total_drive_distance);
+        $offthetee_data_array = array_add($offthetee_data_array, 'total_drive_distance_opportunities', $total_drive_opportunities);
+        $offthetee_data_array = array_add($offthetee_data_array, 'avg_drive_distance_all_rounds', $avg_drive_distance_all_rounds);
 
 //DRIVING ACCURACY PERCENTAGE (FW HIT) = The percentage of time a tee shot
 // comes to rest in the fairway (regardless of club)
@@ -121,8 +125,46 @@ class Tee
 
     }
 
-    public static function offthetee_round($user, $n)
+    public static function drive_distance_round($user, $n)
     {
+
+        $rounds = Rounds::roundsAll($user, $n);
+
+        $totalrounds = 0;
+
+        foreach($rounds as $key => $round) {
+            ++$totalrounds;
+            $round_id = $round->id;
+            $round_date = $round->round_date;
+            $totaldistance = 0;
+            $numberofholes = 0;
+            $score = 0;
+
+            for ($i = 1; $i < $round->round_type + 1; $i++) {
+
+                $holedrivedistance = 'hole' . $i . '_drive_distance';
+                $holepar = 'hole'.$i.'_par';
+                $holescore = 'hole' . $i . '_score';
+
+                $score += $round->$holescore;
+                $array[$key]['round_score'] = $score;
+
+                if ($round->$holedrivedistance > 0 && $round->scorecard->$holepar > 3) {
+                    ++$numberofholes;
+//                    $totaldistance = $totaldistance + $round->$holedrivedistance;
+                    $totaldistance += $round->$holedrivedistance;
+
+                    $array[$key]['round_id'] = $round_id;
+                    $array[$key]['round_date'] = $round_date;
+                    $array[$key]['driving_distance'] = $totaldistance;
+                    $array[$key]['nummber_of_holes'] = $numberofholes;
+
+                }
+
+            }
+        }
+
+        return $array;
 
     }
 }

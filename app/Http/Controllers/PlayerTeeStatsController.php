@@ -17,14 +17,21 @@ class PlayerTeeStatsController extends Controller
         //Grab the current logged in user
         $user = Auth::user()->id;
 
+        //Grab the Driving Distance Data per Round
+//        $drive_distance_round = Tee::drive_distance_round($user, 10);
+
+
         //Grab the fw hit data by round and date for all user rounds
         $fw_hit_round = Tee::fw_hit_round(null);
 
-        //Grad the Off the Tee data
+        //Grab the Off the Tee data
         $offthetee_data = Tee::offthetee_totals($user, null);
 
+        //Grab the Drive Distance Data per Round
+        $drive_distance_round = Tee::drive_distance_round($user, null);
 
-        dd($fw_hit_round);
+
+        dd($drive_distance_round);
 
 //dd($scrambling_data);
 
