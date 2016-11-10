@@ -423,7 +423,7 @@
                                     <a href="{{ url ('igif/player/stats/scoring') }}">Scoring</a>
                                 </li>
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
-                                    <a href="{{ url ('igif/player/stats/fairways') }}">Driving Accuracy</a>
+                                    <a href="{{ url ('igif/player/stats/tee') }}">Off the Tee</a>
                                 </li>
                                 <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
                                     <a href="{{ url ('igif/player/stats/gir') }}">Greens in Regulation</a>

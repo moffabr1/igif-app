@@ -96,8 +96,8 @@
                                 ],
                         label: 'Fairways Hit',
                         borderWidth: 1,
-                        backgroundColor: "rgba(54, 162, 235, 0.2)",
-                        borderColor: "rgba(54, 162, 235, 1)"
+                        backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
 
                     }]
                 },
@@ -105,7 +105,8 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero:true
+                                beginAtZero:true,
+                                suggestedMax: 18,
                             }
                         }]
                     },
@@ -142,7 +143,7 @@
                                 [
                                     {{implode(", ", $driving_distance_avg_round)}}
                                 ],
-                        label: 'Fairways Hit',
+                        label: 'Drive Distance',
                         borderWidth: 1,
                         backgroundColor: "rgba(54, 162, 235, 0.2)",
                         borderColor: "rgba(54, 162, 235, 1)"
@@ -153,13 +154,14 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero:true
+                                beginAtZero:false,
+                                suggestedMax: 350
                             }
                         }]
                     },
                     title: {
                         display: true,
-                        text: 'Fairways Hit'
+                        text: 'Driving Distance Per Round (Yards)'
                     },
                     hover: {
                         // Overrides the global setting
@@ -211,7 +213,8 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero:true
+                                beginAtZero:true,
+                                suggestedMax: 100
                             }
                         }]
                     },

@@ -115,6 +115,7 @@ class Tee
                     ++$number_of_holes_eligible_round;
                     $total_driving_round += $round->$holedrivedistance;
                     $avg_drive_distance_by_round = $total_driving_round / $number_of_holes_eligible_round;
+                    $avg_drive_distance_by_round_wholenumber = number_format($avg_drive_distance_by_round, 0);
                     $avg_drive_distance_by_round_formatted = number_format($avg_drive_distance_by_round, 0) . ' Yards';
 
                     $drive_distance_by_round_array[$round_id]['round_id'] = $round_id;
@@ -122,6 +123,7 @@ class Tee
                     $drive_distance_by_round_array[$round_id]['driving_distance_round'] = $total_driving_round;
                     $drive_distance_by_round_array[$round_id]['nummber_of_holes_eligible_round'] = $number_of_holes_eligible_round;
                     $drive_distance_by_round_array[$round_id]['avg_driving_distance_round'] = $avg_drive_distance_by_round;
+                    $drive_distance_by_round_array[$round_id]['avg_driving_distance_round_wholenumber'] = $avg_drive_distance_by_round_wholenumber;
                     $drive_distance_by_round_array[$round_id]['avg_driving_distance_round_formatted'] = $avg_drive_distance_by_round_formatted;
 
                 }

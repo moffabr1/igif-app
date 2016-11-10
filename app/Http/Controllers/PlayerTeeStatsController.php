@@ -39,7 +39,7 @@ class PlayerTeeStatsController extends Controller
         $fw_hit_round_dates = array_pluck($fw_hit_round, 'round_date');
         $fw_hit_round_data = array_pluck($fw_hit_round, 'fw_hit');
 
-        $driving_distance_avg_round = array_pluck($drive_distance_round, 'avg_driving_distance_round');
+        $driving_distance_avg_round = array_pluck($drive_distance_round, 'avg_driving_distance_round_wholenumber');
 
 //        dd($driving_distance_avg_round);
 
