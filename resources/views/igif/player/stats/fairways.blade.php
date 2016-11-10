@@ -183,6 +183,53 @@
     })();
 
 </script>
+<script>
+    (function() {
+        var ctx = document.getElementById("fairways_hit");
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: <?php echo json_encode($dates) ?>,
+                datasets: [{
+                    data:
+                            [
+                                {{implode(", ", $fw_hit)}}
+                            ],
+                    label: 'Fairways Hit',
+                    borderWidth: 1,
+                    backgroundColor: "rgba(54, 162, 235, 0.2)",
+                    borderColor: "rgba(54, 162, 235, 1)"
+
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero:true
+                        }
+                    }]
+                },
+                title: {
+                    display: true,
+                    text: 'Fairways Hit'
+                },
+                hover: {
+                    // Overrides the global setting
+                    mode: 'label'
+                },
+                legend: {
+                    display: true,
+                    labels: {
+                        fontColor: 'rgb(54, 162, 235)'
+                    }
+                }
+            }
+        });
+
+    })();
+
+</script>
 
 
 @stop

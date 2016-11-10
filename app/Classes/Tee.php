@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\DB;
 class Tee
 {
 
-    public static function offthetee_totals($user, $n)
+    public static function offthetee_cum($user, $n)
     {
         //DRIVING ACCURACY PERCENTAGE (FW HIT) = The percentage of time a tee shot
         // comes to rest in the fairway (regardless of club)
@@ -48,11 +48,6 @@ class Tee
             for ($i = 1; $i < $round->round_type + 1; $i++) {
                 $holefw = 'hole' . $i . '_fw_hit';
                 $holepar = 'hole'.$i.'_par';
-                $holegir = 'hole' . $i . '_gir';
-                $holescore = 'hole' . $i . '_score';
-                $holeputts = 'hole' . $i . '_number_of_putts';
-                $holechips = 'hole' . $i . '_number_of_chips';
-                $holesand = 'hole' . $i . '_sand';
                 $holedrivedistance = 'hole' . $i . '_drive_distance';
 
                 ++$totalholes;
@@ -113,21 +108,14 @@ class Tee
                 $holepar = 'hole'.$i.'_par';
                 $holescore = 'hole' . $i . '_score';
 
-                $score_round += $round->$holescore;
-                $array[$key]['round_score'] = $score_round;
+//                $score_round += $round->$holescore;
+//                $drive_distance_by_round_array[$key]['round_score'] = $score_round;
 
                 if ($round->$holedrivedistance > 0 && $round->scorecard->$holepar > 3) {
                     ++$number_of_holes_eligible_round;
                     $total_driving_round += $round->$holedrivedistance;
                     $avg_drive_distance_by_round = $total_driving_round / $number_of_holes_eligible_round;
                     $avg_drive_distance_by_round_formatted = number_format($avg_drive_distance_by_round, 0) . ' Yards';
-
-//                    $drive_distance_by_round_array[$key]['round_id'] = $round_id;
-//                    $drive_distance_by_round_array[$key]['date_round'] = $date_round;
-//                    $drive_distance_by_round_array[$key]['driving_distance_round'] = $total_driving_round;
-//                    $drive_distance_by_round_array[$key]['nummber_of_holes_eligible_round'] = $number_of_holes_eligible_round;
-//                    $drive_distance_by_round_array[$key]['avg_driving_distance_round'] = $avg_drive_distance_by_round;
-//                    $drive_distance_by_round_array[$key]['avg_driving_distance_round_formatted'] = $avg_drive_distance_by_round_formatted;
 
                     $drive_distance_by_round_array[$round_id]['round_id'] = $round_id;
                     $drive_distance_by_round_array[$round_id]['date_round'] = $date_round;
@@ -145,12 +133,9 @@ class Tee
             $drive_distance_by_round_array[$key]['total_rounds'] = $totalrounds;
         }
 
-        //$array = array_add(['name' => 'Desk'], 'price', 100);
-//        $drive_distance_by_round_array = $drive_distance_by_round_array['total_rounds'] = $totalrounds;
-
         $drive_distance_by_round_array_formatted = array_reverse($drive_distance_by_round_array, false);
 
-        dd($drive_distance_by_round_array_formatted);
+//        dd($drive_distance_by_round_array_formatted);
 
         return $drive_distance_by_round_array_formatted;
 
