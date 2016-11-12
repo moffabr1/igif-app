@@ -28,7 +28,21 @@ class PlayerTeeStatsController extends Controller
 //        dd($rounds);
 
         //Grab the Off the Tee data
+//    "total_fw_opportunities" => 112
+//    "total_fw_hit" => 61
+//    "total_fw_percentage" => 0.54464285714286
+//    "total_fw_percentage_formatted" => "54%"
+//    "total_drive_distance" => 19214
+//    "total_drive_distance_opportunities" => 82
+//    "avg_drive_distance_all_rounds" => 234.31707317073
         $offthetee_totals = Tee::offthetee_cum($user, $n);
+
+        $fw_hit_percentage_total = number_format($offthetee_totals['total_fw_percentage'], 2) * 100;
+        $fw_miss_percentage_total = 100 - $fw_hit_percentage_total;
+        $total_fw_opportunities = $offthetee_totals['total_fw_opportunities'];
+        $total_fw_hit = $offthetee_totals['total_fw_hit'];
+
+//        dd($fw_hit_percentage_total);
 
         //Grab the Drive Distance Data per Round
         $drive_distance_round = Tee::drive_distance_round($user, $n);
@@ -38,6 +52,8 @@ class PlayerTeeStatsController extends Controller
 
         $fw_hit_round_dates = array_pluck($fw_hit_round, 'round_date');
         $fw_hit_round_data = array_pluck($fw_hit_round, 'fw_hit');
+
+//        dd($fw_hit_round);
 
         $driving_distance_avg_round = array_pluck($drive_distance_round, 'avg_driving_distance_round_wholenumber');
 
@@ -51,7 +67,11 @@ class PlayerTeeStatsController extends Controller
                 'driving_distance_avg_round' => $driving_distance_avg_round,
                 'offthetee_totals' => $offthetee_totals,
                 'scores_round' => $scores_round,
-                'scores_round_date' => $scores_round_date
+                'scores_round_date' => $scores_round_date,
+                'total_fw_hit_percentage' => $fw_hit_percentage_total,
+                'total_fw_miss_percentage' => $fw_miss_percentage_total,
+                'total_fw_opportunities' => $total_fw_opportunities,
+                'total_fw_hit' => $total_fw_hit
             ]);
     }
 }

@@ -62,12 +62,12 @@
                 <div class="panel panel-default">
 
                     <div class="panel-heading">
-                        heading
+                        Fairways Hit %
                     </div>
 
                     <div class="panel-body">
                         <div style="max-width:400px; margin:0 auto;">
-                            body
+                            <canvas id="fairways_hit_percentage" width="800" height="500"></canvas>
                         </div>
                     </div>
                 </div>
@@ -172,6 +172,18 @@
                         labels: {
                             fontColor: 'rgb(54, 162, 235)'
                         }
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                var dataset = data.datasets[tooltipItem.datasetIndex];
+                                var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                    return previousValue + currentValue;
+                                });
+                                var currentValue = dataset.data[tooltipItem.index];
+                                return currentValue + " yards";
+                            }
+                        }
                     }
                 }
             });
@@ -238,7 +250,85 @@
         })();
 
     </script>
+    <script>
+        (function() {
+            var ctx4 = document.getElementById("fairways_hit_percentage");
+            var chart = new Chart(ctx4, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        "Fairways Hit: {{$total_fw_hit}}",
+                        "Fairway Opportunities: {{$total_fw_opportunities}}",
+                    ],
+                    datasets: [{
+                        data:
+                        [
+                            {{$total_fw_hit_percentage}},
+                            {{$total_fw_miss_percentage}}
+                        ],
 
+                        label: 'Fairway Hit %',
+                        borderWidth: 1,
+                        backgroundColor: [
+                            "rgba(0,255,0, .5)",
+                            "rgba(255,0,0, .5)"
+                        ],
+                        hoverBackgroundColor: [
+                            "rgba(0,255,0, .8)",
+                            "rgba(255,0,0, .8)"
+                        ]
+
+                    }]
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            display:false,
+                            gridLines: {
+                                display:false
+                            }
+                        }],
+                        yAxes: [{
+                            display: false,
+                            gridLines: {
+                                display:false
+                            }
+                        }]
+                    },
+
+                    title: {
+                        display: true,
+                        text: 'Fairways Hit %'
+                    },
+                    hover: {
+                        // Overrides the global setting
+                        mode: 'label'
+                    },
+                    legend: {
+                        display: true,
+                        position: 'left',
+                        labels: {
+                            fontColor: 'rgb(54, 162, 235)'
+                        }
+                    },
+                    tooltips: {
+                        callbacks: {
+                            label: function(tooltipItem, data) {
+                                var dataset = data.datasets[tooltipItem.datasetIndex];
+                                var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                                    return previousValue + currentValue;
+                                });
+                                var currentValue = dataset.data[tooltipItem.index];
+                                var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+                                return precentage + "%";
+                            }
+                        }
+                    }
+                }
+            });
+
+        })();
+    </script>
 
 
 @stop

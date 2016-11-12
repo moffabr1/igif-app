@@ -78,13 +78,21 @@
                     ],
                     data: [
                         {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
-                        {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_175_200yds'] > 0) ? number_format($proximity_totals['prox_175_200yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_150_175yds'] > 0) ? number_format($proximity_totals['prox_150_175yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_130_150yds'] > 0) ? number_format($proximity_totals['prox_130_150yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_120_130yds'] > 0) ? number_format($proximity_totals['prox_120_130yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_110_120yds'] > 0) ? number_format($proximity_totals['prox_110_120yds'], 0) : 0 }},
+
+                        {{ ($proximity_totals['prox_100_110yds'] > 0) ? number_format($proximity_totals['prox_100_110yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_90_100yds'] > 0) ? number_format($proximity_totals['prox_90_100yds'], 0) : 0 }},
+
                         {{ ($proximity_totals['prox_inside_90yds'] > 0) ? number_format($proximity_totals['prox_inside_90yds'], 0) : 0 }}
 
                     ]
@@ -120,7 +128,7 @@
                         label: 'Proximity',
                         data: [
                             {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
-                            {{ ($proximity_totals['prox_200yds'] > 0) ? number_format($proximity_totals['prox_200yds'], 0) : 0 }},
+
                             {{ ($proximity_totals['prox_175_200yds'] > 0) ? number_format($proximity_totals['prox_175_200yds'], 0) : 0 }},
 
                             {{ ($proximity_totals['prox_150_175yds'] > 0) ? number_format($proximity_totals['prox_150_175yds'], 0) : 0 }},
@@ -130,6 +138,8 @@
                             {{ ($proximity_totals['prox_120_130yds'] > 0) ? number_format($proximity_totals['prox_120_130yds'], 0) : 0 }},
 
                             {{ ($proximity_totals['prox_110_120yds'] > 0) ? number_format($proximity_totals['prox_110_120yds'], 0) : 0 }},
+
+                            {{ ($proximity_totals['prox_100_110yds'] > 0) ? number_format($proximity_totals['prox_100_110yds'], 0) : 0 }},
 
                             {{ ($proximity_totals['prox_90_100yds'] > 0) ? number_format($proximity_totals['prox_90_100yds'], 0) : 0 }},
 

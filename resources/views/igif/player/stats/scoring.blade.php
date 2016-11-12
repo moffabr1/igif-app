@@ -155,6 +155,7 @@
                     yAxes: [{
                         ticks: {
                             suggestedMin: 60,
+                            suggestedMax: 85,
                             beginAtZero:false
                         }
                     }]
