@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c8b00-ad81-4aab-af6e-a3f0f9812851" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring2.blade.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Putting.php" afterPath="$PROJECT_DIR$/app/Classes/Putting.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Scoring.php" afterPath="$PROJECT_DIR$/app/Classes/Scoring.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php" />
     </list>
     <ignored path="igif-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,43 +31,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scoring2.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scoring2.blade.php">
+      <file leaf-file-name="putting.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" column="100" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+            <state relative-caret-position="424">
+              <caret line="402" column="64" selection-start-line="402" selection-start-column="64" selection-end-line="402" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlayerStatsScoringController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php">
+      <file leaf-file-name="fairways.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/fairways.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-              <folding>
-                <element signature="e#40#63#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scoring.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Classes/Scoring.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+            <state relative-caret-position="407">
+              <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="200" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stats.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Classes/Stats.php">
+      <file leaf-file-name="Putting.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Classes/Putting.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="266" column="52" selection-start-line="266" selection-start-column="52" selection-end-line="266" selection-end-column="52" />
+            <state relative-caret-position="405">
+              <caret line="389" column="81" selection-start-line="389" selection-start-column="64" selection-end-line="389" selection-end-column="81" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PlayerStatsController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="150" column="27" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -110,8 +116,6 @@
         <option value="$PROJECT_DIR$/resources/views/igif/player/stats/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-        <option value="$PROJECT_DIR$/app/Classes/Putting.php" />
-        <option value="$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/admin/clubs/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminCoursesController.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/admin/courses/index.blade.php" />
@@ -128,11 +132,13 @@
         <option value="$PROJECT_DIR$/resources/views/igif/player/stats/proximity.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Classes/Scoring.php" />
         <option value="$PROJECT_DIR$/resources/views/igif/player/stats/scoring2.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/Classes/Putting.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php" />
-        <option value="$PROJECT_DIR$/app/Classes/Scoring.php" />
+        <option value="$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php" />
       </list>
     </option>
   </component>
@@ -598,12 +604,12 @@
       <workItem from="1478785235589" duration="5624000" />
       <workItem from="1478809295800" duration="4463000" />
       <workItem from="1478821711551" duration="15809000" />
-      <workItem from="1478919811309" duration="7255000" />
+      <workItem from="1478919811309" duration="12994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="504262000" />
+    <option name="totallyTimeSpent" value="510001000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="716" extended-state="0" />
@@ -816,13 +822,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scrambling.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="156" column="49" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bower_components/fontawesome/less/icons.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1410">
@@ -851,24 +850,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/fairways.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="231" column="9" selection-start-line="231" selection-start-column="9" selection-end-line="231" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/dashboard.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
           <caret line="423" column="37" selection-start-line="423" selection-start-column="37" selection-end-line="423" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1157">
-          <caret line="493" column="15" selection-start-line="493" selection-start-column="15" selection-end-line="493" selection-end-column="15" />
         </state>
       </provider>
     </entry>
@@ -903,21 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="56" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Tee.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
@@ -940,14 +910,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Classes/Putting.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="512" column="0" selection-start-line="512" selection-start-column="0" selection-end-line="512" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Rounds.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -960,14 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="795">
           <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="49" column="63" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="63" />
           <folding />
         </state>
       </provider>
@@ -988,24 +942,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scoring2.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="100" selection-start-line="30" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="24" column="66" selection-start-line="24" selection-start-column="66" selection-end-line="24" selection-end-column="66" />
-          <folding>
-            <element signature="e#40#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Stats.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1016,8 +952,94 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Scoring.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+        <state relative-caret-position="47">
+          <caret line="117" column="99" selection-start-line="117" selection-start-column="99" selection-end-line="117" selection-end-column="99" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scrambling.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="326">
+          <caret line="95" column="112" selection-start-line="95" selection-start-column="112" selection-end-line="95" selection-end-column="124" />
+          <folding>
+            <element signature="e#5467#5473#0#HTML" expanded="true" />
+            <element signature="e#5473#5479#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade-old.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsScoringController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="27" column="52" selection-start-line="27" selection-start-column="52" selection-end-line="27" selection-end-column="52" />
+          <folding>
+            <element signature="e#40#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-208">
+          <caret line="296" column="45" selection-start-line="296" selection-start-column="45" selection-end-line="296" selection-end-column="45" />
+          <folding>
+            <element signature="e#1416#1455#0#HTML" expanded="true" />
+            <element signature="e#4028#4034#0#HTML" expanded="true" />
+            <element signature="e#4034#4040#0#HTML" expanded="true" />
+            <element signature="e#6149#6155#0#HTML" expanded="true" />
+            <element signature="e#6155#6161#0#HTML" expanded="true" />
+            <element signature="e#7094#7100#0#HTML" expanded="true" />
+            <element signature="e#7100#7106#0#HTML" expanded="true" />
+            <marker date="1478955074000" expanded="false" signature="796:827" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Classes/Putting.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="389" column="81" selection-start-line="389" selection-start-column="64" selection-end-line="389" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/PlayerStatsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="150" column="27" selection-start-line="150" selection-start-column="17" selection-end-line="150" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/fairways.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="199" column="0" selection-start-line="199" selection-start-column="0" selection-end-line="200" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/igif/player/stats/putting.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="402" column="64" selection-start-line="402" selection-start-column="64" selection-end-line="402" selection-end-column="64" />
           <folding />
         </state>
       </provider>

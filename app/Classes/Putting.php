@@ -23,6 +23,8 @@ class Putting
         $totalholes = 0;
         $totalputts = 0;
         $totalgir = 0;
+        $total_putts_per_gir = 0;
+        $total_putting_avg = 0;
 
         $totalsecondputts = 0;
         $totalsecondputtdistance = 0;
@@ -159,6 +161,8 @@ class Putting
 
                 if($round->$holegir == 1) {
                     ++$totalgir;
+                    $total_putts_per_gir = $total_putts_per_gir + $round->$holeputts;
+
                     if(($round->$holescore - $round->scorecard->$holepar) <= -1){
                         ++$birdieorbetterconversion;
                     }
@@ -258,6 +262,8 @@ class Putting
 
 //        dd($birdieorbetterconversionpercentage);
 
+
+
         $oneputtpercentage = $totaloneputts / $totalputts;
         $twoputtpercentage = $totaltwoputts / $totalputts;
         $threeputtpercentage = $totalthreeputts / $totalputts;
@@ -266,6 +272,7 @@ class Putting
         $threeputtavoidance = $totalthreeputts / $totalholes;
 
         $totalputts_round = $totalputts / $totalrounds;
+        $total_putting_avg = $total_putts_per_gir / $totalgir;
 
         $totalapproachputtperformance = $totalsecondputtdistance / $totalsecondputts;
 
@@ -373,12 +380,14 @@ class Putting
         $putttovertwentyfivefooter_makepercentage = $putttovertwentyfivefooter_make / ($putttovertwentyfivefooter_make + $putttovertwentyfivefooter_miss);
         $putttovertwentyfivefooter_makepercentage_formatted = number_format($putttovertwentyfivefooter_makepercentage, 2) * 100 . ' %';
 
-//        dd($longestputtfeet);
+//        dd();
 
         $putting_stats_array = array_add($putting_stats_array, 'total_rounds', $totalrounds);
         $putting_stats_array = array_add($putting_stats_array, 'total_holes', $totalholes);
         $putting_stats_array = array_add($putting_stats_array, 'total_putts', $totalputts);
+        $putting_stats_array = array_add($putting_stats_array, 'total_gir', $totalgir);
         $putting_stats_array = array_add($putting_stats_array, 'total_putts_round', $totalputts_round);
+        $putting_stats_array = array_add($putting_stats_array, 'total_putting_avg', $total_putting_avg);
         $putting_stats_array = array_add($putting_stats_array, 'total_approach_putt_performance', $totalapproachputtperformance);
 
 

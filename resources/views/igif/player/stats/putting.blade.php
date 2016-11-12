@@ -100,13 +100,24 @@
                             <tbody>
                             <tr>
                                 <th>
+                                    AVG PUTTS PER ROUND
+                                </th>
+                                <td>
+                                    {{number_format($total_putts_round, 0)}}
+                                </td>
+                                <td>
+                                    Average Number of Putts per Round Recorded
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
                                     PUTTING AVERAGE
                                 </th>
                                 <td>
-                                    {{$total_putts_round}}
+                                    {{number_format($puttingStats_total_array['total_putting_avg'], 2)}}
                                 </td>
                                 <td>
-                                    Average Number of Putts per GIR
+                                    The average number of putts per green in regulation.
                                 </td>
                             </tr>
                             <tr>
@@ -377,10 +388,20 @@
                                 ],
                         label: ' Putts',
                         borderWidth: 1,
-                        backgroundColor: "rgba(148, 0, 211, 0.3)",
-                        borderColor: "rgba(46, 100, 1, 1)"
+                        backgroundColor: "rgba(255, 206, 86, 0.2)",
+                        borderColor: "rgba(54, 162, 235, 1)"
 
-                    }]
+                    },
+                        {
+                            data:
+                            [
+                                {{ implode(", ", $gir_totals) }}
+                            ],
+                            label: 'GIR Count',
+                            borderWidth: 1,
+                            backgroundColor: "rgba(54, 162, 235, 0.2)",
+                            borderColor: "rgba(54, 162, 235, 1)"
+                        }]
                 },
                 options: {
                     scales: {

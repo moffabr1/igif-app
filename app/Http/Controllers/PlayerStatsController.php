@@ -118,11 +118,14 @@ class PlayerStatsController extends Controller
 
         $n = 10;
         $putting = Stats::putting($n);
+        $gir = Stats::gir(10);
 
         $putting_dates = array_pluck($putting, 'round_date');
         $new_putting_dates = array_map(array($this, 'date_adj'), $putting_dates);
 
         $putting_data = array_pluck($putting, 'putts');
+
+        $gir_totals = array_pluck($gir, 'gir');
 
 
 //dd($putting_data);
@@ -145,6 +148,7 @@ class PlayerStatsController extends Controller
             ->with([
                 'putting_dates' => $new_putting_dates,
                 'putting_data' => $putting_data,
+                'gir_totals' => $gir_totals,
                 'zeroputts' => $total_zeroputts,
                 'oneputts' => $total_oneputts,
                 'twoputts' => $total_twoputts,

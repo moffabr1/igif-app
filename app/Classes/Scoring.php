@@ -115,6 +115,8 @@ class Scoring
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'scoring_avg', $scoring_avg);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_rounds', $totalrounds);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_holes', $totalholes);
+        $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_strokes', $totalstrokes);
+
 
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'front_9_scoring_avg', $front_9_scoring_avg);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'back_9_scoring_avg', $back_9_scoring_avg);
