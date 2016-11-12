@@ -35,4 +35,10 @@ return [
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'facebook' => [
+        'client_id' => '1142642879108276',
+        'client_secret' => '3c700c5e25b0fccc4c6e1bb0b5842c95',
+        'redirect' => 'http://igif-app.dev/callback',
+    ],
+
 ];
