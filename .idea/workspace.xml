@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e04c8b00-ad81-4aab-af6e-a3f0f9812851" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Classes/Scoring.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring2.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Stats.php" afterPath="$PROJECT_DIR$/app/Classes/Stats.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/PlayerTeeStatsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/PlayerTeeStatsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/scorecards/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/proximity.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/proximity.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/scoring.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/igif/player/stats/tee.blade.php" afterPath="$PROJECT_DIR$/resources/views/igif/player/stats/tee.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Classes/Scoring.php" afterPath="$PROJECT_DIR$/app/Classes/Scoring.php" />
     </list>
     <ignored path="igif-app.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +48,8 @@
       <file leaf-file-name="Scoring.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Classes/Scoring.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="112" column="67" selection-start-line="112" selection-start-column="67" selection-end-line="112" selection-end-column="67" />
+            <state relative-caret-position="465">
+              <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -607,15 +598,15 @@
       <workItem from="1478785235589" duration="5624000" />
       <workItem from="1478809295800" duration="4463000" />
       <workItem from="1478821711551" duration="15809000" />
-      <workItem from="1478919811309" duration="1842000" />
+      <workItem from="1478919811309" duration="7255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="498849000" />
+    <option name="totallyTimeSpent" value="504262000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="716" extended-state="6" />
+    <frame x="0" y="23" width="1280" height="716" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1025,8 +1016,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Classes/Scoring.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="112" column="67" selection-start-line="112" selection-start-column="67" selection-end-line="112" selection-end-column="67" />
+        <state relative-caret-position="465">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
           <folding />
         </state>
       </provider>

@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: brianmof
- * Date: 11/10/16
- * Time: 8:02 PM
- */
 
 namespace App\Classes;
 
@@ -18,8 +12,6 @@ class Scoring
         $scores_array = $rounds->pluck('total_score');
         $lowest_round = $scores_array->min();
         $scoring_avg = (float)number_format($scores_array->avg(), 2);
-
-//        dd($scoring_avg);
 
         $scoring_cum_data_array = [];
 
@@ -40,6 +32,10 @@ class Scoring
         $total_back_9_holes = 0;
         $back_9_scoring_total = 0;
 
+        $bounce_back_total = 0;
+        $total_bogey_or_worse = 0;
+        $total_bounce_back_pctg = 0;
+
         foreach($rounds as $key => $round) {
             ++$totalrounds;
 
@@ -58,6 +54,20 @@ class Scoring
                 else {
                     ++$total_back_9_holes;
                     $back_9_scoring_total += $round->$holescore;
+                }
+
+                if(($round->$holescore - $round->scorecard->$holepar) >= 1) {
+                    //grab the next hole results
+
+                    $x = $i + 1;
+
+                    $holescore_next = 'hole' . $x . '_score';
+                    $holepar_next = 'hole'.$x.'_par';
+
+                    if(($round->$holescore_next <= $round->scorecard->$holepar_next) && ($x < 19)) {
+//                        echo($round->id . 'ID = ' . 'hole' . $x . '_score' . '-' . 'hole' . $i . '_score' . '<br>');
+                        ++$bounce_back_total;
+                    }
                 }
 
                 if($round->$holescore == $round->scorecard->$holepar) {
@@ -98,9 +108,9 @@ class Scoring
         $total_birdies_per_hole = number_format($totalbirdies / $totalholes, 2);
 
         $total_par_or_better_pctg = number_format((($totalpars + $totalbirdies) / $totalholes), 2);
+        $total_bogey_or_worse = $totalbogeys + $totaldblbogeys + $total3plusbogeys;
+        $total_bounce_back_pctg = number_format($bounce_back_total / $total_bogey_or_worse, 2);
 
-//        dd($total_par_or_better_pctg);
-//
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'lowest_round', $lowest_round);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'scoring_avg', $scoring_avg);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_rounds', $totalrounds);
@@ -108,6 +118,11 @@ class Scoring
 
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'front_9_scoring_avg', $front_9_scoring_avg);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'back_9_scoring_avg', $back_9_scoring_avg);
+
+        $scoring_cum_data_array = array_add($scoring_cum_data_array, 'bounce_back_total', $bounce_back_total);
+        $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_bogey_or_worse', $total_bogey_or_worse);
+
+        $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_bounce_back_pctg', $total_bounce_back_pctg);
 
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_pars', $totalpars);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_birdies', $totalbirdies);
@@ -129,7 +144,7 @@ class Scoring
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_birdies_hole', $total_birdies_per_hole);
         $scoring_cum_data_array = array_add($scoring_cum_data_array, 'total_par_or_better_pctg', $total_par_or_better_pctg);
 
-        dd($scoring_cum_data_array);
+//        dd($scoring_cum_data_array);
 
         return $scoring_cum_data_array;
     }
