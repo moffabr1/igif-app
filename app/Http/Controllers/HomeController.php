@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Rounds;
 use App\Http\Requests;
 use App\Scores;
 use App\User;
@@ -28,19 +29,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return view('/igif/home');
-        //return view('igif');
+        $scoring_data_array[] = 0;
+        $n = 10;
 
-        $user = Auth::user();
+        $rounds = Rounds::roundsAll(Auth::user()->id, $n);
+        $roundsReversed = $rounds->reverse();
 
-        //Need to get the chart data and pass it to the home page for the user (Dashboard) to
-        //display the charts. Write a function that gets the chart data.
-
-
+//        $scoring_cum = Scoring::scoring_cum(Auth::user()->id, $n);
 
 
+        return View::make('igif.home')
+//            ->with(compact('cumulativeData'))
+            ->with([
+                'dates' => $roundsReversed->pluck('round_date'),
+                'scores' => $roundsReversed->pluck('total_score'),
+                'number_of_rounds' => $n
+//                'scoring_cum' => $scoring_cum
+            ]);
 
-        return view('igif.home', compact('user'));
     }
 
 

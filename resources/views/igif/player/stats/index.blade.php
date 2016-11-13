@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                @include('partials.fairways-chart')
+                @include('partials.charts.fairways-chart')
             </div>
             <div class="col-lg-4"></div>
             <div class="col-lg-4"></div>

@@ -14,7 +14,7 @@
                         {{--<canvas id="cline" width="552" height="346" style="width: 276px; height: 173px;"></canvas>--}}
                     {{--</div>--}}
                 {{--</div>--}}
-                @include('partials.fairways-chart')
+                @include('partials.charts.fairways-chart')
 
                 <div class="panel panel-default">
                     <div class="panel-heading">
