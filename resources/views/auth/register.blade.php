@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-social.css") }}" />
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -76,7 +79,25 @@
                     </form>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-4 text-center" >
+                    - or -
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 col-md-offset-4">
+                    <a href="redirect" class="btn btn-block btn-social btn-facebook">
+                        <span class="fa fa-facebook"></span>
+                        Log in with Facebook
+                    </a>
+                </div>
+            </div>
         </div>
+    </div>
+    <div class="row">
+
+
+
     </div>
 </div>
 @endsection

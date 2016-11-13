@@ -17,6 +17,7 @@ elixir(function(mix) {
     mix.copy('bower_components/bootstrap/dist/fonts', 'public/assets/fonts');
     mix.copy('bower_components/fontawesome/fonts', 'public/assets/fonts');
     mix.copy('bower_components/jquery-ui', 'public/assets/jquery-ui');
+    mix.copy('bower_components/bootstrap-social/bootstrap-social.css', 'public/css/bootstrap-social.css');
     mix.copy('bower_components/Chart.js/Chart.min.js', 'public/assets/scripts/Chart.min.js');
     mix.copy('bower_components/jquery/dist/jquery.min.js', 'public/assets/scripts/jquery.min.js');
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.min.js', 'public/assets/scripts/bootstrap.min.js');
@@ -25,8 +26,10 @@ elixir(function(mix) {
     mix.copy('bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js', 'public/assets/scripts/bootstrap-datetimepicker.min.js');
     mix.copy('resources/js/sb-admin-2.js', 'public/assets/scripts/sb-admin-2.js');
     mix.copy('resources/js/frontend.js', 'public/assets/scripts/frontend.js');
+    mix.copy('resources/app_images', 'public/app_images');
     mix.styles([
         'bower_components/bootstrap/dist/css/bootstrap.css',
+        // 'bower_components/bootstrap-social/bootstrap-social.scss',
         'bower_components/fontawesome/css/font-awesome.css',
         'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         'resources/css/sb-admin-2.css',

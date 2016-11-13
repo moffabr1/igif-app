@@ -7,6 +7,8 @@ Route::get('/', function()
     return View::make('welcome');
 });
 
+Route::resource('/activate', 'UserMembershipController@activate');
+
 Route::auth();
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
@@ -38,6 +40,7 @@ Route::group(['middleware' => 'igif'], function () {
 
 
     Route::get('/igif', 'HomeController@index');
+
     Route::get('/ajax-call', function(){
 
         if(Input::get('state') != '') {

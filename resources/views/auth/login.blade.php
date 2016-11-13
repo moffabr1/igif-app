@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
+    <link rel="stylesheet" href="{{ asset("css/bootstrap-social.css") }}" />
+
+    <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -55,7 +58,20 @@
                                 </button>
 
                                 <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your Password?</a>
-                                <a href="redirect">FB Login</a>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-4 text-center" >
+                                - or -
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 col-md-offset-4">
+                                <a href="redirect" class="btn btn-block btn-social btn-facebook">
+                                    <span class="fa fa-facebook"></span>
+                                    Log in with Facebook
+                                </a>
                             </div>
                         </div>
                     </form>

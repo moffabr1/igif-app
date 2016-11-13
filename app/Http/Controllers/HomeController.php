@@ -38,6 +38,8 @@ class HomeController extends Controller
 
 
 
+
+
         return view('igif.home', compact('user'));
     }
 

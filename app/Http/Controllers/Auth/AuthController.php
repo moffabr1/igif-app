@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -68,5 +69,23 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    protected function authenticated( )
+    {
+        $id=Auth::id();
+//        dd($id);
+
+        $user = User::find($id);
+
+//        dd($user);
+
+        if($user->is_active == '1') {
+            return redirect('/igif');
+        } else {
+            return redirect('/activate');
+        }
+
+//        return redirect('portal/dashboard/'.$user->email);
     }
 }
