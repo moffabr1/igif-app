@@ -81,6 +81,8 @@ Route::group(['middleware' => 'admin'], function () {
     Route::resource('igif/admin/courses', 'AdminCoursesController');
     Route::resource('igif/admin/clubs', 'AdminClubsController');
     Route::resource('igif/admin/scorecards', 'AdminScorecardsController');
+    Route::resource('igif/admin/training', 'Training\AdminTrainingController');
+
 
 });
 

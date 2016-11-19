@@ -13,6 +13,7 @@
 	<meta content="" name="author"/>
 
 	<link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />
+	{{--<link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
 	<link rel="stylesheet" href="{{ asset("assets/jquery-ui/jquery-ui.min.css") }}" />
 
 	<script src="{{ asset("assets/scripts/jquery.min.js") }}" type="text/javascript"></script>

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDrillsTable extends Migration
+class CreateTrainingDrillsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,17 @@ class CreateDrillsTable extends Migration
     public function up()
     {
         //
-        Schema::create('drills', function (Blueprint $table) {
+        Schema::create('training_drills', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned()->index();
-            $table->string('media_id')->unsigned()->index();
+            $table->integer('training_categories_id')->unsigned();
+            $table->integer('training_media_id')->unsigned();
             $table->string('name');
             $table->longText('description');
+            $table->integer('default_attempts');
+            $table->integer('default_distance');
+            $table->string('default_success_criteria');
+            $table->string('measurement_type');
             $table->timestamps();
-
 
         });
     }
@@ -33,6 +36,6 @@ class CreateDrillsTable extends Migration
     public function down()
     {
         //
-        Schema::drop('drills');
+        Schema::drop('training_drills');
     }
 }

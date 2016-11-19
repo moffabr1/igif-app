@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDrillsMediaTable extends Migration
+class CreateTrainingMediaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDrillsMediaTable extends Migration
     public function up()
     {
         //
-        Schema::create('drills_media', function (Blueprint $table) {
+        Schema::create('training_media', function (Blueprint $table) {
             $table->increments('id');
             $table->string('file');
             $table->timestamps();
@@ -28,7 +28,7 @@ class CreateDrillsMediaTable extends Migration
     public function down()
     {
         //
-        Schema::drop('drills_media');
+        Schema::drop('training_media');
 
     }
 }

@@ -12,12 +12,12 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    // mix.sass('app.scss');
-    mix.less('app.less');
+    mix.sass('app.scss');
+    // mix.less('app.less');
     mix.copy('bower_components/bootstrap/dist/fonts', 'public/assets/fonts');
     mix.copy('bower_components/fontawesome/fonts', 'public/assets/fonts');
     mix.copy('bower_components/jquery-ui', 'public/assets/jquery-ui');
-    mix.copy('bower_components/bootstrap-social/bootstrap-social.css', 'public/css/bootstrap-social.css');
+    // mix.copy('bower_components/bootstrap-social/bootstrap-social.css', 'public/css/bootstrap-social.css');
     mix.copy('bower_components/Chart.js/Chart.min.js', 'public/assets/scripts/Chart.min.js');
     mix.copy('bower_components/jquery/dist/jquery.min.js', 'public/assets/scripts/jquery.min.js');
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.min.js', 'public/assets/scripts/bootstrap.min.js');
@@ -33,9 +33,9 @@ elixir(function(mix) {
         'bower_components/fontawesome/css/font-awesome.css',
         'bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         'resources/css/sb-admin-2.css',
-        'resources/css/timeline.css',
-        'resources/assets/sass/app.scss'
+        'resources/css/timeline.css'
     ], 'public/assets/stylesheets/styles.css', './');
+    // ], 'public/assets/stylesheets/styles.css', './');
     // mix.scripts([
     //     // 'bower_components/jquery/dist/jquery.js',
     //     // 'bower_components/bootstrap/dist/js/bootstrap.js',

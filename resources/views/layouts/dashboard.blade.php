@@ -387,6 +387,19 @@
                                     </ul>
                                 </li>
                             <!-- /END ADMIN:SCORECARDS Navigation -->
+                            <!-- /ADMIN:TRAINING Navigation -->
+                                <li>
+                                    <a href="#">Training <span class="fa arrow"></span></a>
+                                    <ul class="nav nav-third-level">
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/training') }}">Manage Drills</a>
+                                        </li>
+                                        <li {{ (Request::is('*admin') ? 'class="active"' : '') }}>
+                                            <a href="{{ url ('igif/admin/training/create' ) }}">Create Drills</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            <!-- /END ADMIN:TRAINING Navigation -->
                             </ul>
                         </li>
                     @endif
