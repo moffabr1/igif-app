@@ -18,10 +18,10 @@
             {!! Form::model($drill, ['method'=>'PATCH', 'action'=> ['Training\AdminTrainingController@update', $drill->id],'files'=>true]) !!}
 
 
-            <div class="form-group">
-                {!! Form::label('name', 'Name:') !!}
-                {!! Form::text('name', null, ['class'=>'form-control'])!!}
-            </div>
+            {{--<div class="form-group">--}}
+                {{--{!! Form::label('name', 'Name:') !!}--}}
+                {{--{!! Form::text('name', null, ['class'=>'form-control'])!!}--}}
+            {{--</div>--}}
 
             <div class="form-group">
                 {!! Form::label('training_categories_id', 'Training Category:') !!}
@@ -30,7 +30,7 @@
 
             <div class="form-group">
                 {!! Form::label('description', 'Name:') !!}
-                {!! Form::textArea('description', null, ['class'=>'form-control'])!!}
+                {!! Form::textArea('description', null, ['class'=>'form-control', 'readonly'])!!}
             </div>
 
             <div class="form-group">
@@ -39,13 +39,13 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('default_attempts', 'Attempts:') !!}
-                {!! Form::text('default_attempts', null, ['class'=>'form-control'])!!}
+                {!! Form::label('attempts', 'Attempts:') !!}
+                {!! Form::text('attempts', null, ['class'=>'form-control'])!!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('default_distance', 'Distance:') !!}
-                {!! Form::text('default_distance', null, ['class'=>'form-control'])!!}
+                {!! Form::label('distance', 'Distance:') !!}
+                {!! Form::text('distance', null, ['class'=>'form-control'])!!}
             </div>
 
             <div class="form-group">
@@ -59,13 +59,14 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Update Training Drill', ['class'=>'btn btn-primary col-sm-4']) !!}
+                {!! Form::label('success_criteria', 'Success Criteria:') !!}
+                {!! Form::text('success_criteria', null, ['class'=>'form-control'])!!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('default_success_criteria', 'Success Criteria:') !!}
-                {!! Form::text('default_success_criteria', null, ['class'=>'form-control'])!!}
+                {!! Form::submit('Update Training Drill', ['class'=>'btn btn-primary col-sm-4']) !!}
             </div>
+
 
             {!! Form::close() !!}
 

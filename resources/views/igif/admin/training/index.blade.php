@@ -31,15 +31,16 @@
                 </tr>
                 <tr>
                     <th>id</th>
-                    <th>media</th>
-                    <th>category</th>
-                    <th>name</th>
-                    <th>attempts</th>
-                    <th>Distance</th>
-                    <th>success Criteria</th>
-                    <th>measurement</th>
-                    <th>created</th>
-                    <th>updated</th>
+                    <th>Media</th>
+                    <th>Category</th>
+                    <th>Name</th>
+                    {{--<th>name</th>--}}
+                    {{--<th>attempts</th>--}}
+                    {{--<th>Distance</th>--}}
+                    {{--<th>success Criteria</th>--}}
+                    {{--<th>measurement</th>--}}
+                    <th>Created</th>
+                    <th>Updated</th>
 
                 </tr>
                 </thead>
@@ -53,11 +54,20 @@
                             <td>{{$drill->id}}</td>
                             <td><img height="50" src="{{$drill->media ? $media_path . $drill->media->file : 'http://placehold.it/140x100'}}" alt=""></td>
                             <td>{{$drill->category->name}}</td>
-                            <td><a href="{{route('igif.admin.training.edit', $drill->id)}}">{{$drill->name}}</a></td>
-                            <td>{{$drill->default_attempts}}</td>
-                            <td>{{$drill->default_distance . ' ' . $drill->default_distance_unit }}</td>
-                            <td>{{$drill->success_criteria}}</td>
-                            <td>{{$drill->measurement_type}}</td>
+                            {{--<td><a href="{{route('igif.admin.training.edit', $drill->id)}}">{{$drill->name}}</a></td>--}}
+                            <td><a href="{{route('igif.admin.training.edit', $drill->id)}}">
+                                {{$drill->category->name}} Training:
+                                {{$drill->attempts}} attempts from
+                                {{$drill->distance . ' ' . $drill->distance_unit }}
+                                {{$drill->unitsoflength->name}}
+                                Success is {{$drill->measurementtype->name}}
+                                {{$drill->success_criteria}}
+                                </a>
+                            </td>
+                            {{--<td>{{$drill->attempts}}</td>--}}
+                            {{--<td>{{$drill->distance . ' ' . $drill->distance_unit }}</td>--}}
+                            {{--<td>{{$drill->success_criteria}}</td>--}}
+                            {{--<td>{{$drill->measurement_type}}</td>--}}
                             <td>{{ ($drill->created_at != null) ? $drill->created_at->diffForHumans() : "No Date" }}</td>
                             <td>{{ ($drill->updated_at != null) ? $drill->updated_at->diffForHumans() : "No Date" }}</td>
 

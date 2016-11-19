@@ -19,9 +19,9 @@ class CreateTrainingDrillsTable extends Migration
             $table->integer('training_media_id')->unsigned();
             $table->string('name');
             $table->longText('description');
-            $table->integer('default_attempts');
-            $table->integer('default_distance');
-            $table->string('default_success_criteria');
+            $table->integer('attempts');
+            $table->integer('distance');
+            $table->string('success_criteria');
             $table->string('measurement_type');
             $table->timestamps();
 

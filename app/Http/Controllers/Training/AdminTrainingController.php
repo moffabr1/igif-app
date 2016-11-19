@@ -56,8 +56,10 @@ class AdminTrainingController extends Controller
     {
         //
         $categories = TrainingCategory::lists('name','id')->all();
+        $unitsoflength = TrainingUnitsOfLength::lists('name', 'id', 'symbol')->all();
+        $measurementtypes = TrainingMeasurementType::lists('name', 'id')->all();
 
-        return view('igif.admin.training.create', compact('categories'));
+        return view('igif.admin.training.create', compact('categories', 'unitsoflength', 'measurementtypes'));
     }
 
     /**
@@ -71,6 +73,8 @@ class AdminTrainingController extends Controller
         //
 
             $input = $request->all();
+
+        dd($input);
             $training_category_id = $input['training_categories_id'];
 
 
@@ -87,9 +91,22 @@ class AdminTrainingController extends Controller
                 $media = TrainingMedia::create(['file' => $name]);
 
                 $input['training_media_id'] = $media->id;
-
-
             }
+
+        //category->name +
+        // "Training:" +
+        // attempts +
+        // distance +
+        // " " +
+        // distnance_unit +
+        // unitsoflength->name +
+        // "Success is " +
+        // measurementtype->name +
+        // success_criteria
+
+            //build the name of the drill
+
+//        dd($input['training_categories_id']);
 
             TrainingDrill::create($input);
 
